@@ -13,8 +13,8 @@ const Form = () => {
     if (storedLogin === 'true') {
       setLogin(true);
     }
-  }, []);
-
+  }, []); 
+ 
   const restart = (e) => {
     e.preventDefault();
     if (name === '' || name.length <= 5 || password === '' || password.length <= 6) {

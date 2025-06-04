@@ -1,13 +1,10 @@
 import React from 'react';
 
-const Tostify = ({ message }) => { 
+const Tostify = ({ message }) => {
+    const isError = message.toLowerCase().includes('check');
     return (
         <div>
-            {message===false ?<p className={`text-white bg-red-600 w-75 h-10 flex justify-center items-center rounded-2xl absolute top-4 z-50 right-2.5`}>
-                {message}
-            </p>:<p className="bg-red-500 text-white w-75 h-10 flex justify-center items-center rounded-2xl px-4">
-                    {message}
-                </p>}
+            <p className={`w-75 h-10 flex justify-center items-center rounded-2xl absolute top-4 z-5 right-18 text-white px-4 ${isError ? 'bg-red-500' : 'bg-green-500'}`}>{message}</p>
         </div>
     );
 };
