@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+
+select.select-width{
+   width: 128px;
+}
