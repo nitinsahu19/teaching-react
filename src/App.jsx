@@ -1,32 +1,34 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Form from './component/Form';
-import Home from './component/Home';  
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import Cart from './component/Cart';
+import Header from './component/Header';
+import Navbar from './component/Navbar';
 import TodoList from './component/TodoList';
 
 function App() {
-  const [login, setLogin] = useState(false);
-  const navigate = useNavigate();
+  // const [login, setLogin] = useState(false);
+  // const navigate = useNavigate();
 
-  useEffect(() => {
-    if (login === true) {
-      navigate("/home");
-    } else {
-      navigate("/login");
-    }
-  }, [login]);
+  // useEffect(() => {
+  //   if (login === true) {
+  //     navigate("/home");
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // }, [login]);
 
-  return (
-    // <Routes>
-    //   <Route path='/login' element={<Form login={login} setLogin={setLogin} />} /> 
-    //   <Route path='/home' element={<Home />} />
-    // </Routes> 
-
+  return ( 
 
     <>
-    <TodoList/>
-    
+      {/* <Routes>
+        <Route path='/navbar' element={<Navbar />} >
+          <Route path='cart' element={<Cart />} />
+          <Route path='header' element={<Header />} />
+        </Route>
+      </Routes> */}
+
+      <TodoList/>
     </>
   );
 }
