@@ -31,7 +31,7 @@ const TodoList = () => {
 
     const HndleFilter = (index) => {
         const updatedArray = todoList.map((item, ind) => {
-            return ind === index ? { ...item, checked: !item.checked } : item;
+            return index === ind ? { ...item, checked: !item.checked } : item;
         });
         setTodoList(updatedArray);
     };

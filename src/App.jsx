@@ -21,14 +21,13 @@ function App() {
   return ( 
 
     <>
-      {/* <Routes>
+      <Routes>
         <Route path='/navbar' element={<Navbar />} >
           <Route path='cart' element={<Cart />} />
           <Route path='header' element={<Header />} />
-        </Route>
-      </Routes> */}
-
-      <TodoList/>
+        </Route>  
+      </Routes>
+ 
     </>
   );
 }
