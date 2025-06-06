@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link  } from 'react-router-dom'
 import { CiDark } from "react-icons/ci";
 import { MdSunny } from "react-icons/md";
 
 const Navbar = (props) => {
   return (
+    <>
     <div className='sticky top-0 bg-white z-50' id='main-heading'>
       <nav className='flex  justify-between p-2 items-center'>
         <div>
@@ -27,6 +28,8 @@ const Navbar = (props) => {
         </div>
       </nav>
     </div>
+   
+    </>
   )
 }
 
