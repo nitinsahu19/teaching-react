@@ -10,6 +10,7 @@ import Fetchapi from './component/Fetchapi'
 import Foter from './component/Foter'
 import DefaulPage from './component/DefaulPage'
 import Todo from './component/Todo'
+import FakeApiData from './component/FakeApiData'
 
 
 
@@ -54,8 +55,9 @@ function App() {
 
     <>
    
+   <FakeApiData/>
     {/* <Todo/> */}
-      {
+      {/* {
         login === false ?
           <Form setLogin={setLogin} error={error} setError={setError} /> :
           <div>
@@ -66,7 +68,7 @@ function App() {
               <Route path='/about' element={<Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />} />
             </Routes>
           </div>
-      }
+      } */}
 
 
 
