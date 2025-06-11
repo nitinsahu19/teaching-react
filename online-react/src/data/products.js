@@ -1,0 +1,17 @@
+export const products = [
+  { id: 1, Name: "Lava", price: 2000, category: "Electronics", image: "https://www.lavamobiles.com/_next/image?url=https%3A%2F%2Fhotfixapi.lavamobiles.com%2Fstorage%2Fmedia%2Fhome_slider%2Fvideo%2Fteaser-desktop-1747803900.png&w=3840&q=75" },
+  { id: 2, Name: "iPhone 14 Pro", price: 120000, category: "Electronics", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNtyEpcgbyT48tITkMuYl_sB2KUi4uzDLiXQ&s" },
+  { id: 3, Name: "Royal Enfield Classic 350", price: 210000, category: "Vehicle", image: "https://img.autocarindia.com/model/uploads/modelimages/Royal-Enfield-Hunter-350-070820221837.png?w=872&h=578&q=75&c=1" },
+  { id: 4, Name: "Samsung Galaxy S23", price: 85000, category: "Electronics", image: "https://media.wired.com/photos/63ee8e4fcde6e0e4f71293ef/master/pass/Samsung-Galaxy-S23-SOURCE-Samsung.jpg" },
+  { id: 5, Name: "Tata Nexon EV", price: 1500000, category: "Vehicle", image: "https://imgd.aeplcdn.com/664x374/n/cw/ec/149123/nexon-ev-exterior-right-rear-three-quarter.jpeg?isig=0&q=80" },
+  { id: 6, Name: "Sony WH-1000XM4 Headphones", price: 25000, category: "Electronics", image: "https://inspireonline.in/cdn/shop/files/r1586_Starlight_PDP_Image_Position-3__en-IN_083d3fe3-9c10-4242-bfd8-8aeef921864e.jpg?v=1691426391&width=823" },
+  { id: 7, Name: "MacBook Air M2", price: 135000, category: "Electronics", image: "https://finebuy.co.in/wp-content/uploads/2023/10/mac-air-5.webp" },
+  { id: 8, Name: "Hero Splendor Plus", price: 80000, category: "Vehicle", image: "https://media.zigcdn.com/media/model/2024/Jan/lest-side-view-1957291464_930x620.jpg" },
+  { id: 9, Name: "DJI Mini 3 Drone", price: 70000, category: "Electronics", image: "https://i.ytimg.com/vi/aOwTUgqUfH8/maxresdefault.jpg" },
+  { id: 10, Name: "Honda Activa 6G", price: 90000, category: "Vehicle", image: "https://cdn.bikedekho.com/processedimages/honda/activa-6g/source/activa-6g65e80a7b08ce2.jpg" },
+  { id: 11, Name: "ASUS ROG Gaming Laptop", price: 145000, category: "Electronics", image: "https://images.jdmagicbox.com/quickquotes/images_main/asus-rog-strix-hero-gaming-laptop-gl504-15-6-144hz-ips-type-slim-display-intel-core-i7-8750h-processor-up-to-3-9ghz-113434402-8iqea.jpg" },
+  { id: 12, Name: "Bajaj Pulsar 150", price: 110000, category: "Vehicle", image: "https://www.carandbike.com/_next/image?url=https%3A%2F%2Fi.ndtvimg.com%2Fi%2F2018-04%2F2018-bajaj-pulsar-150_827x510_51524039199.jpg&w=3840&q=75" },
+  { id: 13, Name: "OnePlus Nord CE 3", price: 26000, category: "Electronics", image: "https://images.indianexpress.com/2023/08/oneplus-nord-ce-3-5g-review-featured.jpg" },
+  { id: 14, Name: "Mahindra Thar", price: 1700000, category: "Vehicle", image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Mahindra_Thar_Photoshoot_At_Perupalem_Beach_%28West_Godavari_District%2CAP%2CIndia_%29_Djdavid.jpg" },
+  { id: 15, Name: "Noise ColorFit Pro Smartwatch", price: 4000, category: "Electronics", image: "https://www.fliptwirls.com/wp-content/uploads/2023/05/F87.jpg" },
+];

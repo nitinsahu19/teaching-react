@@ -1,0 +1,13 @@
+/* Light Theme */
+.light-theme {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #1f2937;
+  color: #fefefe;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
