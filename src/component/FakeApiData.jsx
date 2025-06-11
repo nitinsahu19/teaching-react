@@ -4,7 +4,7 @@ import React,{useState ,useEffect} from 'react'
 const FakeApiData = () => {
      const [data,setData] = useState([]);
     const [category,setCategory] = useState("All");
-  const [limit,setLimit] = useState(5)
+  const [limit,setLimit] = useState(3)
     useEffect(()=>{
       fetch(`https://fakestoreapi.com/products?limit=${limit}`)
       .then(res =>res.json())
@@ -17,11 +17,14 @@ const FakeApiData = () => {
     },[limit])
 
     const handlecount = ()=>{
-      setLimit(limit+5)
+      setLimit(limit+3)
     }
     const filterValue = category==="All"?data:data.filter((item)=>{
       return item.category===category
     })
+
+
+ 
   return (
     <div>
        <div>
@@ -41,14 +44,14 @@ const FakeApiData = () => {
                 <p className='font-medium'>Title : {item.title}</p>
                 <p className='font-medium'>Category : {item.category}</p>
                 <p><span className='font-semibold'>Description : </span>{item.description.slice(0,100)}...</p>
-                <p><span className='font-semibold'>Price : </span>{item.price}</p>
+                <p><span className='font-semibold'>Price : </span>{item.price} ₹</p>
             </div>
             )
         }
       </div>
-      <div className='flex justify-center mt-3 mb-2'>
+     {limit<=data.length? <div className='flex justify-center mt-3 mb-2'>
       <button className='bg-amber-400 rounded p-2 ' onClick={handlecount}>View more</button>
-      </div>
+      </div>:""}
     </div>
     </div>
   )
