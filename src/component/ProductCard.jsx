@@ -8,6 +8,7 @@ import "toastify-js/src/toastify.css"
 import Tostyfiy from './Tostyfiy';
 import Navbar from './Navbar';
 import Foter from './Foter';
+import { memo } from 'react';
 
 
 
@@ -225,4 +226,4 @@ const ProductCard = (props) => {
   )
 }
 
-export default ProductCard
+export default memo(ProductCard)

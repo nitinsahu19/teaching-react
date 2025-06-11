@@ -55,9 +55,9 @@ function App() {
 
     <>
    
-   <FakeApiData/>
+   {/* <FakeApiData/> */}
     {/* <Todo/> */}
-      {/* {
+      {
         login === false ?
           <Form setLogin={setLogin} error={error} setError={setError} /> :
           <div>
@@ -68,7 +68,7 @@ function App() {
               <Route path='/about' element={<Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />} />
             </Routes>
           </div>
-      } */}
+      }
 
 
 

@@ -1,4 +1,5 @@
 import React,{useState ,useEffect} from 'react'
+import { memo } from 'react';
 
 
 const FakeApiData = () => {
@@ -57,4 +58,4 @@ const FakeApiData = () => {
   )
 }
 
-export default FakeApiData
+export default memo(FakeApiData)

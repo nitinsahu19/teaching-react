@@ -1,4 +1,5 @@
 import React from 'react'
+import { memo } from 'react'
 
 const Tostyfiy = (props) => {
   return (
@@ -10,4 +11,4 @@ const Tostyfiy = (props) => {
   )
 }
 
-export default Tostyfiy
+export default memo(Tostyfiy)

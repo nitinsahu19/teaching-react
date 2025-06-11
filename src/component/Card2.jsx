@@ -6,6 +6,7 @@ import { GrPowerReset } from "react-icons/gr";
 import Card from './Card'
 import Navbar from './Navbar';
 import Foter from './Foter';
+import { memo } from 'react';
 
 
 
@@ -99,4 +100,4 @@ const Card2 = (props) => {
   )
 }
 
-export default Card2
+export default memo(Card2)
