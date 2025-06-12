@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { MdDeleteForever } from "react-icons/md";
-
+import { FaMoon } from "react-icons/fa";
+import { FaSun } from "react-icons/fa";
 
 const TodoList = () => {
     const [task, setTask] = useState("");
     const [todoList, setTodoList] = useState([]);
     const [filter, setFilter] = useState('All')
+    const [darkMode, setDarkMode] = useState(false)
 
     const handleClick = () => {
         if (task !== "") {
@@ -22,6 +24,13 @@ const TodoList = () => {
         }
     };
 
+
+
+    const Themsmode = () => {
+        setDarkMode(!darkMode)
+    }
+
+
     const handleDelete = (items) => {
         const editbtn = todoList.filter((i, index) => {
             return items !== index
@@ -36,7 +45,7 @@ const TodoList = () => {
         setTodoList(updatedArray);
     };
 
-    const finalaray = todoList.filter((item) => {
+    const finalaray = todoList.filter((item, ind) => {
         if (filter === "All") return true;
         if (filter === "Active") return !item.checked;
         if (filter === "Complete") return item.checked;
@@ -49,9 +58,17 @@ const TodoList = () => {
     return (
         <>
             <div>
-                <div className='text-5xl p-2 font-bold italic bg-red-700'>
-                    <h1 className='flex justify-center'>TodoList</h1>
+                <div className={`${darkMode ? 'bg-black text-white' : 'bg-white text-black'} min-h-screen transition duration-800`}>
+
+                    <div className='text-5xl p-2 font-bold italic bg-red-700'>
+                        <h1 className='flex justify-center'>TodoList</h1>
+                        <button onClick={Themsmode} className='text-3xl cursor-pointer'>
+                            {darkMode ? <FaSun /> : <FaMoon />}
+                        </button>
+                    </div>
                 </div>
+ 
+
                 <div className='flex justify-around'>
 
                     <div className="flex justify-center gap-4 mt-50 p-4 bg-white shadow-md shadow-green-700 rounded-2xl">
@@ -69,18 +86,14 @@ const TodoList = () => {
                 </div>
                 <div className='mt-6'>
                     {finalaray.length === 0 ? (
-                        <p className='text-2xl text-gray-500 text-center font-bold'>Please Enter task !</p>
+                        <p className='text-2xl text-red-500 text-center font-bold'>Please Enter task !</p>
                     ) : (
                         finalaray.map((item, index) => (
                             <div className='flex gap-50 ml-65 items-center p-2'>
                                 <p>{index + 1}</p>
-                                <input type="checkbox" checked={item.checked} onChange={() => HndleFilter(index)}
-                                />
+                                <input value={filter} checked={item.checked} onChange={() => HndleFilter(index)} type="checkbox" />
                                 <li className='text-red-800 flex items-center gap-4'>{item.text}</li>
-                                <button onClick={() => handleDelete(index)} className='text-2xl text-red-600 font-bold cursor-pointer'
-                                >
-                                    <MdDeleteForever />
-                                </button>
+                                <button onClick={() => handleDelete(index)} className='text-2xl text-red-600 font-bold cursor-pointer'><MdDeleteForever /></button>
                             </div>
                         ))
                     )}
@@ -94,6 +107,5 @@ const TodoList = () => {
 };
 
 export default TodoList;
-
 
 

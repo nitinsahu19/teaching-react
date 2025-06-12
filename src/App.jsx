@@ -1,37 +1,30 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import Cart from './component/Cart';
-import Header from './component/Header';
 import Navbar from './component/Navbar';
-import TodoList from './component/TodoList';
+import { lazy, Suspense } from 'react';
+
+const Cart = React.lazy(() => import('./component/Cart'))
+const Header = React.lazy(() => import('./component/Header'))
+const Datas = React.lazy(() => import('./component/Datas'))
 
 function App() {
-  // const [login, setLogin] = useState(false);
-  // const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (login === true) {
-  //     navigate("/home");
-  //   } else {
-  //     navigate("/login");
-  //   }
-  // }, [login]);
-
-  return ( 
+  return (
 
     <>
+    {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
       <Routes>
         <Route path='/navbar' element={<Navbar />} >
           <Route path='cart' element={<Cart />} />
           <Route path='header' element={<Header />} />
-        </Route>  
+          <Route path='data' element={<Datas />} />
+        </Route>
       </Routes>
- 
-    </>
-  );
+    </Suspense>} 
+  </>
+  )
 }
 
 export default App;
-
 
