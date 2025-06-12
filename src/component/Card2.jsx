@@ -57,9 +57,9 @@ const Card2 = (props) => {
       <div className='mt-1'>
         <div className='grid md:grid-cols-2 gap-4 p-1'>
           <div>
-            <Card title="React app" img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04HyzQ1x41KdCCV9KCHaeRdVvRszAP2Zc9A&s"} />
+            <Card title="React app" img={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04HyzQ1x41KdCCV9KCHaeRdVvRszAP2Zc9A&s"} mode={props.mode} />
           </div>
-          <div className="bg-white rounded shadow-xl p-2 mt-3 ">
+          <div className=" rounded shadow-xl p-2 mt-3 ">
             <div>
               <img className='cursor-pointer' src={props.img} alt="" />
             </div>

@@ -26,16 +26,10 @@ function App() {
     if (mode === "light") {
       document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
-      let heading = document.getElementById("main-heading");
-      heading.style.backgroundColor = "black";
-      heading.style.color = "white";
       setMode("dark")
     } else {
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
-      let heading = document.getElementById("main-heading");
-      heading.style.backgroundColor = "white";
-      heading.style.color = "black";
       setMode("light")
     }
   }
