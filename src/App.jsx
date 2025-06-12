@@ -1,29 +1,37 @@
-import React, { Component, Suspense , lazy } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import components1 from './comonents/components1';
-// import components2 from './comonents/components2';
+import ApiFetch from './comonents/ApiFetch';
+
 const Navbarr = React.lazy(() => import('./comonents/Router/Navbarr'));
 const Home = React.lazy(() => import('./comonents/Router/Home'));
 const About = React.lazy(() => import('./comonents/Router/About'));
-const Contact = React.lazy(() => import('./comonents/Router/Contact')); 
+const Contact = React.lazy(() => import('./comonents/Router/Contact'));
+const ProtectedRoute = React.lazy(() => import('./comonents/Router/ProtectedRouter'));
+
 function App() {
-  return (    <>
-<Navbarr />
+  const isLoggedIn = true; 
+
+  return (<>
+  <Navbarr />
       <Suspense fallback={<div><h1>Loading...</h1></div>}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path='/' element={<Home/>}/>
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+          <Route path="/contact"element={<ProtectedRoute isLoggedIn={isLoggedIn}><Contact /></ProtectedRoute>}/>
+        </Routes> 
       </Suspense>
 
-      {/* <Component1/>
-      <Component2/> */}
+      <ApiFetch/>
+      
       </>
+          
+    
   );
 }
 
 export default App;
+
 // import React, { useState } from 'react';
 // import Form from './comonents/form'; 
 // import Product from './data/Product';

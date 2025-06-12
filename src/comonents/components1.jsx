@@ -1,5 +1,4 @@
-// import {memo} form 'react'
-// import React from 'react'
+// import {memo} from react;
 // const components1=(props)=>{
 //     console.log()
 
