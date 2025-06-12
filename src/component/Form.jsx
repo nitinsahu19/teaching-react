@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
 import { useState } from 'react';
-import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
-import ProductCard from './ProductCard';
 import Tostyfiy from './Tostyfiy';
-
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Form = (props) => {
+    const navigate = useNavigate();
+
     const mainFull = (event) => {
         event.preventDefault();
     }
@@ -38,7 +37,9 @@ const Form = (props) => {
             props.setLogin(true)
             showAlert("congrass yor are logined")
             setValue("")
-            setValue2("")
+            setValue2("");
+            // <Navigate to='/cart'/>
+            navigate('/');
         }
 
     }
@@ -57,14 +58,10 @@ const Form = (props) => {
         }
     }
 
-   
-
-  
-
     return (
         <>
             {props.error && <Tostyfiy error={props.error} />}
-             <div className='flex justify-center mt-14 mb-4'>
+            <div className='flex justify-center mt-14 mb-4'>
                 <div className='p-3 rounded shadow-xl shadow-blue-300 bg-white'>
                     <form action="" id='main' onSubmit={mainFull} className='p-2'>
                         <div>
@@ -74,8 +71,8 @@ const Form = (props) => {
                         <div className='mt-2'>
                             <label className='font-medium' htmlFor="102">Password</label><br />
                             <div className='border  hover:border-green-300  mt-3 w-100 p-1 rounded cursor-pointer flex gap-1'>
-                                <input className='w-100 outline-0' id='102' name='password'  value={value2} onChange={(e) => setValue2(e.target.value)} type="password" placeholder='Password' required />
-                                <button className='cursor-pointer outline-0 '  id='buton-show' type='button' onClick={ShowPassword}>Show</button>
+                                <input className='w-100 outline-0' id='102' name='password' value={value2} onChange={(e) => setValue2(e.target.value)} type="password" placeholder='Password' required />
+                                <button className='cursor-pointer outline-0 ' id='buton-show' type='button' onClick={ShowPassword}>Show</button>
                             </div>
                         </div>
                         <div>
@@ -85,7 +82,7 @@ const Form = (props) => {
                     </form>
                 </div>
             </div>
-                
+
 
         </>
     )
