@@ -23,7 +23,7 @@ const Product = ({ datas }) => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-  
+
     return (
         <>
             <div className="relative">
@@ -52,19 +52,19 @@ const Product = ({ datas }) => {
                         </div>
                     ))}
                 </div>
+                {
+                    <div className="grid grid-cols-3 p-10 gap-10">
+                        {datas.map((item) => (
+                            <div key={item.id} className="border p-4 rounded shadow">
+                                <img className="w-full h-48 object-contain" src={item.img} alt={item.category} />
 
-                <div className="grid grid-cols-3 p-10 gap-10">
-                    {datas.map((item) => (
-                        <div key={item.id} className="border p-4 rounded shadow">
-                            <img className="w-full h-48 object-contain" src={item.img} alt={item.category} />
-
-                            <p>ID: {item.id}</p>
-                            <p>{item.name}</p>
-                            <p>₹{item.price}</p>
-                            <button onClick={() => handleClick(item)} className="bg-blue-600 p-3 mt-2 text-white rounded cursor-pointer hover:bg-blue-700">Add to cart</button>
-                        </div>
-                    ))}
-                </div>
+                                <p>ID: {item.id}</p>
+                                <p>{item.name}</p>
+                                <p>₹{item.price}</p>
+                                <button onClick={() => handleClick(item)} className="bg-blue-600 p-3 mt-2 text-white rounded cursor-pointer hover:bg-blue-700">Add to cart</button>
+                            </div>
+                        ))}
+                    </div>}
             </div>
         </>
     );
