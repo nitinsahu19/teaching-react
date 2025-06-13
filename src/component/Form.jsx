@@ -38,7 +38,6 @@ const Form = (props) => {
             showAlert("congrass yor are logined")
             setValue("")
             setValue2("");
-            // <Navigate to='/cart'/>
             navigate('/');
         }
 

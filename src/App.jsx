@@ -1,5 +1,5 @@
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useSearchParams } from 'react-router-dom'
 import './App.css'
 import Form from './component/Form'
 import ProductCard from './component/ProductCard'
@@ -44,9 +44,52 @@ function App() {
   //     setLogin(true);
   //   }
   // }, []);
+
+
+
+  const users = [
+    {name:'suresh',
+      role:'admin'
+    },
+    {name:'ankit',
+      role:'guest'
+    },
+    {name:'neeraj',
+      role:'custmer'
+    }
+  ]
+
+  const [params,setParams] = useSearchParams();
+  const filterrole = params.get("role");
+
+  const handlecahnge=(e)=>{
+    const role = e.target.value;
+    setParams({role})
+
+  }
+  const finalvalue = filterrole==='All'?users:users.filter((item)=>item.role===filterrole)
+
   return (
 
     <>
+
+      <div>
+        <select name="" value={filterrole} onChange={handlecahnge} id="">
+          <option value="All">All</option>
+          <option value="admin">Admin</option>
+          <option value="custmer">Custmer</option>
+          <option value="guest">Guest</option>
+        </select>
+      </div>
+
+      <div>
+        {finalvalue.map((item)=>
+        <div>
+          <p>{item.name}</p>
+          <p>{item.role}</p>
+        </div>
+        )}
+      </div>
 
       {/* <FakeApiData/> */}
       {/* <Todo/> */}
@@ -55,7 +98,7 @@ function App() {
           <Form setLogin={setLogin} error={error} setError={setError} /> :
           <div> */}
 
-      <Routes>
+      {/* <Routes>
         <Route path='*' element={<DefaulPage />} />
         <Route path='/' element={
           <ProtectRoute>
@@ -69,7 +112,7 @@ function App() {
             <Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />
           </ProtectRoute>} />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
-      </Routes>
+      </Routes> */}
 
 
 
