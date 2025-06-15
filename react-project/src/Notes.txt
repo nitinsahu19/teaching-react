@@ -1,0 +1,210 @@
+---------------------------------------------------- what is react ? ----------------------------------------------------
+React is a javascript library for building user interfaces.React is used to built single-page application. 
+React was developed by the facebook software engineer JORDAN WALKE.
+
+----------------------------------command to create create react app without vite ? --------------------------------------
+=> npx create-react-app my-react-app -> cd ./my-react-app -> npm i
+
+--------------------------------- command to create create react app with vite ? ------------------------------------------
+=> npm create vite@latest my-app  -> cd ./my-app -> npm i
+
+--------------------------------------------- what is react Components ?---------------------------------------------------
+=> components are like functions that return html elements.
+
+******************************* 2 types of component  *******************************
+
+------------------------------------------------- 1. class components -----------------------------------------------------                                 
+import React, { Component } from "react";
+
+class Welcome extends Component {
+  render() {
+    return <h2>Hello, I am a Class Component!</h2>;
+  }
+}
+
+export default Welcome;
+
+
+-------------------------------------------------- 2. functions components -------------------------------------------------
+function Welcome() {
+    return <h1>Hello</h1>;
+}
+export Welcome;
+
+
+---------------------------------------------------- what is props? ----------------------------------------------------------
+props are argument passed into React component. 
+function Greet (props) {
+return <h1>Hello {props.name}</h1>
+}
+<Greet name = "neetu"/>
+
+
+what is react event ?
+=> function wish (){
+    const greet = ()=>{
+        alert ("good Moring!" )
+    }
+    return (
+       <button button onclick = {greet} > greeting </button>
+    );
+}
+<Wish/>
+
+
+--------------------------------------------------- what is lazy loading ? -------------------------------------------------
+=> Lazy loading in react renders the component or webpage only when the user needs it . This can reduce the web page loading time.
+{syntax} -> const Todo = React.lazy(()=> import ("./components/Todo/Todo"));
+
+
+---------------------------------------------- what is suspense ? -------------------------------------------------------
+=> React suspense is a built-in React component thet wraps around another component to change its behaviour. fallback show the text when 
+the content is loading. 
+{syntax} -> 
+import React, { Suspense } from 'react';
+
+const About = React.lazy(() => import('./About'));      //this is lazy loading
+
+function App() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <About />
+        </Suspense>
+    );
+}
+
+export default App;
+
+------------------------------------------ what is react memo? ---------------------------------------------------------
+=> React memo is High Order component (HOC) that memoizes the passed in component along with value of its props. 
+import React, { memo } from 'react';
+
+const MyComponent = ({ name }) => {
+    console.log('Rendering MyComponent');
+    return <h1>Hello, {name}</h1>;
+};
+
+export default memo(MyComponent);
+
+------------------------------------------------- what is usesearchParams? -----------------------------------------------
+=> React Router ka hook hai jo hume URL ke query parameters (?key=value) read aur update karne deta hai.
+import { useSearchParams } from "react-router-dom";
+
+function MyComponent() {
+  const [searchParams] = useSearchParams();
+  const name = searchParams.get("name");
+
+  return <h2>Hello, {name}</h2>;
+}
+export default MyComponent
+
+
+-------------------------------------------------what is usenavigate? ---------------------------------------------------- 
+=>Page change karne ke liye programmatically.
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+function App() {
+  const navigate = useNavigate();
+
+  return (
+    <button onClick={() => navigate("/about")}>
+      Go to About Page
+    </button>
+  );
+}
+export default home
+
+
+------------------------------------------------- what is useParams? -------------------------------------------------
+=>URL se value lena (dynamic params).
+import React from "react";
+import { useParams } from "react-router-dom";
+
+function User() {
+  const { id } = useParams();
+
+  return <h2>User ID: {id}</h2>;
+}
+export default User
+
+
+---------------------------------------------what is react router dom?----------------------------------------------
+=> React mein pages banane wali library.
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+export default App
+
+
+--------------------------------------------------what is link?---------------------------------------------------
+=>Bina page reload ke navigation.
+import { Link } from "react-router-dom";
+
+function Navbar() {
+  return (
+    <nav>
+      <Link to="/">Home</Link> | <Link to="/about">About</Link>
+    </nav>
+  );
+}
+export default Navbar
+
+
+----------------------------------------------what is oulet?-----------------------------------------------------
+=> Nested routes ke liye jagah.
+import { Outlet } from "react-router-dom";
+
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <Outlet /> {/* Yahan child routes dikhenge */}
+    </div>
+  );
+}
+export default Dashboard
+
+
+----------------------------------------------what is usestate?----------------------------------------------------
+=> Component ke andar data store karna.
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+export default Counter
+
+
+------------------------------------------------whta is useeffect?-----------------------------------------------
+=> Jab component load ho ya update ho tab kuch karna.
+
+import React, { useEffect } from "react";
+
+function Timer() {
+  useEffect(() => {
+    console.log("Component mounted");
+  }, []);
+
+  return <h2>Check console for message</h2>;
+}
+export default Timer
+
+
+
