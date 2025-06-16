@@ -3,9 +3,14 @@ import { useState, useEffect } from 'react'
 
 const Weather = () => {
     const [cityweather, setCityweather] = useState('')
-    const [Apis , setApis] = useState('')
+    const [Apis, setApis] = useState('')
+
 
     const fetchcity = () => {
+        if (Apis === "") {
+            alert("Please enter a city name")
+        }
+
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${Apis}&appid=a65c31188fb818a04bb6cc14ac838c6d&units=metric`)
             .then((res) => res.json())
             .then((res) => {
@@ -16,7 +21,6 @@ const Weather = () => {
     }
 
 
-    
     useEffect(() => {
         fetchcity
     }, [cityweather])
@@ -24,23 +28,31 @@ const Weather = () => {
 
     return (
         <>
+            <div className='classs'>
 
-            <h1 className='text-3xl font-bold mt-10 text-center'>Weather App</h1>
-            <div className='w-80 h-50 border p-10 mt-10 ml-10'>
-                <div>
-                    <input onChange={(e) => setApis(e.target.value)} className='border mt-5 ml-5 w-50 h-10 rounded-2xl' type="text" placeholder='Enter Your City' />
+                <h1 className='text-3xl font-bold text-center'>Weather App</h1>
+
+                <div className='w-full flex justify-center mt-10'>
+                    <div className='w-96 border rounded-xl p-6 shadow-lg'>
+                        <input onChange={(e) => setApis(e.target.value)} className='border w-full h-10 px-4 rounded-xl mb-4' type="text" placeholder='Enter Your City' />
+                        <button onClick={fetchcity} className='w-full h-10 bg-amber-400 rounded-xl font-semibold hover:bg-amber-500 cursor-pointer' >
+                            Get Weather
+                        </button>
+                    </div>
                 </div>
-                <button onClick={fetchcity} className='w-30 h-10 bg-amber-400 rounded-2xl mt-6 ml-10 cursor-pointer'>Click</button>
-            </div>
 
-           {cityweather && <div>
-                <p>{cityweather.main.temp}</p>
-                <p>{cityweather.main.grnd_level}</p>
-            </div>}
-            
-           {cityweather.cod !==  200 &&<h1>
-            <p className='text-red-500 ml-10 mt-5 font-bold'>invalid code please try again Api </p>
-            </h1>}
+
+                {cityweather && <div className='text-center mt-10'>
+                    <p className='py-2'>🏙️ City: {cityweather.name}</p>
+                    <p className='py-2'>🌡️ Temp: {cityweather.main.temp}°C</p>
+                    <p className='py-2'>💧 Humidity: {cityweather.main.humidity}%</p>
+                    <p className='py-2'>🔽Pressure: {cityweather.main.pressure} hPa</p>
+                </div>}
+
+                {cityweather.cod !== 200 && <h1 className='text-center'>
+                    <p className='text-red-500 ml-10 mt-5 font-bold'>invalid code please try again Api </p>
+                </h1>}
+            </div>
         </>
     )
 }
