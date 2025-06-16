@@ -192,7 +192,7 @@ function Counter() {
 export default Counter
 
 
-------------------------------------------------whta is useeffect?-----------------------------------------------
+------------------------------------------------what is useeffect?-----------------------------------------------
 => Jab component load ho ya update ho tab kuch karna.
 
 import React, { useEffect } from "react";

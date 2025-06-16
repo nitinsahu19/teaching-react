@@ -23,9 +23,7 @@ const RoleSelector = () => {
   };
 
   const filteredUsers =
-    roleFilter === "all"
-      ? users
-      : users.filter((user) => user.role === roleFilter);
+    roleFilter === "all"? users: users.filter((user) => user.role === roleFilter);
 
 return (
     <div className="flex flex-col items-center">

@@ -6,6 +6,7 @@ import Home from "./components/Navbar/Home";
 import Help from "./components/Navbar/Help";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+
 const Count = React.lazy(() => import("./components/Count/CountButton"));
 const Todo = React.lazy(() => import("./components/Todo/Todo"));
 const TodoApp = React.lazy(() => import("./components/Todo/simpletodo"));
@@ -14,6 +15,7 @@ const NoPageFound = React.lazy(() => import("./components/NopageFound/Nopagefoun
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const ThemeToggle = React.lazy(() => import("./components/ThemeButton/Theme"));
 const RoleSelector = React.lazy(() => import("./components/Usesearchparams/selector"));
+const Weather = React.lazy(()=> import('./components/weather/Weather'))
 
 function App() {
   return (
@@ -33,6 +35,7 @@ function App() {
               <Route path="SimpleTodo" element={<TodoApp />} />
               <Route path="theme" element={<ThemeToggle />} />
               <Route path="selector" element={<RoleSelector />} />
+              <Route path="Weather" element={<Weather />} />
               <Route path="*" element={<NoPageFound />} />
             </Route>
           </Routes>
