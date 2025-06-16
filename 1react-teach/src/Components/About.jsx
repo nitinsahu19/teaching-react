@@ -6,7 +6,7 @@ function About() {
   return (
     <>
     {/* <Navbar /> */}
-    <Header />
+    {/* <Header /> */}
       <h1 className='mt-10'>Hello User. This is About page</h1>
     </>
   )

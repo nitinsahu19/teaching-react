@@ -6,7 +6,7 @@ function Blog() {
   return (
     <>
     {/* <Navbar /> */}
-    <Header />
+    {/* <Header /> */}
      <h1 className='mt-10'>Hello User This is Blog Page</h1> 
     </>
   )

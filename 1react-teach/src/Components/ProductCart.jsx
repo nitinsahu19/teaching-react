@@ -5,7 +5,15 @@ import { MdDarkMode, MdLightMode, MdLogout } from "react-icons/md";
 import Cart from './Cart';
 import LikeunLikeCommet from './LikeunLikeCommet';
 import Tostify from './Tostify';
+import Header from './Header';
+import { useSearchParams } from 'react-router-dom';
 
+
+const dommy = [
+  { id: 1, name: "Vikas", role: "user" },
+  { id: 2, name: "suresh", role: "active" },
+  { id: 3, name: "rahul", role: "complete" }
+]
 
 export default function ProductCart(props) {
   const [filterdData, setFilterdData] = useState(products)
@@ -13,6 +21,7 @@ export default function ProductCart(props) {
   const [addCartItem, setAddCartItem] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [toast, setToast] = useState("")
+  const [search, setSearch] = useSearchParams()
 
   const showToast = (message) => {
     setToast(message)
@@ -31,52 +40,74 @@ export default function ProductCart(props) {
     }
   }
 
-  const color = () => {
-    if (mode === "light") {
-      document.body.style.backgroundColor = "white";
-      document.body.style.color = "black";
-      setMode("dark")
-    }
-    else {
-      document.body.style.backgroundColor = "black";
-      document.body.style.color = "white";
-      setMode("light");
-    }
+  // const color = () => {
+  //   if (mode === "light") {
+  //     document.body.style.backgroundColor = "white";
+  //     document.body.style.color = "black";
+  //     setMode("dark")
+  //   }
+  //   else {
+  //     document.body.style.backgroundColor = "black";
+  //     document.body.style.color = "white";
+  //     setMode("light");
+  //   }
+  // }
+
+
+  // const cartsAdd = (product) => {
+  //   const index = addCartItem.findIndex((item) => {
+  //     return product.id === item.id;
+  //   })
+  //   if (index === -1) {
+  //     const newCart = [...addCartItem, { ...product, quantity: 1 }]
+  //     showToast("Your product added")
+  //     setAddCartItem(newCart)
+  //   } else {
+  //     const Updatequantity = [...addCartItem]
+  //     Updatequantity[index].quantity += 1
+  //     setAddCartItem(Updatequantity)
+  //   }
+  // }
+
+
+  const filterrole = search.get("role");
+
+  const handleChange = (e) => {
+    const role = e.target.value;
+    setSearch({ role })
   }
+  
 
-
-  const cartsAdd = (product) => {
-    const index = addCartItem.findIndex((item) => {
-      return product.id === item.id;
-    })
-    if (index === -1) {
-      const newCart = [...addCartItem, { ...product, quantity: 1 }]
-      showToast("Your product added")
-      setAddCartItem(newCart)
-    } else {
-      const Updatequantity = [...addCartItem]
-      Updatequantity[index].quantity += 1
-      setAddCartItem(Updatequantity)
-    }
-  }
-
-
-
+  // const filtered = filterrole === "All" ? dommy:dommy. :dommy.filter((item)=>items.role === filterrole))
+  
+  const filtered = filterrole === 'All' ? dommy:dommy.filter((item)=>item.role===filterrole)  
 
   return (
     <>
-    {setToast && <Tostify toast={toast} />}
+      {setToast && <Tostify toast={toast} />}
+
       <div className='flex justify-between relative' >
         <div className='text-start font-bold'>
           <label >Filter </label>
-          <select name="" id="" className='border-2 rounded' onChange={(e) => handleFilter(e.target.value)}>
+          {/* <select name="" id="" className='border-2 rounded' onChange={(e) => handleFilter(e.target.value)}>
             <option className='font-bold text-white bg-black' value="All">All</option>
             <option className='font-bold text-white bg-black' value="Cars">Cars</option>
             <option className='font-bold text-white bg-black' value="Electric">Electric</option>
             <option className='font-bold text-white bg-black' value="Shirt">Shirt</option>
+          </select> */}
+          <select name="" id="" className='border-2 rounded' onChange={handleChange}>
+            <option className='font-bold text-white bg-black' value="All">All</option>
+            <option className='font-bold text-white bg-black' value="user">user</option>
+            <option className='font-bold text-white bg-black' value="active">active</option>
+            <option className='font-bold text-white bg-black' value="complete">complete</option>
           </select>
+          <div className='mt-6'>
+            {filtered.map((item) => <div>
+              <p>{item.name} : {item.role}</p>
+            </div>)}
+          </div>
         </div>
-        <div className='flex items-center'>
+        {/* <div className='flex items-center'>
           <div className='me-10'>
             {mode === "light" ? <button onClick={color}><MdLightMode className='text-2xl cursor-pointer' /></button> : <button><MdDarkMode className='text-2xl cursor-pointer' onClick={color} /></button>}
           </div>
@@ -88,8 +119,8 @@ export default function ProductCart(props) {
             <button className='cursor-pointer' onClick={props.logout}> <MdLogout className='text-2xl font-bold' /></button>
           </div>
 
-        </div>
-        {cartOpen && <div className={mode === "light" ? 'absolute top-15   text-white right-0 p-3 bg-black shadow-2xl shadow-amber-300 ' : 'absolute top-15  right-0 p-3 bg-white text-black shadow-2xl shadow-amber-300 '}>
+        </div> */}
+        {/* {cartOpen && <div className={mode === "light" ? 'absolute top-15   text-white right-0 p-3 bg-black shadow-2xl shadow-amber-300 ' : 'absolute top-15  right-0 p-3 bg-white text-black shadow-2xl shadow-amber-300 '}>
           <div className='flex p-5 justify-between border-b'>
             <h1 className='font-bold text-2xl'>Carts</h1>
             <button onClick={() => setCartOpen((close) => !close)} className='font-bold border p-1 px-3 buttonCart'>X</button>
@@ -97,10 +128,11 @@ export default function ProductCart(props) {
           <div>
             {addCartItem.length <= 0 && <p className='font-black text-2xl p-3'>No Item!</p>}
           </div>
-          <Cart add={addCartItem} setadd={setAddCartItem} mode={mode} setmode={setMode} />
-        </div>}
+          
+          <Header add={addCartItem} setadd={setAddCartItem} mode={mode} setmode={setMode} />
+        </div>} */}
       </div>
-      <div className='flex justify-evenly flex-wrap' style={{ height: "auto", width: "100%" }}>
+      {/* <div className='flex justify-evenly flex-wrap' style={{ height: "auto", width: "100%" }}>
         {filterdData.map((datas) => <div className='shadow-2xl shadow-blue-700  m-5 p-5'>
           <img className='h-80 w-80 object-cover' src={datas.img} alt="" />
           <p className='text-bold text-start p-1 font-bold'>Name : {datas.name}</p>
@@ -114,7 +146,7 @@ export default function ProductCart(props) {
           </div>
         </div>
         )}
-      </div>
+      </div> */}
     </>
   )
 }

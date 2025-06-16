@@ -4,7 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 
 function Todo() {
 
-  const [todo, settodo] = useState([]);
+  const [todo, settodo] = useState([]); 
   const [input, setInput] = useState("");
   const [filter, setFilter] = useState('All')
 
@@ -44,7 +44,6 @@ function Todo() {
       return item.checked
     }
   })
-  console.log(finalarray);
 
   return (
     <>
@@ -73,7 +72,6 @@ function Todo() {
             <button id='id' onClick={() => remove(index)} className='bg-red-600 px-3 font-semibold py-1 rounded-lg cursor-pointer'><MdDeleteForever className='text-2xl' /></button>
           </div>)}
         </div>
-
       </div>
     </>
   )

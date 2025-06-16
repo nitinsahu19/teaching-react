@@ -5,7 +5,7 @@ import ProductCart from './ProductCart'
 function Home(props) {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <ProductCart logout={props.logout} />
         </>
     )
