@@ -10,6 +10,7 @@ import DefaulPage from './component/DefaulPage'
 // import Todo from './component/Todo'
 // import FakeApiData from './component/FakeApiData'
 import ProtectRoute from './component/ProtectRoute'
+import Weather from './component/weather'
 
 
 
@@ -72,7 +73,7 @@ function App() {
   return (
 
     <>
-
+{/* 
       <div>
         <select name="" value={filterrole} onChange={handlecahnge} id="">
           <option value="All">All</option>
@@ -89,8 +90,11 @@ function App() {
           <p>{item.role}</p>
         </div>
         )}
-      </div>
+      </div> */}
 
+
+
+        <Weather/>
       {/* <FakeApiData/> */}
       {/* <Todo/> */}
       {/* {

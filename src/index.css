@@ -82,3 +82,11 @@ body{
 }
 
 
+
+.img{
+  background-image: url('https://thumbs.dreamstime.com/b/blue-sky-white-cumulus-clouds-sunny-clear-day-panoramic-view-good-weather-background-generated-ai-352277442.jpg');
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
