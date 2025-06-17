@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+
+
+
+
+
+
+ /* <div className={`${darkMode ? 'bg-black text-white' : 'bg-white text-black'} min-h-screen transition duration-1000 `}>
+
+    <div className='flex justify-end '>
+        <button onClick={toggleTheme} className='text-3xl cursor-pointer'>
+            {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+    </div> 
+
+
+    
+     const toggleTheme = () => {
+         setDarkMode(!darkMode);
+     };
+
+     const [darkMode, setDarkMode] = useState(false); */
