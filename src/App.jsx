@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, Children } from 'react';
 import './App.css';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, BrowserRouter, Link, NavLink, Outlet } from 'react-router-dom';
 import Navbar from './component/Navbar';
 import { lazy, Suspense } from 'react'; 
 import Weather from './component/Weather';
@@ -14,7 +14,7 @@ function App() {
   return (
 
     <>
-    {/* {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
+    {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
       <Routes>
         <Route path='/navbar' element={<Navbar />} >
           <Route path='cart' element={<Cart />} />
@@ -23,9 +23,9 @@ function App() {
         </Route>
       </Routes>
     </Suspense>} 
-  */}
+ 
     
-    <Weather/>
+    {/* <Weather/> */}
   </>
   )
 }
@@ -50,9 +50,7 @@ export default App;
 //        </ProtectedRoute>} /> 
 //      </Routes> */}
 
-//  <Taskk/>
-
-     
+//  <Taskk/> 
     
     
 //     </>
@@ -62,4 +60,22 @@ export default App;
 // export default App;
 
 
+
  
+
+// src/
+// ├── App.jsx
+// ├── index.js
+// ├── components/
+// │   ├── Header.jsx (memoized)
+// │   ├── Sidebar.jsx (memoized)
+// ├── pages/
+// │   ├── Home.jsx
+// │   ├── About.jsx
+// │   ├── Dashboard.jsx
+// │   └── dashboard/
+// │       ├── Stats.jsx
+// │       ├── Reports.jsx
+// │       └── Settings.jsx
+// └── layout/
+//     └── MainLayout.jsx

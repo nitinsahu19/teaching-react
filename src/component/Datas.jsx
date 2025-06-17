@@ -5,9 +5,9 @@ import { FaSun } from "react-icons/fa";
 
 const Datas = () => {
     const [apis, setApis] = useState([]);
-    const [error, seterror] = useState(null); 
+    const [error, seterror] = useState(null);
     const [count, setcount] = useState(3);
-    const [darkMode, setDarkMode] = useState(false); 
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/posts")
@@ -29,16 +29,15 @@ const Datas = () => {
     };
 
     const ubdateval = apis.slice(0, count);
-
     return (
         <div className={`${darkMode ? 'bg-black text-white' : 'bg-white text-black'} min-h-screen transition duration-1000 `}>
-             
-            <div className='flex justify-end p-4'>
+
+            <div className='flex justify-end '>
                 <button onClick={toggleTheme} className='text-3xl cursor-pointer'>
                     {darkMode ? <FaSun /> : <FaMoon />}
                 </button>
             </div>
- 
+
             <div className='grid grid-cols-3 gap-6 p-2'>
                 {error && <p className='text-center text-red-600 text-3xl'>{error}</p>}
 
@@ -51,11 +50,11 @@ const Datas = () => {
                     </div>
                 ))}
             </div>
- 
+
             {count < apis.length && (
                 <div className='flex justify-center mt-4'>
-                    <button 
-                        onClick={ubdateData} 
+                    <button
+                        onClick={ubdateData}
                         className='bg-amber-300 font-medium px-6 py-2 rounded cursor-pointer hover:bg-amber-400 transition'>
                         View More
                     </button>
@@ -66,3 +65,5 @@ const Datas = () => {
 };
 
 export default Datas;
+
+

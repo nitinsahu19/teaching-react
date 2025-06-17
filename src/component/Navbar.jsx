@@ -7,7 +7,7 @@ const Navbar = () => {
         <> 
             <div className='bg-amber-500 flex justify-between'>
                 <img className='w-20 ' src={logo} alt="" /> 
-                <h1 className='font-bold text-2xl italic flex justify-center cursor-pointer mt-5'>Hello </h1>
+                {/* <h1 className='font-bold text-2xl italic flex justify-center cursor-pointer mt-5'>Hello </h1> */}
                 {/* <Link to='cart'><p className='text-2xl font-bold cursor-pointer mt-5'>Home</p></Link>
                 <Link to='header'><p className='text-2xl font-bold cursor-pointer mt-5'>TodoList</p></Link>
                 <Link to='data'><p className='text-2xl font-bold cursor-pointer mt-5'>ApisData</p></Link> */}

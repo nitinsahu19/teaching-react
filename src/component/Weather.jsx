@@ -17,14 +17,15 @@ const Weather = () => {
                 console.log(res)
                 setCityweather(res)
             })
-            .catch((err) => console.log("invalid", err))
+            .catch((err) => console.log("invalid", err) ,  alert("Please enter a valid city name"))
     }
-
+    
 
     useEffect(() => {
         fetchcity
     }, [cityweather])
     console.log(cityweather)
+    console.log(Apis)
 
     return (
         <>
@@ -50,7 +51,7 @@ const Weather = () => {
                 </div>}
 
                 {cityweather.cod !== 200 && <h1 className='text-center'>
-                    <p className='text-red-500 ml-10 mt-5 font-bold'>invalid code please try again Api </p>
+                    <p className='text-red-500 ml-10 mt-5 font-bold'>❌कृपया मान्य शहर का नाम दर्ज करें और फिर से प्रयास करें।</p>
                 </h1>}
             </div>
         </>
