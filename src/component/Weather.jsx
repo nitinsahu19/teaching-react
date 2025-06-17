@@ -31,7 +31,9 @@ const getweather = ()=>{
     });
 }
   
-  
+  setTimeout(() => {
+    setMessage("")
+  }, 3000);
 
   const submitButton=()=>{
     if(cityname.trim()===''){
