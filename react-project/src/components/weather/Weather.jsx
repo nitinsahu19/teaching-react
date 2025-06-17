@@ -23,7 +23,7 @@ const Weather = () => {
         
       });
     } catch (error) {
-      console.error("Error fetching weather data:", error);
+      console.log("Error fetching weather data:", error);
     }
   }
 useEffect(()=>{

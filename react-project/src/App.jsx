@@ -16,6 +16,7 @@ const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 const ThemeToggle = React.lazy(() => import("./components/ThemeButton/Theme"));
 const RoleSelector = React.lazy(() => import("./components/Usesearchparams/selector"));
 const Weather = React.lazy(()=> import('./components/weather/Weather'))
+const GithubUser = React.lazy(()=> import('./components/GithubUserSearch/UserSearch'))
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="theme" element={<ThemeToggle />} />
               <Route path="selector" element={<RoleSelector />} />
               <Route path="Weather" element={<Weather />} />
+              <Route path="GithubUser" element={<GithubUser />} />
               <Route path="*" element={<NoPageFound />} />
             </Route>
           </Routes>

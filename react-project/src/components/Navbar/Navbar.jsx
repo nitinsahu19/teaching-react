@@ -15,12 +15,13 @@ import { NavLink, Outlet } from 'react-router-dom';
         <NavLink to="/SimpleTodo" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>SimpleTodo</NavLink>
         <NavLink to="/selector" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>selector</NavLink>
         <NavLink to="/weather" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>weather</NavLink>
+        <NavLink to="/GithubUser" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Github User</NavLink>
       </div>
       </div>
 
       <div className="flex items-center gap-2">
       <form className="d-flex" role="search">
-      <input className="form-control p-1 m-2" type="search" placeholder="Search" aria-label="Search"/>
+      <input className="form-control p-1 m-2" type="search" placeholder="Search" aria-label="Search"/> 
       <button className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600" type="submit">Search</button>
       </form>
        

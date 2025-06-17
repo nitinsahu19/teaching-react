@@ -3,3 +3,8 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 }
+@media (max-width:567px) {
+  nav{
+    display: none;
+  }
+}
