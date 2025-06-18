@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Tostyfiy from './Tostyfiy';
+import Navbar from './Navbar';
 
-const Login = () => {
+
+const Login = (props) => {
 const [name,setName] = useState('');
 const [password,setPassword] = useState('')
 const navigate = useNavigate();
 const handleAuth = () =>{
-    if(name==="" && password===""){
-        alert('please enter value')
+    if(name==="" || password===""){
+        props.ShowMessage('please enter value')
+
     }else{
         localStorage.setItem('token',true);
         setName('')
@@ -21,7 +25,13 @@ const handlform =(event)=>{
     event.preventDefault()
 }
   return (
+
     <div>
+              <Navbar mode={props.mode} handleMode={props.handleMode} />
+
+      {
+       props.message&& <Tostyfiy message={props.message}/>
+      }
       <div className='flex justify-center items-center h-100 '>
         <form action="" onSubmit={handlform}>
             <div className='p-2'>

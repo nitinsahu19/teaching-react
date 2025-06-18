@@ -1,6 +1,6 @@
 export const movies = [
   {
-    id: 2,
+    id: 1,
     title: "The Dark Knight",
     genre: "Action",
     rating: 9.0,
@@ -8,7 +8,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
   },
   {
-    id: 3,
+    id: 2,
     title: "Interstellar",
     genre: "Sci‑Fi",
     rating: 8.6,
@@ -16,7 +16,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg"
   },
   {
-    id: 4,
+    id: 3,
     title: "The Shawshank Redemption",
     genre: "Drama",
     rating: 9.3,
@@ -24,7 +24,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg"
   },
   {
-    id: 5,
+    id: 4,
     title: "Avengers: Endgame",
     genre: "Superhero",
     rating: 8.4,
@@ -32,7 +32,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
   },
   {
-    id: 6,
+    id: 5,
     title: "Forrest Gump",
     genre: "Drama",
     rating: 8.8,
@@ -40,7 +40,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/saHP97rTPS5eLmrLQEcANmKrsFl.jpg"
   },
   {
-    id: 7,
+    id: 6,
     title: "Joker",
     genre: "Crime",
     rating: 8.4,
@@ -48,7 +48,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
   },
   {
-    id: 8,
+    id: 7,
     title: "Iron Man",
     genre: "Superhero",
     rating: 7.9,
@@ -56,7 +56,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg"
   },
   {
-    id: 9,
+    id: 8,
     title: "Doctor Strange",
     genre: "Fantasy",
     rating: 7.5,
@@ -64,7 +64,7 @@ export const movies = [
     poster: "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg"
   },
   {
-    id: 10,
+    id: 9,
     title: "The Matrix",
     genre: "Action",
     rating: 8.7,

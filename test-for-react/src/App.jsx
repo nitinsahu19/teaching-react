@@ -5,6 +5,9 @@ import Navbar from './component/Navbar'
 import Login from './component/Login'
 import { Routes, Route } from 'react-router-dom';
 import Protect from './component/Protect'
+import Detilas from './component/Detilas'
+
+
 function App() {
 
   const [mode,setMode] = useState('light');
@@ -19,16 +22,23 @@ function App() {
       setMode('light')
     }
   }
+const [message,setMessage] = useState('')
+  const ShowMessage=(msg)=>{
+    setMessage(msg)
+    setTimeout(() => {
+      setMessage('')
+    }, 3000);
+  }
+
 
   return (
   <>
-  
- <Navbar handleMode={handleMode} mode={mode} />
+   
  <Routes>
   
-  <Route path='/' element={<Protect> <Home mode={mode}  /> </Protect>} />
-
-  <Route path='login' element={<Login mode={mode}  />}/>
+  <Route path='/' element={<Protect> <Home mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> </Protect>} />
+  <Route path='/movie/:id' element={<Detilas handleMode={handleMode} mode={mode}/> }   />
+  <Route path='login' element={<Login mode={mode} handleMode={handleMode}  message={message} ShowMessage={ShowMessage} setMessage={setMessage} />}/>
  </Routes>
   </>
   )

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
   return (
-    <div>
+    <div className={`w-full sticky top-0 z-40 ${props.mode==='light'?'bg-white':'bg-black'}`}>
        <div className='flex justify-between p-3'>
         <p className='font-medium text-lg'>Movies</p>
         <Link className='font-medium text-lg' to='/' >Home</Link>
