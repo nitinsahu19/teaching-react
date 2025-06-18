@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'; 
-// import Movies from './components/Movies';
+import Movies from './components/Movies';
 import Login from './components/Login';
 import Protectrouter from './components/Protectrouter';
 import Home from './components/Home';
@@ -13,7 +13,7 @@ function App() {
     
     <Routes>
       <Route path='/' element={<Login/>}/>
-      <Route path='home' element={<Protectrouter><Home/></Protectrouter>}/>
+      <Route path='home' element={<Protectrouter><Movies/></Protectrouter>}/>
     </Routes>
    </>
   );

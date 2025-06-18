@@ -87,7 +87,7 @@ const Movies = () => {
         }
     ];
  
-    const [darkmode, setDarkmode] = useState('white')
+    const [darkmode, setDarkmode] = useState('')
     const [slider, setSlider] = useState(false)
 
     const handleDark = () => {
