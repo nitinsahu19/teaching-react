@@ -1,24 +1,31 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [name, setName]=useState();
-    const [pass, setPass]=useState();
+    const [pass, setPass]=useState(); 
 
-    const loginHandler=()=>{
+    const navigate =useNavigate();
+
+    const loginHandler=(e)=>{
+      e.preventDefault()
+      setName("");
+      setPass("");
         if(name=="akash"&&pass==1234){
             localStorage.setItem("token",true);
-            <Navigate to="/"/>
+            navigate("/");
         }
     }
 
   return (
-    <div className='m-auto my-100'>
-      <div className="p-5">
-        <div><input onChange={(e)=>setName(e.target.value)} type="text" /></div>
-        <div className='my-4'><input onChange={(e)=>setPass(e.target.value)} type="text" /></div>
-        <button onClick={loginHandler}>Login</button>
+    <div className='flex h-screen align-middle'>
+    <div className='m-auto rounded-xl shadow-lg shadow-gray-600 w-100 bg-gray-200'>
+      <div className="p-10">
+        <div><input className='py-1 px-2 w-1/1 rounded bg-white' onChange={(e)=>setName(e.target.value)} type="text" /></div>
+        <div className='my-4'><input className='py-1 px-2 w-1/1 rounded bg-white' onChange={(e)=>setPass(e.target.value)} type="password" /></div>
+        <button className='bg-blue-400 py-1 px-3 text-white rounded' onClick={(e)=>loginHandler(e)}>Login</button>
       </div>
+    </div>
     </div>
   )
 }

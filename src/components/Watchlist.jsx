@@ -11,7 +11,7 @@ function Watchlist(props) {
             <div className='flex flex-wrap justify-evenly'>
                 {
                     watchlist.map((movie)=>{
-                        return <div className='shadow p-2 w-100 mt-5'>
+                        return <div className='shadow bg-gray-400 rounded p-2 w-100 mt-5'>
                             <div className='flex'>
                                 <div><img src={movie.poster} /></div>
                                 <div>
