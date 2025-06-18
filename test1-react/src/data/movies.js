@@ -1,13 +1,5 @@
 export const movies = [
     {
-        id: 1,
-        title: "Inception",
-        genre: "Sci-Fi",
-        rating: 8.8,
-        releaseYear: 2010,
-        poster: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
-    },
-    {
         id: 2,
         title: "The Dark Knight",
         genre: "Action",
