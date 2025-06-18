@@ -5,7 +5,7 @@ export const moviesdata = [
     genre: "Sci-Fi",
     rating: 8.8,
     releaseYear: 2010,
-    poster: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
+    poster: "https://m.media-amazon.com/images/I/71thFiIUSpL._AC_UF894,1000_QL80_.jpg"
   },
   {
     id: 2,
