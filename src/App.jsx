@@ -8,6 +8,8 @@ import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Weather from "./components/Weather";
 import GithubProfileFinder from "./components/GithubProfileFinder";
+import Movies from "./components/Movies";
+import MovieDetails from "./components/MovieDetails";
 
 const Profile = lazy(() => import("./components/Profile"));
 const Orders = lazy(() => import("./components/Orders"));
@@ -35,6 +37,8 @@ const App = () => {
             path="github-profile-finder"
             element={<ProtectedGihtubFinder />}
           />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:id" element={<MovieDetails />} />
         </Route>
       </Routes>
     </Suspense>

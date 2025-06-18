@@ -8,6 +8,7 @@ function Navbar() {
     { to: "users", label: "Users" },
     { to: "weather", label: "Weather" },
     { to: "github-profile-finder", label: "GitHub Finder" },
+    { to: "movies", label: "Movies" },
   ];
 
   return (
