@@ -9,6 +9,7 @@ import Tostyfiy from './Tostyfiy';
 import Navbar from './Navbar';
 import Foter from './Foter';
 import { memo } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -35,7 +36,7 @@ const ProductCard = (props) => {
     butons.style.transition = "1.4s 0.2s  linear"
   }
 
-
+ const naviagate = useNavigate()
   const [addcard, setAddcard] = useState(() => {
     return JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -44,6 +45,11 @@ const ProductCard = (props) => {
     return JSON.parse(localStorage.getItem("length")) || 0;
 
   });
+
+  const handlefun = (getindex)=>{
+    console.log(getindex);
+    naviagate(`/detail/${getindex}`);
+  }
 
 
 
@@ -162,7 +168,7 @@ const ProductCard = (props) => {
           return <div className='shadow-xl  rounded p-2 ' key={index}>
             <div className='w-full'>
               <div className='h-100'>
-                <img className='w-full h-100 object-contain' src={value.img} alt="" />
+                <img onClick={()=>{handlefun(value.id)}} className='w-full h-100 object-contain' src={value.img} alt="" />
               </div>
               <p className='ps-4 font-semibold'>ID: {value.id}</p>
               <p className='ps-4 font-semibold'>Name: {value.name}</p>

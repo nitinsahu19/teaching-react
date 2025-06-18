@@ -11,6 +11,7 @@ import DefaulPage from './component/DefaulPage'
 // import FakeApiData from './component/FakeApiData'
 import ProtectRoute from './component/ProtectRoute'
 import Weather from './component/weather'
+import Details from './component/Details'
 
 
 
@@ -94,7 +95,7 @@ function App() {
 
 
 
-        <Weather/>
+        {/* <Weather/> */}
       {/* <FakeApiData/> */}
       {/* <Todo/> */}
       {/* {
@@ -102,7 +103,7 @@ function App() {
           <Form setLogin={setLogin} error={error} setError={setError} /> :
           <div> */}
 
-      {/* <Routes>
+      {<Routes>
         <Route path='*' element={<DefaulPage />} />
         <Route path='/' element={
           <ProtectRoute>
@@ -116,7 +117,8 @@ function App() {
             <Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />
           </ProtectRoute>} />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
-      </Routes> */}
+        <Route path='/detail/:id' element={<Details/>}/>
+      </Routes> }
 
 
 

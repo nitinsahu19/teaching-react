@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "toastify-js/src/toastify.css"
 import Tostyfiy from './Tostyfiy';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const Form = (props) => {
