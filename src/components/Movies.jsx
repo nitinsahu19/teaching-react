@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa6";
+import { BsCart3 } from "react-icons/bs";
 
-const Movies = () => { 
+const Movies = () => {
     const movies = [
         {
             id: 1,
@@ -85,35 +86,51 @@ const Movies = () => {
             poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
         }
     ];
-    
-    
+ 
     const [darkmode, setDarkmode] = useState('white')
+    const [slider, setSlider] = useState(false)
 
-    const handldark = () => {
+    const handleDark = () => {
         setDarkmode(!darkmode)
     }
 
- 
+
     return (
         <>
+            <div className={`${darkmode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+                <div className='flex justify-around p-5'>
+                    <div className='flex gap-10 items-center'>
+                        <h1 className='text-2xl font-bold'>Product List</h1>
+                        <b className='text-3xl cursor-pointer' onClick={() => setSlider(!slider)}><BsCart3 /></b>
+                    </div>
+                    <button onClick={handleDark}>
+                        {darkmode ? <FaSun /> : <FaMoon />}
+                    </button>
+                </div>
+ 
 
-            <div className='flex justify-around'>
-                <h1 className='text-2xl font-bold'>Product List</h1>
-
-                {darkmode && <div className={`${darkmode} bg-black text-white : `} onClick={handldark}>
-                    <h1><FaMoon /></h1>
-                    <h1><FaSun /></h1>
+                {slider && <div>
+                    {movies.map((item) => <div>
+                        <img className='w-50 h-50 object-cover' src={item.poster} alt={item.title} />
+                        <p className='mt-2 text-sm text-gray-600'>{item.genre}</p>
+                        <p className='text-2xl font-bold'>{item.title}</p>
+                        <p>Rating: {item.rating}</p>
+                        <p className='text-lg'>{item.releaseYear}</p>
+                    </div>)}
                 </div>}
-            </div>
 
-            <div className='grid grid-cols-3 p-10 gap-10'>
-                {movies.map((item) => <div className='text-center tex'>
-                    <img className='w-full h-100 object-cover' src={item.poster} alt='' />
-                    <p className=''>{item.id}</p>
-                    <p className='text-2xl font-bold'>{item.title}</p>
-                    <p className=''>{item.rating}</p>
-                    <p className='text-2xl font-bold'>{item.releaseYear}</p>
-                </div>)}
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-10 gap-10'>
+                    {movies.map((item) => (
+                        <div key={item.id} className='text-center shadow-lg rounded-lg p-4 gap-10'>
+                            <img className='w-100 h-50 object-contain' src={item.poster} alt='' />
+                            <p className='mt-2 text-sm text-gray-600'>{item.genre}</p>
+                            <p className='text-2xl font-bold'>{item.title}</p>
+                            <p>Rating: {item.rating}</p>
+                            <p className='text-lg'>{item.releaseYear}</p>
+                            <button className='bg-amber-300 w-24 mt-5 py-1 rounded-2xl cursor-pointer'>Click</button>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )
