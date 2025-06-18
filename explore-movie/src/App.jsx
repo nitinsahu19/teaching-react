@@ -5,6 +5,7 @@ import Login from './components/Login'
 import MovieList from './components/MovieList'
 import Navbar from './components/Navbar'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import NoPageFound from './components/NoPageFound'
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
       <Route path = "/movie" element = {<MovieList/>}/>
       </Route>
       <Route path = "/login" element = {<Login/>}/>
+      <Route path = "*" element = {<NoPageFound/>}/>
    
 
 

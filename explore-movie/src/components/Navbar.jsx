@@ -11,6 +11,7 @@ import { NavLink, Outlet } from 'react-router-dom';
         <NavLink to="/home" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Home</NavLink>
         <NavLink to="/about" className={({ isActive }) => (isActive ? 'text-blue-500 ' : '')}>About</NavLink>
         <NavLink to="/movie" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Movie</NavLink>
+        <NavLink to="/login" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Login</NavLink>
         
       </div>
       </div>
@@ -18,7 +19,6 @@ import { NavLink, Outlet } from 'react-router-dom';
     
   </nav>
   
-  <h1 className='text-center text-xl underline decoration-wavy bg-black'>Movie Explore App</h1>
 
   <Outlet/>
 
