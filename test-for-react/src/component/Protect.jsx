@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom'
 const Protect = ({children}) => {
     const token = JSON.parse(localStorage.getItem("token"))
     if(!token){
-        return <Navigate to='login'/>
+        return <Navigate to='/login'/>
     }else{
        return  children
     }

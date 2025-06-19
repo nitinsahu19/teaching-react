@@ -4,22 +4,24 @@ import { useParams } from 'react-router-dom'
 import Navbar from './Navbar';
 
 
-const Detilas = () => {
+const Detilas = (props) => {
     const {id} = useParams();
-    const movie = movies.find((item)=>item.id===Number(id));
+    const movie = movies.find((item)=>item.id==Number(id));
     if(!movie)  return <h2>Movie not found</h2>;
        
     
   return (
     <div>
-                <Navbar mode={props.mode} handleMode={props.handleMode} />
-     <div className='p-4'>
+         <Navbar mode={props.mode} handleMode={props.handleMode} />
+   <div className='flex justify-center items-center'>
+      <div className='p-4 rounded  shadow-2xl'>
+      <img className='w-100 h-90 my-2' src={movie.poster} alt={movie.title} />
       <h1 className='text-2xl font-bold'>{movie.title}</h1>
-      <img className='w-60 my-2' src={movie.poster} alt={movie.title} />
       <p><strong>Genre:</strong> {movie.genre}</p>
       <p><strong>Rating:</strong> {movie.rating}</p>
       <p><strong>Release Year:</strong> {movie.releaseYear}</p>
     </div>
+   </div>
     </div>
   )
 }

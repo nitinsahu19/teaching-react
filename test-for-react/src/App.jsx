@@ -6,6 +6,7 @@ import Login from './component/Login'
 import { Routes, Route } from 'react-router-dom';
 import Protect from './component/Protect'
 import Detilas from './component/Detilas'
+import WatchList from './component/WatchList'
 
 
 function App() {
@@ -36,9 +37,10 @@ const [message,setMessage] = useState('')
    
  <Routes>
   
-  <Route path='/' element={<Protect> <Home mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> </Protect>} />
+  <Route path='/' element={ <Home mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> } />
+  <Route path='/watchlist' element={<Protect> <WatchList mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> </Protect>} />
   <Route path='/movie/:id' element={<Detilas handleMode={handleMode} mode={mode}/> }   />
-  <Route path='login' element={<Login mode={mode} handleMode={handleMode}  message={message} ShowMessage={ShowMessage} setMessage={setMessage} />}/>
+  <Route path='/login' element={<Login mode={mode} handleMode={handleMode}  message={message} ShowMessage={ShowMessage} setMessage={setMessage} />}/>
  </Routes>
   </>
   )

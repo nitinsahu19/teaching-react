@@ -13,17 +13,12 @@ const Home = (props) => {
     const [search, setSearch] = useState('');
     const [list, setList] = useState([]);
 
-    const handlesidebar = () => {
-        let sidebar = document.getElementById("siderbar")
-        sidebar.style.left = '0'
-    }
-
-    const handleRemoveSidebar = () => {
-        let sidebar = document.getElementById("siderbar")
-        sidebar.style.left = '-100%'
-    }
 
 
+    useEffect(() => {
+        let getList = JSON.parse(localStorage.getItem('movie')) || [];
+        setList(getList)
+    }, [])
 
     const handleAddtoCart = (item) => {
         const isAlreadyAdded = list.some((i) => i.id === item.id);
@@ -35,23 +30,18 @@ const Home = (props) => {
         }
     };
 
-    useEffect(() => {
-        let getList = JSON.parse(localStorage.getItem('movie')) || [];
-        setList(getList)
-    }, [])
+
 
 
 
 
     const filterole = searchparams.get("genre") || "All"
-    console.log(filterole);
 
     const handleRole = (e) => {
         const genre = e.target.value
         setSearchparams({ genre })
     }
     let filterMovie = filterole === "All" ? movies : movies.filter((item) => item.genre === filterole)
-    console.log(filterMovie);
 
 
     const filteredMovies = filterMovie.filter((item) =>
@@ -60,9 +50,9 @@ const Home = (props) => {
 
     return (
         <>
-        <Navbar mode={props.mode} handleMode={props.handleMode} />
+            <Navbar mode={props.mode} handleMode={props.handleMode} />
             {
-              props.message&& <Tostyfiy message={props.message}/>
+                props.message && <Tostyfiy message={props.message} />
             }
             <div className='mt-3 relative'>
                 <div>
@@ -70,14 +60,13 @@ const Home = (props) => {
                         <input
                             type="text"
                             placeholder="Search movie..."
-                            className="border p-2 w-full mb-4"
+                            className="border p-2 w-full mb-4 shadow"
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
                 </div>
-                <div className='p-2 flex justify-between'>
-                    <button className='text-2xl font-medium cursor-pointer' onClick={handlesidebar}><FaShoppingCart /></button>
+                <div className='p-2 flex'>
                     <select className='border' name="" value={filterole} onChange={handleRole} id="">
                         <option value="All">All</option>
                         <option value="Action">Action</option>
@@ -88,28 +77,12 @@ const Home = (props) => {
                         <option value="Sci‑Fi">Sci‑Fi</option>
                     </select>
                 </div>
-                <div className='h-100 bg-white w-80 absolute -left-100 overflow-y-scroll' id='siderbar'>
-                    <div className='flex justify-end p-2'>
-                        <p className='text-2xl font-bold cursor-pointer' onClick={handleRemoveSidebar}>X</p>
-                    </div>
 
-                    <div>
-                        {
-                            list.map((item, index) =>
-                                <div className='flex gap-3 items-center mt-2' key={index}>
-                                    <img className='w-30' src={item.poster} alt="" />
-                                    <p className='text-lg font-medium'>{item.title}</p>
-                                </div>
-                            )
-                        }
-                    </div>
-
-                </div>
                 <div className='grid md:grid-cols-3 mt-2 gap-3'>
                     {
                         filteredMovies.map((item, index) =>
                             <div key={index} className='border p-2 rounded bg-gray-100'>
-                                <img className='h-80 object-contain' src={item.poster} alt="movies" />
+                                <img className='h-100 w-100 object-cover' src={item.poster} alt="movies" />
                                 <p className='font-semibold text-lg'>Title: {item.title}</p>
                                 <p className='font-semibold text-lg'>Realse year: {item.releaseYear}</p>
                                 <div className='flex gap-3'>

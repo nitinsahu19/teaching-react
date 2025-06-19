@@ -27,7 +27,7 @@ const handlform =(event)=>{
   return (
 
     <div>
-              <Navbar mode={props.mode} handleMode={props.handleMode} />
+              {/* <Navbar mode={props.mode} handleMode={props.handleMode} /> */}
 
       {
        props.message&& <Tostyfiy message={props.message}/>
@@ -39,8 +39,8 @@ const handlform =(event)=>{
                 <input className='border rounded p-1' value={name} onChange={(e)=>setName(e.target.value)} type="text" name="" id="101" placeholder='Enter your name' />
             </div>
             <div className='p-2'>
-                <label htmlFor="101">Name</label><br/>
-                <input className='border rounded p-1' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="" id="101" placeholder='Enter your name' />
+                <label htmlFor="102">Password</label><br/>
+                <input className='border rounded p-1' value={password} onChange={(e)=>setPassword(e.target.value)} type="password" name="" id="102" placeholder='Enter your name' />
             </div>
             <div className='p-2'><button type='submit' onClick={handleAuth} className='bg-green-700 p-1 border rounded text-white'>Submit</button></div>
         </form>
