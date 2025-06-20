@@ -11,11 +11,11 @@ function Navbar() {
     { to: "weather", label: "Weather" },
     { to: "github-profile-finder", label: "GitHub Finder" },
     { to: "movies", label: "Movies" },
+    { to: "todo", label: "Todo" },
   ];
 
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
 
-  console.log(theme, "theme");
   return (
     <div
       className={`${
