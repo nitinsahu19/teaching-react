@@ -1,4 +1,5 @@
 import { useSearchParams } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const dummyUsers = [
   { id: 1, name: "Nitin", role: "Admin" },
@@ -9,6 +10,7 @@ const dummyUsers = [
 const UserList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const roleFilter = searchParams.get("role") || "All";
+  const { theme } = useTheme();
 
   const filteredUsers =
     roleFilter === "All"
@@ -21,13 +23,17 @@ const UserList = () => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 flex h-full w-full justify-center items-center gap-3.5 flex-col">
       <h2 className="text-xl font-bold mb-4">Filter by Role</h2>
 
       <select
         onChange={handleChange}
         value={roleFilter}
-        className="border p-2 rounded"
+        className={`border-1 p-2 rounded ${
+          theme === "dark"
+            ? "bg-gray-800 text-white border-gray-600"
+            : "bg-white text-black border-gray-300"
+        }`}
       >
         <option>All</option>
         <option>Admin</option>

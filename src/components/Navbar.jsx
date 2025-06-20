@@ -19,7 +19,9 @@ function Navbar() {
   return (
     <div
       className={`${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-50 text-black"
+        theme === "dark"
+          ? "bg-gray-800 text-white placeholder-white"
+          : "bg-gray-50 text-black placeholder-black"
       } min-h-screen flex flex-col items-center  text-gray-800`}
     >
       {/* Header */}
@@ -41,7 +43,7 @@ function Navbar() {
               `px-4 py-2 rounded-md transition-all duration-200 text-sm font-medium 
               ${
                 isActive
-                  ? "bg-blue-600 text-white"
+                  ? "bg-gradient-to-r from-indigo-500 to-purple-500  text-white"
                   : "hover:bg-gray-100 text-gray-700"
               }`
             }

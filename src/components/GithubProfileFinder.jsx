@@ -36,7 +36,7 @@ const GithubProfileFinder = () => {
       />
       <button
         onClick={fetchGithubUser}
-        className="bg-purple-600 text-white px-4 py-2 rounded"
+        className="bg-purple-600 text-white px-4 py-2 rounded font-semibold"
       >
         Search
       </button>
