@@ -27,7 +27,7 @@ const Weather = () => {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded shadow">
+    <div className="p-6 max-w-md mx-auto border-1 rounded-2xl shadow">
       <h1 className="text-2xl font-bold mb-4">Weather App</h1>
       <input
         type="text"
@@ -36,10 +36,7 @@ const Weather = () => {
         onChange={(e) => setCity(e.target.value)}
         className="border p-2 w-full mb-4"
       />
-      <button
-        onClick={fetchWeather}
-        className="bg-blue-500 text-white px-4 py-2 rounded"
-      >
+      <button onClick={fetchWeather} className="bg-blue-500  px-4 py-2 rounded">
         Get Weather
       </button>
       {error && <p className="text-red-500 mt-2">{error}</p>}

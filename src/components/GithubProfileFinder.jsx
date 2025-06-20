@@ -25,7 +25,7 @@ const GithubProfileFinder = () => {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded shadow">
+    <div className="p-6 max-w-md mx-auto border-1 rounded-2xl  shadow">
       <h1 className="text-2xl font-bold mb-4">GitHub Profile Finder</h1>
       <input
         type="text"

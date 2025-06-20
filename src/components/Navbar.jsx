@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
+import ToggleThemeButton from "./ToggleThemeButton";
 
 function Navbar() {
   const navLinks = [
@@ -11,13 +13,22 @@ function Navbar() {
     { to: "movies", label: "Movies" },
   ];
 
+  const { theme, setTheme } = useTheme();
+
+  console.log(theme, "theme");
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-50 text-gray-800">
+    <div
+      className={`${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-gray-50 text-black"
+      } min-h-screen flex flex-col items-center  text-gray-800`}
+    >
       {/* Header */}
-      <header className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 p-4 shadow-md">
+      <header className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 p-4 shadow-md flex justify-between">
         <h1 className="text-white text-2xl font-semibold text-center">
-          React Router Navigation
+          Code with Nitin
         </h1>
+
+        <ToggleThemeButton />
       </header>
 
       {/* NavBar */}

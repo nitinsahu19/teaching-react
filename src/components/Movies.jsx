@@ -2,14 +2,14 @@ import { movies } from "../data/movies";
 
 const Movies = () => {
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6  min-h-screen">
       <h1 className="text-2xl font-bold mb-6 text-center">🎬 Movie Explorer</h1>
 
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
+            className=" rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
           >
             <img
               src={movie.poster}

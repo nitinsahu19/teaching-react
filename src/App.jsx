@@ -23,7 +23,13 @@ const ProtectedGihtubFinder = ProtectedRoute(GithubProfileFinder);
 
 const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="h-screen w-full flex justify-center items-center font-bold text-xl">
+          Loading...
+        </div>
+      }
+    >
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Navbar />}>
