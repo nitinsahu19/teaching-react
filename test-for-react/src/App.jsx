@@ -1,26 +1,27 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import Home from './component/Home'
-import Navbar from './component/Navbar'
+// import Navbar from './component/Navbar'
 import Login from './component/Login'
 import { Routes, Route } from 'react-router-dom';
 import Protect from './component/Protect'
 import Detilas from './component/Detilas'
 import WatchList from './component/WatchList'
+import  { useTheme } from './ContextApi';
+
 
 
 function App() {
-
-  const [mode,setMode] = useState('light');
+const {theme, setTheme} = useTheme()
   const handleMode = () =>{
-    if(mode==='light'){
+    if(theme==='light'){
       document.body.style.backgroundColor = "black"
       document.body.style.color = "white"
-      setMode('dark')
+      setTheme('dark')
     }else{
        document.body.style.backgroundColor = "white"
       document.body.style.color = "black"
-      setMode('light')
+      setTheme('light')
     }
   }
 const [message,setMessage] = useState('')
@@ -37,10 +38,10 @@ const [message,setMessage] = useState('')
    
  <Routes>
   
-  <Route path='/' element={ <Home mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> } />
-  <Route path='/watchlist' element={<Protect> <WatchList mode={mode} handleMode={handleMode}  ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> </Protect>} />
-  <Route path='/movie/:id' element={<Detilas handleMode={handleMode} mode={mode}/> }   />
-  <Route path='/login' element={<Login mode={mode} handleMode={handleMode}  message={message} ShowMessage={ShowMessage} setMessage={setMessage} />}/>
+  <Route path='/' element={ <Home   ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> } />
+  <Route path='/watchlist' element={<Protect> <WatchList   ShowMessage={ShowMessage} message={message} setMessage={setMessage} /> </Protect>} />
+  <Route path='/movie/:id' element={<Detilas /> }   />
+  <Route path='/login' element={<Login   message={message} ShowMessage={ShowMessage} setMessage={setMessage} />}/>
  </Routes>
   </>
   )

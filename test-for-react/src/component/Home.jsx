@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { movies } from '../datas/movies'
 import { FaShoppingCart } from "react-icons/fa";
 import { Link, useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Tostyfiy from './Tostyfiy';
 import Navbar from './Navbar';
+import { useTheme } from '../ContextApi';
 
 
 
@@ -13,6 +14,9 @@ const Home = (props) => {
     const [search, setSearch] = useState('');
     const [list, setList] = useState([]);
 
+
+    const {theme, setTheme} = useTheme()
+    
 
 
     useEffect(() => {
@@ -50,12 +54,13 @@ const Home = (props) => {
 
     return (
         <>
-            <Navbar mode={props.mode} handleMode={props.handleMode} />
+            <Navbar  />
             {
                 props.message && <Tostyfiy message={props.message} />
             }
             <div className='mt-3 relative'>
                 <div>
+
                     <div className='p-2'>
                         <input
                             type="text"
@@ -67,7 +72,7 @@ const Home = (props) => {
                     </div>
                 </div>
                 <div className='p-2 flex'>
-                    <select className='border' name="" value={filterole} onChange={handleRole} id="">
+                    <select className={`border ${theme==="light"?'bg-white':"bg-black"}`} name="" value={filterole} onChange={handleRole} id="">
                         <option value="All">All</option>
                         <option value="Action">Action</option>
                         <option value="Fantasy">Fantasy</option>
