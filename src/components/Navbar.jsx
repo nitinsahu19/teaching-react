@@ -12,6 +12,7 @@ function Navbar() {
     { to: "github-profile-finder", label: "GitHub Finder" },
     { to: "movies", label: "Movies" },
     { to: "todo", label: "Todo" },
+    { to: "counter", label: "Counter" },
   ];
 
   const { theme } = useTheme();

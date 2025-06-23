@@ -11,6 +11,7 @@ import GithubProfileFinder from "./components/GithubProfileFinder";
 import Movies from "./components/Movies";
 import MovieDetails from "./components/MovieDetails";
 import Todo from "./components/Todo";
+import Counter from "./components/Counter";
 
 const Profile = lazy(() => import("./components/Profile"));
 const Orders = lazy(() => import("./components/Orders"));
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="movies" element={<Movies />} />
           <Route path="movies/:id" element={<MovieDetails />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/counter" element={<Counter />} />
         </Route>
       </Routes>
     </Suspense>
