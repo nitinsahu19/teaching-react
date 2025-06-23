@@ -13,8 +13,18 @@ const Home = (props) => {
     const [searchparams, setSearchparams] = useSearchParams();
     const [search, setSearch] = useState('');
     const [list, setList] = useState([]);
+    const [name,setName] = useState('')
+    // const {value:todos,addItem,removeItem,clearItem}= uselocalstroage('todo')
 
 
+    // const handleAdd = ()=>{
+    //     if(name===""){
+    //         return ;
+    //     }else{
+    //         addItem({text:name,id:Date.now()})
+    //         setName('')
+    //     }
+    // }
     const {theme, setTheme} = useTheme()
     
 
@@ -99,6 +109,8 @@ const Home = (props) => {
                     }
                 </div>
             </div>
+            
+                
         </>
     )
 }

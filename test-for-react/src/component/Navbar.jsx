@@ -23,6 +23,7 @@ const Navbar = (props) => {
         <p className='font-medium text-lg'>Movies</p>
         <NavLink  className={({isActive})=>isActive?'text-blue-500 font-medium text-lg border-b-2':"font-medium text-lg"} to='/' >Home</NavLink>
         <NavLink className={({isActive})=>isActive?'text-blue-500 font-medium text-lg border-b-2':"font-medium text-lg"} to='/watchlist' >WatchList</NavLink>
+        <NavLink className={({isActive})=>isActive?'text-blue-500 font-medium text-lg border-b-2':"font-medium text-lg"} to='/todo' >TodoList</NavLink>
         <NavLink className={({isActive})=>isActive?'text-blue-500 font-medium text-lg border-b-2':"font-medium text-lg"} to='/login' >Login</NavLink>
         {theme==='light'?<p className='font-medium text-2xl' onClick={handleMode}><IoIosMoon /></p>:
         <p className='font-medium text-2xl' onClick={handleMode}><IoIosSunny /></p>}
