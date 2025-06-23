@@ -1,16 +1,13 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 function Header() {
-  
   return (
-    <>
-    <div className='flex justify-between bg-gray-600  ps-2 p-2'>
-    <NavLink to={"movies"}>Movies</NavLink>
-    <NavLink to={"wishlist"}>wishlist</NavLink>
+    <div className={`flex gap-5 px-5 py-4`}>
+      <span> <NavLink to="/movies">Movies</NavLink>  </span>
+      <span> <NavLink to="/wishlist">Wishlist</NavLink> </span>
+      <span> <NavLink to="/todo">Todo</NavLink> </span>
     </div>
-    </>
-  )
+  );
 }
 
-export default Header
+export default Header;
