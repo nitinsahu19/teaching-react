@@ -13,6 +13,7 @@ function Navbar() {
     { to: "movies", label: "Movies" },
     { to: "todo", label: "Todo" },
     { to: "counter", label: "Counter" },
+    { to: "multiple-step-form", label: "Multiple-Step-form" },
   ];
 
   const { theme } = useTheme();
