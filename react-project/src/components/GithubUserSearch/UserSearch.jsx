@@ -23,7 +23,7 @@ const GithubUser = () => {
   };
 
   useEffect(() => {
-    search("shradha-khapra"); 
+    search("neetukumawat"); 
   }, []);
 
   return (

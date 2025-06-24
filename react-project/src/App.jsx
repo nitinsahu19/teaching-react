@@ -5,6 +5,7 @@ import Contact from "./components/Navbar/Contact";
 import Home from "./components/Navbar/Home";
 import Help from "./components/Navbar/Help";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MultipleForm from './components/LoginPages/MultiplePages';
 
 
 const Count = React.lazy(() => import("./components/Count/CountButton"));
@@ -17,6 +18,7 @@ const ThemeToggle = React.lazy(() => import("./components/ThemeButton/Theme"));
 const RoleSelector = React.lazy(() => import("./components/Usesearchparams/selector"));
 const Weather = React.lazy(()=> import('./components/weather/Weather'))
 const GithubUser = React.lazy(()=> import('./components/GithubUserSearch/UserSearch'))
+const Calculator = React.lazy(()=> import('./components/Calculator/Calculator'))
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
               <Route path="selector" element={<RoleSelector />} />
               <Route path="Weather" element={<Weather />} />
               <Route path="GithubUser" element={<GithubUser />} />
+              <Route path="Calculator" element={<Calculator />} />
+              <Route path="Loginpage" element={<MultipleForm />} />
               <Route path="*" element={<NoPageFound />} />
             </Route>
           </Routes>

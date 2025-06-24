@@ -16,6 +16,8 @@ import { NavLink, Outlet } from 'react-router-dom';
         <NavLink to="/selector" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>selector</NavLink>
         <NavLink to="/weather" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>weather</NavLink>
         <NavLink to="/GithubUser" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Github User</NavLink>
+        <NavLink to="/Calculator" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Calculator</NavLink>
+        <NavLink to="/LoginPage" className={({ isActive }) => (isActive ? 'text-blue-500  ' : '')}>Multiple Form</NavLink>
       </div>
       </div>
 
