@@ -27,7 +27,7 @@ const Todos = () => {
     <>
       <div className='w-100 p-5 h-60 border-2 flex justify-center'>
         <form action="">
-          <input value={todo} onChange={(e) => setTodo(e.target.value)} className='w-full h-10 border' type="text" placeholder='Enter the Task!' />
+          <input onChange={(e) => setTodo(e.target.value)} className='w-full h-10 border' type="text" placeholder='Enter the Task!' />
           <button onClick={Handclike} className='w-full h-10 mt-5 bg-red-400 hover:bg-red-600 cursor-pointer '>click me</button>
         </form>
       </div>

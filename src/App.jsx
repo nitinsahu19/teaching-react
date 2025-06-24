@@ -36,11 +36,12 @@
 // export default App;
 
  import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './component/ProtectedRoute'; 
-import TodoList from './component/TodoList';
-import Login from './component/Login'; 
-import Todos from './component/todos';
+// import { Routes, Route } from 'react-router-dom';
+// import ProtectedRoute from './component/ProtectedRoute'; 
+// import TodoList from './component/TodoList';
+// import Login from './component/Login'; 
+// import Todos from './component/todos';
+import Formpages from './component/Formpages';
 
 const App = () => {
   return (
@@ -50,7 +51,7 @@ const App = () => {
         <Route path="/todolist" element={<ProtectedRoute> <TodoList /></ProtectedRoute>} />
       </Routes> */}
 
-      <Todos />
+        <Formpages/>
     </>
   );
 };
