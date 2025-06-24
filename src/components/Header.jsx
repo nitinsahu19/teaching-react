@@ -6,6 +6,8 @@ function Header() {
       <span> <NavLink to="/movies">Movies</NavLink>  </span>
       <span> <NavLink to="/wishlist">Wishlist</NavLink> </span>
       <span> <NavLink to="/todo">Todo</NavLink> </span>
+      <span> <NavLink to="/github">Github-User </NavLink> </span>
+      <span> <NavLink to="/notes">Notes 📃</NavLink> </span>
     </div>
   );
 }

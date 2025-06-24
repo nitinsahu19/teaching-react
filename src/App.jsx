@@ -8,6 +8,7 @@ import Wishlist from './components/Wishlist';
 import { ThemeContext } from './context/ThemeContext';
 // import useLocalStorage from './context/useLocalStorage';
 import Todo from './components/Todo';
+import Notes from './components/Notes';
 
 const Movies = lazy(() => import('./components/Movies'));
 
@@ -39,7 +40,7 @@ function App() {
 
       {login && <Header theme={theme} />}
 
-      <div className="absolute top-7 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
+      <div className="absolute top-3 right-2 ">
         <button onClick={toggle} className="px-4 py-1 border rounded hover:scale-105 transition">{theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}</button>
       </div>
 
@@ -53,6 +54,7 @@ function App() {
         <Route path='/wishlist' element={login ? <Wishlist /> : <Navigate to='/login' replace />} />
         <Route path='/' element={<Navigate to='/movies' />} />
         <Route path='/todo' element={<Todo/>} />
+        <Route path='/notes' element={<Notes/>} />
       </Routes>
 
   
