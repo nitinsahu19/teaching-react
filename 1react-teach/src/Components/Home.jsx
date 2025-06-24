@@ -6,7 +6,11 @@ function Home(props) {
     return (
         <>
             {/* <Header /> */}
-            <ProductCart logout={props.logout} />
+            <ProductCart
+                logout={props.logout}
+                addCartItem ={props.addCartItem}
+                setAddCartItem ={props.setAddCartItem}
+            />
         </>
     )
 }

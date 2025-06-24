@@ -49,7 +49,7 @@ export default function Cart(props) {
 
     return (
         <>
-            <div className={props.mode === "light" ? 'flex flex-col gap-20 border-b w-100 max-h-85 bg-black text-white overflow-y-auto no-scrollbar relative' : 'flex flex-col gap-20 border-b w-100 max-h-85 bg-white text-black overflow-y-auto no-scrollbar relative'}>
+            <div className={props.theam === "light" ? 'flex flex-col gap-20 border-b w-100 max-h-85 bg-black text-white overflow-y-auto no-scrollbar relative' : 'flex flex-col gap-20 border-b w-100 max-h-85 bg-white text-black overflow-y-auto no-scrollbar relative'}>
                 {props.add.map((items) => <div>
                     <div className='flex justify-between items-center p-3 gap-4'>
                         <div>
