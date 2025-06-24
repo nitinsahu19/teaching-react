@@ -12,6 +12,7 @@ import DefaulPage from './component/DefaulPage'
 import ProtectRoute from './component/ProtectRoute'
 import Weather from './component/weather'
 import Details from './component/Details'
+import MultipleFrom from './component/MultipleFrom'
 
 
 
@@ -103,7 +104,7 @@ function App() {
           <Form setLogin={setLogin} error={error} setError={setError} /> :
           <div> */}
 
-      {<Routes>
+      {/* {<Routes>
         <Route path='*' element={<DefaulPage />} />
         <Route path='/' element={
           <ProtectRoute>
@@ -118,7 +119,7 @@ function App() {
           </ProtectRoute>} />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
         <Route path='/detail/:id' element={<Details/>}/>
-      </Routes> }
+      </Routes> } */}
 
 
 
@@ -126,7 +127,7 @@ function App() {
       {/* </div>
       } */}
 
-
+<MultipleFrom/>
 
     </>
   )
