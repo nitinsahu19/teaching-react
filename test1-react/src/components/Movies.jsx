@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { movies } from '../data/movies'
 import Navbar from './Navbar'
-import { useSearchParams } from 'react-router-dom'
-
+import { useNavigate, useSearchParams } from 'react-router-dom'
 function Movies() {
     const [data, setData] = useState(movies)
     const [addWatch, setAddWatch] = useState([])
-    const [show, setShow] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
+
+    const navigate = useNavigate()
+
     const addWatchListMovies = (product) => {
+
+        const isLogined = JSON.parse(localStorage.getItem("token"))
+
+        if (!isLogined) {
+            alert("Please Log in")
+            navigate('/login')
+        }
+
         const findId = addWatch.find((item) => {
             return product.id === item.id
         })
@@ -16,8 +25,6 @@ function Movies() {
             let addmovie = [...addWatch, product]
             setAddWatch(addmovie)
             localStorage.setItem("movie", JSON.stringify(addmovie))
-        } else {
-            alert('Alredy added')
         }
     }
 
@@ -39,13 +46,10 @@ function Movies() {
             <Navbar />
 
             <div className=''>
-                <button onClick={() => setShow
-                    ((prev) => !prev)} className='bg-red-600 px-3 py-1 rounded mt-5'>Watch List</button>
 
-
-                <div className=' flex gap-20 mt-10 justify-center'>
+                <div className=' flex gap-5 mt-10 justify-start ms-5'>
                     <h1 className='text-3xl font-bold italic'>All list</h1>
-                    <select className='border' onChange={handlgenrefilter} name="" id="">
+                    <select className='border-2' onChange={handlgenrefilter} name="" id="">
                         <option value="All">All</option>
                         <option value="Sci-Fi">Sci-Fi</option>
                         <option value="Action">Action</option>
@@ -56,26 +60,17 @@ function Movies() {
                     </select>
                 </div>
 
-                <div className='grid grid-cols-3 gap-4'>
-                    {AllfilterData.map((item) => <div className='shadow-2xl py-4 px-3 mt-5'>
-                        <img className='w-80 h-80 object-cover' src={item.poster} alt={item.id} />
-                        <p>title:{item.title}</p>
-                        <p>rating:{item.rating}</p>
-                        <p>releaseYear:{item.releaseYear}</p>
-                        <button onClick={() => addWatchListMovies(item)} className='bg-blue-700 px-3 py-1 rounded cursor-pointer'>Add to WatchList</button>
+                <div className='flex flex-wrap justify-center gap-4'>
+                    {AllfilterData.map((item) => <div className='w-[90%] sm:w-[45%] md:w-[30%] shadow-2xl h-auto py-4 px-4 mt-5'>
+                        <img className='w-100 h-100 object-cover' src={item.poster} alt={item.id} />
+                        <p className='font-bold mt-4'>Title : {item.title}</p>
+                        <p className='font-bold'>Rating : {item.rating}</p>
+                        <p className='font-bold'>ReleaseYear : {item.releaseYear}</p>
+                        <button onClick={() => addWatchListMovies(item)} className='bg-blue-700 px-3 py-1 rounded cursor-pointer mt-3 mb-4 font-bold'>Add to WatchList</button>
                     </div>)}
                 </div>
             </div>
 
-
-            {show && <div className='absolute top-30 right-10 w-50 h-auto bg-white p-3 shadow-2xl'>
-                {addWatch.map((items) => <div className='py-4'>
-                    <img className='w-40 h-40 object-cover' src={items.poster} alt="" />
-                    <p>title:{items.title}</p>
-                    <p>rating:{items.rating}</p>
-                    <p>releaseYear:{items.releaseYear}</p>
-                </div>)}
-            </div>}
         </>
     )
 }
