@@ -1,81 +1,60 @@
-import React, { useState, useEffect, memo, Children } from 'react';
-import './App.css';
-import { Routes, Route, useNavigate, BrowserRouter, Link, NavLink, Outlet } from 'react-router-dom';
-import Navbar from './component/Navbar';
-import { lazy, Suspense } from 'react'; 
-import Weather from './component/Weather';
+// import React, { useState, useEffect, memo, Children } from 'react';
+// import './App.css';
+// import { Routes, Route, useNavigate, BrowserRouter, Link, NavLink, Outlet } from 'react-router-dom';
+// import Navbar from './component/Navbar';
+// import { lazy, Suspense } from 'react'; 
+// import Weather from './component/Weather';
+// import Home from './component/Home';
 
-const Cart = React.lazy(() => import('./component/Cart'))
-const Header = React.lazy(() => import('./component/Header'))
-const Datas = React.lazy(() => import('./component/Datas'))
+// const Cart = React.lazy(() => import('./component/Cart'))
+// const Header = React.lazy(() => import('./component/Header'))
+// const Datas = React.lazy(() => import('./component/Datas'))
 
-function App() {
+// function App() {
 
-  return (
+//   return (
 
-    <>
-    {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
-      <Routes>
-        <Route path='/navbar' element={<Navbar />} >
-          <Route path='cart' element={<Cart />} />
-          <Route path='header' element={<Header />} />
-          <Route path='data' element={<Datas />} />
-        </Route>
-      </Routes>
-    </Suspense>} 
+//     <>
+//     {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
+//       <Routes>
+//         <Route path='/navbar' element={<Navbar />} >
+//           <Route path='cart' element={<Cart />} />
+//           <Route path='header' element={<Header />} />
+//           <Route path='data' element={<Datas />} />
+//         </Route>
+//       </Routes>
+//     </Suspense>} 
+
+     
  
     
-    {/* <Weather/> */}
-  </>
-  )
-}
+//     {/* <Weather/> */}
+//   </>
+//   )
+// }
+
+// export default App;
+
+ import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './component/ProtectedRoute'; 
+import TodoList from './component/TodoList';
+import Login from './component/Login'; 
+import Todos from './component/todos';
+
+const App = () => {
+  return (
+    <>
+      {/* <Routes> 
+        <Route path="/" element={<Login />} />
+        <Route path="/todolist" element={<ProtectedRoute> <TodoList /></ProtectedRoute>} />
+      </Routes> */}
+
+      <Todos />
+    </>
+  );
+};
 
 export default App;
 
  
-// import React from 'react';
-// import { Routes, Route } from 'react-router-dom';
-// import ProtectedRoute from './component/ProtectedRoute'; 
-// import TodoList from './component/TodoList'
-// import Login from './component/Login';
-// import Colors from './component/Colors'
-// import Taskk from './component/Taskk';
-
-// const App = () => {
-//   return ( 
-//     <>
-//        {/* <Routes>
-//        <Route path="/" element={<Login />} />
-//        <Route path="/todolist" element={<ProtectedRoute><Taskk/>
-//        </ProtectedRoute>} /> 
-//      </Routes> */}
-
-//  <Taskk/> 
-    
-    
-//     </>
-//   );
-// };
-
-// export default App;
-
-
-
- 
-
-// src/
-// ├── App.jsx
-// ├── index.js
-// ├── components/
-// │   ├── Header.jsx (memoized)
-// │   ├── Sidebar.jsx (memoized)
-// ├── pages/
-// │   ├── Home.jsx
-// │   ├── About.jsx
-// │   ├── Dashboard.jsx
-// │   └── dashboard/
-// │       ├── Stats.jsx
-// │       ├── Reports.jsx
-// │       └── Settings.jsx
-// └── layout/
-//     └── MainLayout.jsx

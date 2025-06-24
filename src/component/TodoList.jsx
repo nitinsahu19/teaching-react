@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { MdDeleteForever } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
+import uselocalstorage from '../hooks/uselocalstorage'
 
 const TodoList = () => {
     const [task, setTask] = useState("");
-    const [todoList, setTodoList] = useState([]);
+    const [todoList, setTodoList] = uselocalstorage("fdfgdfgd" , [])
     const [filter, setFilter] = useState('All')
     const [darkMode, setDarkMode] = useState(false)
-    const [color, setColor] = useState('white')
+    const [color, setColor] = useState('white') 
+ 
 
     const handleClick = () => {
         if (task !== "") {
