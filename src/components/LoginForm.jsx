@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Prectice from './prectice';
+// import Prectice from './prectice';
+const Prectice=React.lazy(()=> import("./prectice"))
 import { shoes } from './products';
 import Toast from './Tost';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = ({ onLoginSuccess }) => {
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [login, setlogin] = useState(false)
   const [showToast, setShowToast] = useState(false);
 
+  console.log(name, password)
 
 
   const log = () => {
@@ -25,11 +27,10 @@ const navigate = useNavigate()
         setShowToast()
       }, 3000)
 
-
     }
 
     else {
-      
+
       setShowToast("Login unsuccess")
       setTimeout(() => {
         setShowToast()
@@ -38,7 +39,11 @@ const navigate = useNavigate()
     }
   }
 
-
+  const submitData = (e) => {
+    e.preventDefault();
+    console.log("hello");
+    localStorage.setItem('mydata', JSON.stringify({ name, password }));
+  }
 
   return (
     <>
@@ -50,7 +55,7 @@ const navigate = useNavigate()
       </div> :
 
         <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-          <form onSubmit={() => { log() }} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
+          <form onSubmit={submitData} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
             <h2 className="text-2xl font-bold mb-4 text-center">Login Form</h2>
 
             <div className="mb-4">
@@ -79,10 +84,7 @@ const navigate = useNavigate()
 
             <button
               type="submit"
-              className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded"
-            >
-              Submit
-            </button>
+              className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 rounded" >    Submit        </button>
 
             {/* <ToastContainer /> */}
           </form>

@@ -1,31 +1,51 @@
-// import React, { useState } from 'react';
-import LoginForm from "./components/LoginForm";
+import React, { Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
-import Home from "./RoutesFol/Home";
-import Cart from "./RoutesFol/Cart";
-import Details from "./RoutesFol/details";
-import Todo from "./TodoList/Todo";
+import LoginForm from "./components/LoginForm";
+import Errors from './RoutesFol/Errors';
 
+
+
+// import Home from "./RoutesFol/Home";
+const Home = React.lazy(() => import("./RoutesFol/Home"))
+
+// import Cart from "./RoutesFol/Cart";
+const Cart = React.lazy(() => import("./RoutesFol/Cart"))
+
+// import Details from "./RoutesFol/details";
+const Details = React.lazy(() => import("./RoutesFol/details"))
+
+
+import Todo from "./TodoList/Todo";
+import { Divide } from 'lucide-react';
+import Prectice from './components/prectice';
+import Api from './components/Api';
+import Api1 from './components/Api1';
+import First from './TodoList/First';
+import Second from './TodoList/Second';
+import Searchperams from './RoutesFol/Searchperams';
+import WeatherApp from './components/WeatherApp';
+import { NameContextFun } from './RoutesFol/NameContext';
+import MultipleForm from './TasksFol/MultipleForm';
 
 
 
 const App = () => {
 
 
-
-
-
   return (
     <>
+  
 
-{/* 
-      <Routes> 
-         <Route path="/home" element={<Home/>}>
-          <Route path="cart"  element={<Cart/>} />
-          <Route path="details" element={<Details/>} />
-        </Route>
-      </Routes> */}
+      {/* <Suspense fallback={<div className='text-6xl'>Loading ...................</div>}> */}
+        {/* <Routes>
+          <Route path="/home" element={<Home />}>
+            <Route path="cart" element={<Suspense fallback={<div className='text-2xl'>Loading .....</div>}><Cart /></Suspense>} />
+            <Route path="details" element={<Details />} />
+          </Route>
+          <Route path="*" element={<Errors />} />
+        </Routes>
 
+      </Suspense> */}
 
       {/* <BrowserRouter>
  <Routes>
@@ -35,14 +55,22 @@ const App = () => {
  </Routes>
  </BrowserRouter> */}
 
-      <Todo/>
+      {/* <Todo/> */}
 
+        {/* <LoginForm/> */}
+      {/* <Prectice/> */}
+      {/* <Searchperams/> */}
 
-
-
-
+      {/* <Api/> */}
+      {/* <Api1/> */}
+      {/* <First/>
+      <Second/> */}
 
       {/* <Home/> */}
+
+      {/* <WeatherApp/> */}
+
+      <MultipleForm/>
 
 
 
