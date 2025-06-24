@@ -1,29 +1,84 @@
 import React, { useEffect, useState } from "react";
-import { Link, Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext";
 
 function Header() {
+  const { theme, setTheme } = useTheme();
   const [login, setLogin] = useState(localStorage.getItem("token"));
-  const [darkTheme, setDarkTheme] = useState(true);
 
-  // const []
   const navigate = useNavigate();
   useEffect(() => {}, [login]);
   return (
-    <div className="p-5 flex justify-between bg-amber-100">
-      <div className="text-4xl">Movies</div>
-      <div className="flex gap-10 align-middle">
-        <Link to="/">Home</Link>
-        <Link to="/watchlist">Watchlist</Link>
+    <div className={"p-5 flex justify-between text-gray-500 bg-amber-100"}>
+      <div className="text-4xl font-bold">Movies</div>
+      <div className="flex gap-10 align-middle pt-2">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+          to="/watchlist"
+        >
+          Watchlist
+        </NavLink>
+        <NavLink
+          to="/github"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          GitHub
+        </NavLink>
+        <NavLink
+          to="/weather"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Weather
+        </NavLink>
+        <NavLink
+          to="/notes"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Notes
+        </NavLink>
+        <NavLink
+          to="/form"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Form
+        </NavLink>
       </div>
       <div className="flex gap-10">
         <button
-          onClick={() => {
-            setDarkTheme(!darkTheme);
-            localStorage.setItem("darktheme",darkTheme)
-          }}
-          className="bg-gray-500 py-2 px-3 rounded text-white"
+          onClick={() => setTheme(!theme)}
+          className="bg-blue-500 py-2 px-3 rounded text-white"
         >
-          mod
+          {theme ? "☀️" : "🌙"}
         </button>
         <button
           onClick={() => {

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
+import Toast from './Toast';
 
 function Login() {
     const [name, setName]=useState();
     const [pass, setPass]=useState(); 
+    const [message,setMessage]=useState();
 
     const navigate =useNavigate();
 
@@ -14,11 +16,18 @@ function Login() {
         if(name=="akash"&&pass==1234){
             localStorage.setItem("token",true);
             navigate("/");
+            setMessage('Login succssesfuly')
+            setTimeout(()=>{
+              setMessage('')
+            },3000)
         }
     }
 
   return (
     <div className='flex h-screen align-middle'>
+      {
+        message?<Toast color='text-white font-bold' bgcolor='bg-green-600' message={message}/>:''
+      }
     <div className='m-auto rounded-xl shadow-lg shadow-gray-600 w-100 bg-gray-200'>
       <div className="p-10">
         <div><input className='py-1 px-2 w-1/1 rounded bg-white' onChange={(e)=>setName(e.target.value)} type="text" /></div>
