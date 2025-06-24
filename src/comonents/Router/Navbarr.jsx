@@ -1,15 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navbarr() {
-  return (<>
-    <div   className=' bg-amber-200  flex m-6 gap-7 img font-serif ' >
-      <Link to="/home"><p>Home</p></Link>
-      <Link to="/contact"><p>Contact</p></Link>
-      <Link to="/about"><p>About</p></Link>
+  return (
+    <>
+      <h1 className="text-center text-2xl font-bold">Project</h1>
 
-    </div>
-  </>
+      <div className="flex justify-center mt-4  ">
+        <div className="bg-amber-200 flex gap-8  p-7 w-100 rounded-lg font-serif">
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""}to="/home"><p>Home</p></NavLink>
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""}to="/contact"><p>Contact</p></NavLink>
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""}to="/about"><p>About</p></NavLink>
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""} to="/Weather"><p>Weather</p></NavLink>
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""}to="/ApiFetch"><p>ApiFetch</p></NavLink>
+          <NavLink className={({ isActive }) =>isActive ? "text-red-500 font-bold" : ""}to="/Todolist"><p>Todolist</p></NavLink>
+        </div>
+      </div>
+    </>
   );
 }
 

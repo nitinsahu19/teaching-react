@@ -1,28 +1,39 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ApiFetch from './comonents/ApiFetch';
+import Tasksform from './comonents/Tasksform';
+// import ApiFetch from './comonents/ApiFetch';
+// import Todolist from './comonents/Todolist';
+// import Uselocalstorage from './comonents/Uselocalstorage';
+// import Todolist from './comonents/Todolist';
 
-const Navbarr = React.lazy(() => import('./comonents/Router/Navbarr'));
-const Home = React.lazy(() => import('./comonents/Router/Home'));
-const About = React.lazy(() => import('./comonents/Router/About'));
-const Contact = React.lazy(() => import('./comonents/Router/Contact'));
-const ProtectedRoute = React.lazy(() => import('./comonents/Router/ProtectedRouter'));
+// const Navbarr = React.lazy(() => import('./comonents/Router/Navbarr'));
+// const Home = React.lazy(() => import('./comonents/Router/Home'));
+// const About = React.lazy(() => import('./comonents/Router/About'));
+// const Contact = React.lazy(() => import('./comonents/Router/Contact'));
+// const ProtectedRoute = React.lazy(() => import('./comonents/Router/ProtectedRouter'));
+// const Apiweather = React.lazy(() => import('./comonents/Apiweather'));
+// const ApiFetch = React.lazy(() => import('./comonents/ApiFetch'));
+// const Todolist = React.lazy(() => import('./comonents/Todolist'));
 
-function App() {
-  const isLoggedIn = true; 
+function App() {                                   
+  // const isLoggedIn = true; y
 
   return (<>
-  <Navbarr />
-      <Suspense fallback={<div><h1>Loading...</h1></div>}>
+  {/* <Navbarr />
+      <Suspense fallback={<div><h1>Loading... </h1></div>}>
         <Routes>
+          
           <Route path='/' element={<Home/>}/>
           <Route path="/home" element={<Home />} />
+          <Route path="/Weather" element={<Apiweather/>} />
+          <Route path="/Apifetch" element={<ApiFetch/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact"element={<ProtectedRoute isLoggedIn={isLoggedIn}><Contact /></ProtectedRoute>}/>
         </Routes> 
-      </Suspense>
+      </Suspense> */}
 
-      <ApiFetch/>
+      {/* <Todolist/> */}
+      <Tasksform/>
       
       </>
           

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import { Outlet } from 'react-router-dom'
+// import { Outlet } from 'react-router-dom'
+import uselocalstorage from './uselocalstorage';
 
 function Todolist() {
     const [Task, setTask] = useState('');
-    const [Tasks, setTasks] = useState([])
+    const [Tasks, setTasks] = uselocalstorage("todos" ,[])
     const [filter, setFilter] = useState('all');
     const handleChange = (e) => {
         setFilter(e.target.value);
@@ -87,6 +88,7 @@ function Todolist() {
                     </div>
                 </div>
             </div>
+            
         </>);
 }
 
