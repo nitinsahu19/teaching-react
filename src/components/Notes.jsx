@@ -5,7 +5,7 @@ import { ThemeContext } from '../context/ThemeContext'
 function Notes() {
     const [data, setdata] = useState("")
     const [notes, setallnotes] = useState([])
-    const {theme , setThemes} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
 
     useEffect(() => {
         const storedNotes = JSON.parse(localStorage.getItem("todos")) || []
@@ -16,7 +16,7 @@ function Notes() {
 
     const dataset = () => {
         if (data.trim() === "") return
-
+        
         const updatedNotes = [...notes, data]
         setallnotes(updatedNotes)
         localStorage.setItem("todos", JSON.stringify(updatedNotes))

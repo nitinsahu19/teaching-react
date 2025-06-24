@@ -6,9 +6,9 @@ import Login from './components/Login';
 import Header from './components/Header';
 import Wishlist from './components/Wishlist';
 import { ThemeContext } from './context/ThemeContext';
-// import useLocalStorage from './context/useLocalStorage';
 import Todo from './components/Todo';
 import Notes from './components/Notes';
+import Multipleform from './components/Multipleform';
 
 const Movies = lazy(() => import('./components/Movies'));
 
@@ -31,7 +31,6 @@ function App() {
   };
 
 
-  // console.log(value);
   
 
   return (
@@ -41,7 +40,7 @@ function App() {
       {login && <Header theme={theme} />}
 
       <div className="absolute top-3 right-2 ">
-        <button onClick={toggle} className="px-4 py-1 border rounded hover:scale-105 transition">{theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}</button>
+        <button onClick={toggle} className="px-4 py-1 border rounded">{theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}</button>
       </div>
 
       <Routes>
@@ -55,6 +54,7 @@ function App() {
         <Route path='/' element={<Navigate to='/movies' />} />
         <Route path='/todo' element={<Todo/>} />
         <Route path='/notes' element={<Notes/>} />
+        <Route path='/form' element={<Multipleform/>} />
       </Routes>
 
   
