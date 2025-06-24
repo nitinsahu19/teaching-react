@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar'
 
-const MultipleFrom = () => {
+const MultipleFrom = (props) => {
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [city,setCity] = useState('')
@@ -32,6 +33,10 @@ const MultipleFrom = () => {
   }
   
   return (
+    <>
+          <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
+    
+    
     <div>
       <p className='text-center font-medium text-3xl'>Details From</p>
       <div className='flex justify-center '>
@@ -77,6 +82,7 @@ const MultipleFrom = () => {
         </form>
       </div>
     </div>
+    </>
   )
 }
 

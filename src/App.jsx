@@ -13,6 +13,7 @@ import ProtectRoute from './component/ProtectRoute'
 import Weather from './component/weather'
 import Details from './component/Details'
 import MultipleFrom from './component/MultipleFrom'
+import Todo from './component/Todo'
 
 
 
@@ -50,27 +51,27 @@ function App() {
 
 
 
-  const users = [
-    {name:'suresh',
-      role:'admin'
-    },
-    {name:'ankit',
-      role:'guest'
-    },
-    {name:'neeraj',
-      role:'custmer'
-    }
-  ]
+  // const users = [
+  //   {name:'suresh',
+  //     role:'admin'
+  //   },
+  //   {name:'ankit',
+  //     role:'guest'
+  //   },
+  //   {name:'neeraj',
+  //     role:'custmer'
+  //   }
+  // ]
 
-  const [params,setParams] = useSearchParams();
-  const filterrole = params.get("role");
+  // const [params,setParams] = useSearchParams();
+  // const filterrole = params.get("role");
 
-  const handlecahnge=(e)=>{
-    const role = e.target.value;
-    setParams({role})
+  // const handlecahnge=(e)=>{
+  //   const role = e.target.value;
+  //   setParams({role})
 
-  }
-  const finalvalue = filterrole==='All'?users:users.filter((item)=>item.role===filterrole)
+  // }
+  // const finalvalue = filterrole==='All'?users:users.filter((item)=>item.role===filterrole)
 
   return (
 
@@ -96,15 +97,10 @@ function App() {
 
 
 
-        {/* <Weather/> */}
-      {/* <FakeApiData/> */}
-      {/* <Todo/> */}
-      {/* {
-        login === false ?
-          <Form setLogin={setLogin} error={error} setError={setError} /> :
-          <div> */}
+     
+    
 
-      {/* {<Routes>
+      {<Routes>
         <Route path='*' element={<DefaulPage />} />
         <Route path='/' element={
           <ProtectRoute>
@@ -117,17 +113,21 @@ function App() {
           <ProtectRoute>
             <Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />
           </ProtectRoute>} />
+        <Route path='/multifrom' element={ <MultipleFrom mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
+        <Route path='/weather' element={ <Weather mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
+        <Route path='/todo' element={ <Todo mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
         <Route path='/detail/:id' element={<Details/>}/>
-      </Routes> } */}
+      </Routes> }
 
 
 
 
-      {/* </div>
-      } */}
 
-<MultipleFrom/>
+
 
     </>
   )

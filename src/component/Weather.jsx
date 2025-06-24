@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
-import { useEffect } from 'react'
+import Navbar from './Navbar'
 
 
-const Weather = () => {
+const Weather = (props) => {
 const apiKey = import.meta.env.VITE_API_KEY
 const [cityname,setCityName] = useState('');
 const [data,setData] = useState(null)
@@ -52,10 +52,14 @@ const getweather = ()=>{
   }
 
   return (
+    <>
+          <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
+
+    
     <div className=' img'>
       <p className='text-center font-medium text-2xl p-3'>Weather-app</p>
       <div  className='flex justify-center mt-6'>
-      <div className='bg-white p-2 rounded'>
+      <div className={` p-2 rounded  ${props.mode==='light'?"text-black bg-white":"text-white bg-black"} `}>
          <div className='flex gap-2'>
         <input type="search" className='border rounded h-8 w-70 p-1' onKeyDown={keypressEvent} value={cityname} onChange={(e)=>setCityName(e.target.value)} name="" id="input-wather" placeholder='Enter a CityName' />
         <button className='bg-green-800 h-8 rounded p-1 text-white cursor-pointer' onClick={submitButton}>Get Weather</button>
@@ -77,8 +81,10 @@ const getweather = ()=>{
       </div>
       </div>
 
-    
+   
     </div>
+   
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import Navbar from './Navbar';
 
-const Todo = () => {
+const Todo = (props) => {
 
     const [array, setArray] = useState([]);
     const [task, setTask] = useState('')
@@ -43,6 +44,8 @@ const Todo = () => {
 
     return (
         <>
+              <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
+
             <div>
                 <p className='text-center font-bold mt-2 text-2xl'>Todo app</p>
                 <div className='text-end p-2 mt-2'>
@@ -59,7 +62,8 @@ const Todo = () => {
             </div>
 
             {filterArray.map((value, index) =>
-                <div className='flex justify-around p-1 items-center'>
+                <div>
+                    <div className='flex justify-around p-1 items-center'>
                     <div className='w-10'>
                         <input type="checkbox" checked={value.checked} onChange={() => toggleCheckbox(index)} name="" id="" />
                     </div>
@@ -69,6 +73,8 @@ const Todo = () => {
                     <div className='w-20'>
                         <button onClick={() => deleteTask(index)} className='bg-red-600 p-1 ps-2 pe-2 text-white rounded'>Delete</button>
                     </div>
+                </div>
+                <hr className='m-2'/>
                 </div>
             )}
         </>

@@ -18,7 +18,7 @@ const backToHome = () =>{
 
   return (
     <div>
-      <h1>details page</h1>
+      <h1 className='font-bold text-3xl text-center p-3'>details page</h1>
       <div className='flex justify-center p-1 items-center'>
 
     {

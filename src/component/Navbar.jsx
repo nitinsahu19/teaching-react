@@ -18,6 +18,12 @@ const Navbar = (props) => {
             About </Link></li>
           <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/cart">
             Cart </Link></li>
+          <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/multifrom">
+            MultiFrom </Link></li>
+          <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/weather">
+            Weather</Link></li>
+          <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/todo">
+            TodoList</Link></li>
         </ul>
         <div>
           {props.mode === "light" ? <button onClick={props.colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
