@@ -11,7 +11,7 @@ const Navbar = (props) => {
         <div>
           <img className='w-16 h-16 rounded-full' src="https://marketplace.canva.com/EAGQ1aYlOWs/1/0/1600w/canva-blue-colorful-illustrative-e-commerce-online-shop-logo-bHiX_0QpJxE.jpg" alt="" />
         </div>
-        <ul className='flex gap-10'>
+        <ul className='flex flex-wrap gap-10'>
           <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/">
             Home </Link></li>
           <li className='hover:underline cursor-pointer hover:text-blue-600 font-semibold'><Link to="/about">
