@@ -1,9 +1,7 @@
 import './App.css';
 import React from 'react';
-import About from "./components/Navbar/About";
-import Contact from "./components/Navbar/Contact";
+
 import Home from "./components/Navbar/Home";
-import Help from "./components/Navbar/Help";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MultipleForm from './components/LoginPages/MultiplePages';
 
@@ -30,9 +28,6 @@ function App() {
             <Route path="/" element={<Navbar />}>
               <Route index element={<ShowHide />} />
               <Route path="home" element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="contact" element={<Contact />} />
-              <Route path="help" element={<Help />} />
               <Route path="count" element={<Count />} />
               <Route path="todo" element={<Todo />} />
               <Route path="SimpleTodo" element={<TodoApp />} />
