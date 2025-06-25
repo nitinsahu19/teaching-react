@@ -36,10 +36,10 @@
 // export default App;
 
  import React from 'react';
-// import { Routes, Route } from 'react-router-dom';
-// import ProtectedRoute from './component/ProtectedRoute'; 
-// import TodoList from './component/TodoList';
-// import Login from './component/Login'; 
+import { Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './component/ProtectedRoute'; 
+import TodoList from './component/TodoList';
+import Login from './component/Login'; 
 // import Todos from './component/todos';
 import Formpages from './component/Formpages';
 

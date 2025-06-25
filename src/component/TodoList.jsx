@@ -3,14 +3,15 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import uselocalstorage from '../hooks/uselocalstorage'
+import { useTheme } from './ToggleTheme';
 
 const TodoList = () => {
     const [task, setTask] = useState("");
-    const [todoList, setTodoList] = uselocalstorage("fdfgdfgd" , [])
+    const [todoList, setTodoList] = uselocalstorage("Todos", [])
     const [filter, setFilter] = useState('All')
-    const [darkMode, setDarkMode] = useState(false)
-    const [color, setColor] = useState('white') 
- 
+    const { darkMode, setDarkMode } = useTheme();
+    const [color, setColor] = useState('white')
+
 
     const handleClick = () => {
         if (task !== "") {
@@ -61,7 +62,7 @@ const TodoList = () => {
     return (
         <>
 
-            <div  style={{backgroundColor:color}} className={`${darkMode ? 'bg-black text-white' : 'bg-white text-black'} min-h-screen transition duration-700`}>
+            <div style={{ backgroundColor: color }} className={`${darkMode ? 'bg-black text-white' : 'bg-white text-black'} min-h-screen transition duration-700`}>
 
                 <div className='flex justify-between items-center text-5xl p-4 font-bold italic bg-red-700'>
                     <h1 className='text-center flex-1'>TodoList</h1>
@@ -107,16 +108,16 @@ const TodoList = () => {
 
             </div>
 
-          <div>
-              <div className="fixed bottom-5 left-0 right-0 flex justify-center gap-4">
-                <button onClick={() => setColor("red")} className="cursor-pointer bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600" > Red</button>
-                <button onClick={() => setColor("blue")} className="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" >Blue</button>
-                <button onClick={() => setColor("green")} className="cursor-pointer bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" >Green</button>
-                <button onClick={() => setColor("yellow")} className="cursor-pointer bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-500" > Yellow</button>
-                <button onClick={() => setColor("purple")} className="cursor-pointer bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600" > Purple</button>
-                <button onClick={() => setColor("pink")} className="cursor-pointer bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600" >Pink</button>
+            <div>
+                <div className="fixed bottom-5 left-0 right-0 flex justify-center gap-4">
+                    <button onClick={() => setColor("red")} className="cursor-pointer bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600" > Red</button>
+                    <button onClick={() => setColor("blue")} className="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" >Blue</button>
+                    <button onClick={() => setColor("green")} className="cursor-pointer bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600" >Green</button>
+                    <button onClick={() => setColor("yellow")} className="cursor-pointer bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-500" > Yellow</button>
+                    <button onClick={() => setColor("purple")} className="cursor-pointer bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600" > Purple</button>
+                    <button onClick={() => setColor("pink")} className="cursor-pointer bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600" >Pink</button>
+                </div>
             </div>
-          </div>
 
 
         </>
