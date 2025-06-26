@@ -54,7 +54,7 @@ const Product = ({ datas }) => {
                 </div>
                 {
                     <div className="grid grid-cols-3 p-10 gap-10">
-                        {datas.map((item) => (
+                        {cart.map((item) => (
                             <div key={item.id} className="border p-4 rounded shadow">
                                 <img className="w-full h-48 object-contain" src={item.img} alt={item.category} />
 

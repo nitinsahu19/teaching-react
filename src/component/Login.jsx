@@ -9,7 +9,7 @@ const Login = () => {
   const handleLogin = () => {
     if (username !== '') {
       localStorage.setItem('token', 'mytoken')
-      navigate('/todolist')
+      navigate('/productData')
     } else {
       alert("कृपया एक कार्य इनपुट करें और बाद में दोबारा प्रयास करें।")
     }
@@ -23,8 +23,7 @@ const Login = () => {
 
           <input type="text" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)} className="w-full h-12 px-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-green-600 transition-all duration-300" />
 
-        </div>
-
+        </div> 
         <div className='mt-10 flex justify-center w-full'>
           <button onClick={handleLogin} className=" p-10 bg-blue-600 text-white font-semibold py-3 rounded-2xl hover:bg-green-800 transition duration-300">Login</button>
         </div>
