@@ -6,7 +6,7 @@ const Feedback = () => {
   const [state, dispatch] = useReducer(feedbackReducer, initialState);
 
   const totalFeedback = state.good + state.neutral + state.bad;
-  const positiveFeedback = ((state.good / totalFeedback) * 100);
+  const positiveFeedback =  Math.floor((state.good / totalFeedback) * 100);
 
   return (
     <div className="text-center">
