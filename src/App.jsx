@@ -14,6 +14,7 @@ import Weather from './component/weather'
 import Details from './component/Details'
 import MultipleFrom from './component/MultipleFrom'
 import Todo from './component/Todo'
+import FeedBack from './component/FeedBack'
 
 
 
@@ -114,6 +115,8 @@ function App() {
             <Fetchapi mode={mode} colorMode={colorMode} logOut={logOut} />
           </ProtectRoute>} />
         <Route path='/multifrom' element={ <MultipleFrom mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
+        <Route path='/feedback' element={ <FeedBack mode={mode} colorMode={colorMode} logOut={logOut} />
  } />
         <Route path='/weather' element={ <Weather mode={mode} colorMode={colorMode} logOut={logOut} />
  } />

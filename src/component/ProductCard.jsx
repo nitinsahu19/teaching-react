@@ -18,11 +18,19 @@ const ProductCard = (props) => {
 
 
   const [salected, setSalected] = useState("all");
+  const [message, setMessage] = useState('');
+
   const filterData = salected === "all" ? products : products.filter((item) => {
     return item.catergory === salected
   })
 
 
+  const handleMessage = (msg) => {
+    setMessage(msg)
+    setTimeout(() => {
+      setMessage('')
+    }, 3000);
+  }
 
 
   const slider = () => {
@@ -36,7 +44,7 @@ const ProductCard = (props) => {
     butons.style.transition = "1.4s 0.2s  linear"
   }
 
- const naviagate = useNavigate()
+  const naviagate = useNavigate()
   const [addcard, setAddcard] = useState(() => {
     return JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -46,7 +54,7 @@ const ProductCard = (props) => {
 
   });
 
-  const handlefun = (getindex)=>{
+  const handlefun = (getindex) => {
     console.log(getindex);
     naviagate(`/detail/${getindex}`);
   }
@@ -60,21 +68,8 @@ const ProductCard = (props) => {
     setAddcard(updatedaddcard);
     totalLength = updatedaddcard.length;
     setCardcount(totalLength);
-    Toastify({
-      text: `${name} is succedfully delete`,
-      duration: 3000,
-      destination: "https://github.com/apvarun/toastify-js",
-      newWindow: true,
-      close: true,
-      gravity: "top", // `top` or `bottom`
-      position: "right", // `left`, `center` or `right`
-      stopOnFocus: true, // Prevents dismissing of toast on hover
-      style: {
-        background: "linear-gradient(to right, #d12a3d, red)",
-      },
-      onClick: function () { } // Callback after click
-    }).showToast();
 
+    handleMessage(`${name} is succedfully delete`)
   }
 
 
@@ -87,34 +82,12 @@ const ProductCard = (props) => {
 
   const formateTotal = totalPrice.toLocaleString("en-IN");
 
-  // const incrementQuantity = (id) => {
-  //   const updatedaddcard = addcard.map(item => {
-  //     if (item.id === id) {
-  //       return { ...item, quantity: item.quantity + 1 };
-  //     }
-  //     return item;
-  //   });
-  //   setAddcard(updatedaddcard);
-  // };
-
-  // const decrementQuantity = (id) => {
-  //   const updatedaddcard = addcard.map(item => {
-  //     if (item.id === id && item.quantity > 1) {
-  //       return { ...item, quantity: item.quantity - 1 };
-  //     }
-  //     return item;
-  //   });
-  //   setAddcard(updatedaddcard);
-  // };
-
-
-
 
 
   return (
     <>
-      {props.error && <Tostyfiy error={props.error} />}
       <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
+      {message && <Tostyfiy error={props.error} message={message} />}
 
 
       <div className='p-3' >
@@ -168,7 +141,7 @@ const ProductCard = (props) => {
           return <div className='shadow-xl  rounded p-2 ' key={index}>
             <div className='w-full'>
               <div className='h-100'>
-                <img onClick={()=>{handlefun(value.id)}} className='w-full h-100 object-contain' src={value.img} alt="" />
+                <img onClick={() => { handlefun(value.id) }} className='w-full h-100 object-contain' src={value.img} alt="" />
               </div>
               <p className='ps-4 font-semibold'>ID: {value.id}</p>
               <p className='ps-4 font-semibold'>Name: {value.name}</p>
@@ -182,39 +155,17 @@ const ProductCard = (props) => {
                     let totalproduct = localStorage.setItem("cart", JSON.stringify(newaddcard));
                     setCardcount(newaddcard.length);
                     let totalLength = localStorage.setItem("length", JSON.stringify(newaddcard.length))
-                    Toastify({
-                      text: `${value.name} is succedfully added `,
-                      duration: 3000,
-                      destination: "https://github.com/apvarun/toastify-js",
-                      newWindow: true,
-                      close: true,
-                      gravity: "top", // `top` or `bottom`
-                      position: "right", // `left`, `center` or `right`
-                      stopOnFocus: true, // Prevents dismissing of toast on hover
-                      style: {
-                        background: "linear-gradient(to right, #17e335, #76deab)",
-                      },
-                      onClick: function () { } // Callback after click
-                    }).showToast();
+
+                    handleMessage(`${value.name} is succedfully added`)
+
                   } else {
                     const updateQuantity = [...addcard];
                     updateQuantity[index].quantity += 1;
                     setAddcard(updateQuantity)
                     localStorage.setItem("cart", JSON.stringify(updateQuantity))
-                    Toastify({
-                      text: `${value.name} quantity increase`,
-                      duration: 3000,
-                      destination: "https://github.com/apvarun/toastify-js",
-                      newWindow: true,
-                      close: true,
-                      gravity: "top", // `top` or `bottom`
-                      position: "right", // `left`, `center` or `right`
-                      stopOnFocus: true, // Prevents dismissing of toast on hover
-                      style: {
-                        background: "linear-gradient(to right, #navyblue, blue)",
-                      },
-                      onClick: function () { } // Callback after click
-                    }).showToast();
+
+                    handleMessage(`${value.name} quantity increase`)
+
                   }
                 }} className='text-white rounded bg-blend-luminosity bg-blue-600 hover:bg-blue-500 font-semibold h-8 w-30 p-1 mt-3 cursor-pointer'>Add to cart</button>
 
