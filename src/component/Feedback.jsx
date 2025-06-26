@@ -1,15 +1,15 @@
 import React, { useReducer, useState } from 'react'
 import { Feedbacreduce, initialState } from './FeedbackReduce';
-
+import { RiResetLeftLine } from "react-icons/ri";
 
 const Feedback = () => {
     const [state, dispatch] = useReducer(Feedbacreduce, initialState)
     console.log(state);
 
     const total = state.good + state.natural + state.bad
-    const totalvalue = (state.good / total) * 100 || 0
-    const Total_Natural = (state.natural / total) * 100 || 0
-    const Total_Bad = (state.bad / total) * 100 || 0
+    const totalvalue = Math.round((state.good / total) * 100 || 0)
+    const Total_Natural = Math.round((state.natural / total) * 100 || 0)
+    const Total_Bad = Math.round((state.bad / total) * 100 || 0)
  
 
     return (
@@ -32,7 +32,7 @@ const Feedback = () => {
                     </div>
 
                     <div>
-                        <button onClick={() => dispatch({ type: 'reset' })} className='w-20 p-1 rounded-2xl h-9 cursor-pointer bg-red-500'>Reset</button>
+                        <button className='text-4xl font-bold mt-1 cursor-pointer' onClick={() => dispatch({ type: 'reset' })}><RiResetLeftLine /></button>
                     </div>
                 </div>
             </div>
