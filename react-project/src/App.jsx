@@ -3,7 +3,7 @@ import React from 'react';
 
 import Home from "./components/Navbar/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MultipleForm from './components/LoginPages/MultiplePages';
+import MultipleForm from './components/MultipleFormPages/MultiplePages';
 
 
 const Count = React.lazy(() => import("./components/Count/CountButton"));
@@ -36,7 +36,7 @@ function App() {
               <Route path="Weather" element={<Weather />} />
               <Route path="GithubUser" element={<GithubUser />} />
               <Route path="Calculator" element={<Calculator />} />
-              <Route path="Loginpage" element={<MultipleForm />} />
+              <Route path="Multipleform" element={<MultipleForm />} />
               <Route path="*" element={<NoPageFound />} />
             </Route>
           </Routes>

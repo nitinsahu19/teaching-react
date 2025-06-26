@@ -209,6 +209,83 @@ export default Timer
 
 
 
-what is useContext?
-what is useRef?
-what is Custom hook?
+-------------------------------what is useContext? ----------------------------
+useContext is used to share data between components without passing props manually at every level. It helps when many components need the same data like theme, user info, etc.
+In short It helps you share data between components without passing props again and again.
+
+ * * * * * * * * * * * * example * * * * * * * * * * * * * *
+const ThemeContext = React.createContext();
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Child />
+    </ThemeContext.Provider>
+  );
+}
+
+function Child() {
+  const theme = useContext(ThemeContext); 
+  return <div>The theme is {theme}</div>;
+}
+
+
+
+-------------------------------- what is useRef? ----------------------------------
+It helps you access HTML elements (like input box) or store values that don’t need re-render.
+
+* * * * * * * * * * * * * example * * * * * * * * * * * * * *
+import { useRef } from "react";
+
+function FocusInput() {
+  const inputRef = useRef();
+
+  const handleClick = () => {
+    inputRef.current.focus(); // Access the input DOM directly
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Focus Input</button>
+    </>
+  );
+}
+
+
+---------------------------------- what is Custom hook? ----------------------------
+It is a function where you write and reuse your own logic using React hooks.
+
+
+
+
+--------------------------------- what is useReducer? -------------------------------------
+It helps you manage complex state using a function and actions, like a calculator with buttons.
+
+ * * * * * * * * * * * * example * * * * * * * * * * * * * *
+import { useReducer } from "react";
+
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+    case "decrement":
+      return { count: state.count - 1 };
+    default:
+      return state;
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+    </>
+  );
+}
