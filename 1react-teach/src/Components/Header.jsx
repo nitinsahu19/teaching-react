@@ -56,6 +56,8 @@ export default function Header(props) {
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : " "} to='/weather' >Weather</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : " "} to='/github' >Github</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/todo' >Todo</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/multipalForms' >MultipalForms</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/feedback' >Feedback</NavLink>
         </div>
         <div>
           <div className='flex items-center'>
@@ -76,14 +78,14 @@ export default function Header(props) {
 
           </div>
         </div>
-      </div> 
+      </div>
       {cartOpen && <div className={theam === true ? 'absolute top-45 w-100 text-white right-20 p-4 bg-black shadow-2xl shadow-amber-300 ' : 'absolute top-15  right-20 p-4 w-100 bg-white text-black shadow-2xl shadow-amber-300 '}>
         <div className='flex p-5 justify-between border-b'>
           <h1 className='font-bold text-2xl'>Carts</h1>
           <button onClick={() => setCartOpen((close) => !close)} className='font-bold border p-1 px-3 buttonCart'>X</button>
         </div>
         <div>
-      <Cart add={props.addCartItem} setadd={props.setAddCartItem} theam={theam} setTheam ={setTheam} />
+          <Cart add={props.addCartItem} setadd={props.setAddCartItem} theam={theam} setTheam={setTheam} />
           {props.addCartItem.length >= 0 && <p className='font-black text-2xl p-3'>No Item!</p>}
         </div>
       </div>}
