@@ -31,7 +31,8 @@ const Navbar = () => {
             <NavLink to="/weather" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Weather</NavLink>
             <NavLink to="/GithubUser" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Github User</NavLink>
             <NavLink to="/Calculator" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Calculator</NavLink>
-            <NavLink to="/LoginPage" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Multiple Form</NavLink>
+            <NavLink to="/Multipleform" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Multiple Form</NavLink>
+            <NavLink to="/Feedback" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Feedback</NavLink>
           </div>
 
           

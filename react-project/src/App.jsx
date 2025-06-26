@@ -3,8 +3,6 @@ import React from 'react';
 
 import Home from "./components/Navbar/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MultipleForm from './components/MultipleFormPages/MultiplePages';
-
 
 const Count = React.lazy(() => import("./components/Count/CountButton"));
 const Todo = React.lazy(() => import("./components/Todo/Todo"));
@@ -17,7 +15,8 @@ const RoleSelector = React.lazy(() => import("./components/Usesearchparams/selec
 const Weather = React.lazy(()=> import('./components/weather/Weather'))
 const GithubUser = React.lazy(()=> import('./components/GithubUserSearch/UserSearch'))
 const Calculator = React.lazy(()=> import('./components/Calculator/Calculator'))
-
+const MultipleForm = React.lazy(() => import('./components/MultipleFormPages/MultiplePages'));
+const Feedback = React.lazy(() => import('./components/FeedbackCollection/Feedback'));
 function App() {
   return (
     <div>
@@ -37,6 +36,7 @@ function App() {
               <Route path="GithubUser" element={<GithubUser />} />
               <Route path="Calculator" element={<Calculator />} />
               <Route path="Multipleform" element={<MultipleForm />} />
+              <Route path="feedback" element={<Feedback />} />
               <Route path="*" element={<NoPageFound />} />
             </Route>
           </Routes>
