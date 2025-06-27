@@ -4,6 +4,8 @@ import React from 'react';
 import Home from "./components/Navbar/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+
+
 const Count = React.lazy(() => import("./components/Count/CountButton"));
 const Todo = React.lazy(() => import("./components/Todo/Todo"));
 const TodoApp = React.lazy(() => import("./components/Todo/simpletodo"));
@@ -17,6 +19,7 @@ const GithubUser = React.lazy(()=> import('./components/GithubUserSearch/UserSea
 const Calculator = React.lazy(()=> import('./components/Calculator/Calculator'))
 const MultipleForm = React.lazy(() => import('./components/MultipleFormPages/MultiplePages'));
 const Feedback = React.lazy(() => import('./components/FeedbackCollection/Feedback'));
+const Test2 = React.lazy(() => import('./components/ReactTest/Test2'));
 function App() {
   return (
     <div>
@@ -37,7 +40,9 @@ function App() {
               <Route path="Calculator" element={<Calculator />} />
               <Route path="Multipleform" element={<MultipleForm />} />
               <Route path="feedback" element={<Feedback />} />
-              <Route path="*" element={<NoPageFound />} />
+              <Route path="*" element={<NoPageFound />} />  
+              <Route path="test" element={<Test2 />} />  
+            
             </Route>
           </Routes>
         </React.Suspense>
