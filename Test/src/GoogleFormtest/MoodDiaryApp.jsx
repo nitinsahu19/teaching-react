@@ -43,7 +43,7 @@ function MoodDiaryApp() {
 
       <div className='flex gap-2'>
         <button onClick={handleSubmit} className='bg-amber-600 text-white px-4 py-2 rounded'>Submit   </button>
-        <button onClick={handleDeleteAll} className='bg-red-600 text-white px-4 py-2 rounded'>    Delete All   </button>
+        <button onClick={handleDeleteAll} className='bg-red-600 text-white px-4 py-2 rounded'>    Delete All   </button>   
       </div>
 
       <div className='mt-4'>
