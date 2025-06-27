@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { feedbackReducer, initialState } from "../reducer/feedbackReducer";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Feedback = () => {
   const [state, dispatch] = useReducer(feedbackReducer, initialState);

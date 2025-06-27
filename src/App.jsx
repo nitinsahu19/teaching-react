@@ -10,6 +10,7 @@ import Todo from './components/Todo';
 import Notes from './components/Notes';
 import Multipleform from './components/Multipleform';
 import Feedback from './components/Feedback';
+import Mood from './components/Mood';
 
 const Movies = lazy(() => import('./components/Movies'));
 
@@ -58,6 +59,7 @@ function App() {
         <Route path='/notes' element={<Notes/>} />
         <Route path='/form' element={<Multipleform/>} />
         <Route path='/feedback' element={<Feedback/>} />
+        <Route path='/mood' element={<Mood/>}/>
       </Routes>
 
   

@@ -10,6 +10,7 @@ function Header() {
       <span> <NavLink to="/notes">Notes 📃</NavLink> </span>
       <span> <NavLink to="/form">Form 📃</NavLink> </span>
       <span> <NavLink to="/feedback">Feedback </NavLink> </span>
+      <span> <NavLink to="/mood">Mood App</NavLink> </span>
     </div>
   );
 }
