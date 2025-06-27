@@ -9,8 +9,10 @@ import { ThemeContext } from './context/ThemeContext';
 import Todo from './components/Todo';
 import Notes from './components/Notes';
 import Multipleform from './components/Multipleform';
+import Feedback from './components/Feedback';
 
 const Movies = lazy(() => import('./components/Movies'));
+
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
         <Route path='/todo' element={<Todo/>} />
         <Route path='/notes' element={<Notes/>} />
         <Route path='/form' element={<Multipleform/>} />
+        <Route path='/feedback' element={<Feedback/>} />
       </Routes>
 
   

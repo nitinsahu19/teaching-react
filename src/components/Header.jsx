@@ -9,6 +9,7 @@ function Header() {
       <span> <NavLink to="/github">Github-User </NavLink> </span>
       <span> <NavLink to="/notes">Notes 📃</NavLink> </span>
       <span> <NavLink to="/form">Form 📃</NavLink> </span>
+      <span> <NavLink to="/feedback">Feedback </NavLink> </span>
     </div>
   );
 }
