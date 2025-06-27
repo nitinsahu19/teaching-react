@@ -1,0 +1,16 @@
+
+.light {
+  background-color: white;
+  color: black !important;
+  height: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+.dark {
+  background-color: #121212;
+  color: white !important;
+  height: 100%;
+  text-align: center;
+  padding: 50px;
+}
