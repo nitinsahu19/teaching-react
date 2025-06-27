@@ -16,7 +16,7 @@ function Notes() {
 
     const dataset = () => {
         if (data.trim() === "") return
-        
+
         const updatedNotes = [...notes, data]
         setallnotes(updatedNotes)
         localStorage.setItem("todos", JSON.stringify(updatedNotes))
