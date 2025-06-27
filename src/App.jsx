@@ -7,7 +7,6 @@ import Card2 from './component/Card2'
 import { useState, useEffect } from 'react'
 import Fetchapi from './component/Fetchapi'
 import DefaulPage from './component/DefaulPage'
-// import Todo from './component/Todo'
 // import FakeApiData from './component/FakeApiData'
 import ProtectRoute from './component/ProtectRoute'
 import Weather from './component/weather'
@@ -15,6 +14,7 @@ import Details from './component/Details'
 import MultipleFrom from './component/MultipleFrom'
 import Todo from './component/Todo'
 import FeedBack from './component/FeedBack'
+import MoodDiary from './component/MoodDiary'
 
 
 
@@ -43,63 +43,11 @@ function App() {
     setLogin(false)
 
   }
-  // useEffect(() => {
-  //   const localdata = JSON.parse(localStorage.getItem("login"));
-  //   if (localdata) {
-  //     setLogin(true);
-  //   }
-  // }, []);
-
-
-
-  // const users = [
-  //   {name:'suresh',
-  //     role:'admin'
-  //   },
-  //   {name:'ankit',
-  //     role:'guest'
-  //   },
-  //   {name:'neeraj',
-  //     role:'custmer'
-  //   }
-  // ]
-
-  // const [params,setParams] = useSearchParams();
-  // const filterrole = params.get("role");
-
-  // const handlecahnge=(e)=>{
-  //   const role = e.target.value;
-  //   setParams({role})
-
-  // }
-  // const finalvalue = filterrole==='All'?users:users.filter((item)=>item.role===filterrole)
+  
 
   return (
 
     <>
-{/* 
-      <div>
-        <select name="" value={filterrole} onChange={handlecahnge} id="">
-          <option value="All">All</option>
-          <option value="admin">Admin</option>
-          <option value="custmer">Custmer</option>
-          <option value="guest">Guest</option>
-        </select>
-      </div>
-
-      <div>
-        {finalvalue.map((item)=>
-        <div>
-          <p>{item.name}</p>
-          <p>{item.role}</p>
-        </div>
-        )}
-      </div> */}
-
-
-
-     
-    
 
       {<Routes>
         <Route path='*' element={<DefaulPage />} />
@@ -121,6 +69,8 @@ function App() {
         <Route path='/weather' element={ <Weather mode={mode} colorMode={colorMode} logOut={logOut} />
  } />
         <Route path='/todo' element={ <Todo mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
+        <Route path='/moodDiary' element={ <MoodDiary mode={mode} colorMode={colorMode} logOut={logOut} />
  } />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
         <Route path='/detail/:id' element={<Details/>}/>

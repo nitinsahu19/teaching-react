@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import  { useReducer } from 'react'
 import { feedBackReducer, intialValue } from '../reducer/feedbackreducer'
 
 const FeedBack = () => {
@@ -23,9 +23,9 @@ const FeedBack = () => {
       </div>
 
       <div>
-    <p className='text-lg font-medium '>good Feedback :- {presentGood?parseFloat(presentGood.toFixed(2)):0}%</p>  
-    <p className='text-lg font-medium '>Neutral Feedback :- {presentNeutral?parseFloat(presentNeutral.toFixed(2)):0}%</p>  
-    <p className='text-lg font-medium '>Bad Feedback :- {presentBad?parseFloat(presentBad.toFixed(2)):0}%</p>  
+    <p className='text-lg font-medium '>good Feedback :- {presentGood?parseFloat(presentGood.toFixed(2)):0} %</p>  
+    <p className='text-lg font-medium '>Neutral Feedback :- {presentNeutral?parseFloat(presentNeutral.toFixed(2)):0} %</p>  
+    <p className='text-lg font-medium '>Bad Feedback :- {presentBad?parseFloat(presentBad.toFixed(2)):0} %</p>  
      </div>
     </div>
     </div>
