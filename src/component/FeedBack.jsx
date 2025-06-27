@@ -8,9 +8,10 @@ const FeedBack = () => {
     const presentNeutral = state.neutral/(state.good+state.bad+state.neutral)*100;
   
   return (
-    <div>
+    <div className='flex justify-center m-3'>
+      <div>
       <h1 className='text-center text-2xl font-medium'>FeedBack app</h1>
-     <div className='flex gap-3'>
+     <div className='flex gap-3 mt-4'>
       <p className='font-semibold text-lg'>Good :- {state.good}</p>
       <p className='font-semibold text-lg'>Neutral :- {state.neutral}</p>
       <p className='font-semibold text-lg'>Bad :- {state.bad}</p>
@@ -22,10 +23,11 @@ const FeedBack = () => {
       </div>
 
       <div>
-    <p className='text-lg font-medium '>good Feedback :- {presentGood?presentGood:0}%</p>  
-    <p className='text-lg font-medium '>Neutral Feedback :- {presentNeutral?presentNeutral:0}%</p>  
-    <p className='text-lg font-medium '>Bad Feedback :- {presentBad?presentBad:0}%</p>  
+    <p className='text-lg font-medium '>good Feedback :- {presentGood?parseFloat(presentGood.toFixed(2)):0}%</p>  
+    <p className='text-lg font-medium '>Neutral Feedback :- {presentNeutral?parseFloat(presentNeutral.toFixed(2)):0}%</p>  
+    <p className='text-lg font-medium '>Bad Feedback :- {presentBad?parseFloat(presentBad.toFixed(2)):0}%</p>  
      </div>
+    </div>
     </div>
   )
 }
