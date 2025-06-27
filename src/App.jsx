@@ -44,8 +44,8 @@ import Login from './component/Login';
 // import Formpages from './component/Formpages';
 // import Forms from './component/Formreduce';
 // import Product from './component/Product'
-import Feedback from './component/Feedback';
-
+import Feedback from './component/Feedback'; 
+import MoodDiary from './component/MoodDiary';
 const App = () => {
   return (
     <>
@@ -55,7 +55,9 @@ const App = () => {
       </Routes> */}
 
 
-        <Feedback/>
+        {/* <Feedback/> */}
+        <MoodDiary/>
+        {/* <Hello/> */}
 
         {/* <Forms/> */}
     </>
