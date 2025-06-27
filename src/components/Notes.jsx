@@ -23,7 +23,7 @@ function Notes() {
       <Header />
 
       {/* Input Section */}
-      <div className='w-full bg-gray-100 flex justify-center py-6 px-4'>
+      <div className='w-full  flex justify-center py-6 px-4'>
         <div className='flex flex-col sm:flex-row gap-4 w-full max-w-3xl items-start sm:items-center'>
           <textarea
             value={inputNote}

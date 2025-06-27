@@ -3,3 +3,15 @@
 .back{
     background-color: rgba(18, 18, 18, 0.745);
 }
+
+
+.weather{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    backdrop-filter: 200;
+    background-image: url("https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg");
+}
+.card{
+    background-image: url('https://previews.123rf.com/images/articoufa/articoufa0911/articoufa091100031/5852077-sunny-weather-in-summer-nice-background.jpg');
+}

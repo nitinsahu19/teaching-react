@@ -4,7 +4,7 @@ import Header from "./Header";
 function Weather() {
   const [inputCity, setInputCity] = useState();
   const [data, setData] = useState({});
-
+  
   const searchHandler = () => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=e5135145b18d5a0e59a91b2998f36ef7&units=metric`

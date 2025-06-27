@@ -18,15 +18,15 @@ function GitHub() {
     <>
       <Header />
 
-      <div className="min-h-screen bg-gray-100 pt-24 px-4">
-        <div className="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-md">
+      <div className="min-h-screen pt-24 px-4">
+        <div className="max-w-xl mx-auto bg-gray-200 p-6 rounded-xl shadow-md">
           <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">GitHub Profile Finder</h2>
 
           <div className="flex gap-3 mb-6">
             <input
               value={inpUser}
               onChange={(e) => setInputUser(e.target.value)}
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="flex-grow px-4 py-2 border bg-white border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               type="text"
               placeholder="Enter GitHub username"
             />

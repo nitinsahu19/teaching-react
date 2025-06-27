@@ -62,7 +62,7 @@ function Header() {
         >
           Notes
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/form"
           className={({ isActive }) =>
             isActive
@@ -71,6 +71,36 @@ function Header() {
           }
         >
           Form
+        </NavLink> */}
+        <NavLink
+          to="/form2"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Form2
+        </NavLink>
+        <NavLink
+          to="/feedback"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Feedback
+        </NavLink>
+        <NavLink
+          to="/diary"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-500 border-b-2 font-bold"
+              : "hover:text-blue-500 font-bold"
+          }
+        >
+          Diary
         </NavLink>
       </div>
       <div className="flex gap-10">
