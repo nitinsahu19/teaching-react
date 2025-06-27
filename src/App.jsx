@@ -1,6 +1,9 @@
+import  Test  from './comonents/Test';
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Tasksform from './comonents/Tasksform';
+// import Feedback  from './comonents/Feedback ';
+// import Tasksform from './comonents/Tasksform';
+
 // import ApiFetch from './comonents/ApiFetch';
 // import Todolist from './comonents/Todolist';
 // import Uselocalstorage from './comonents/Uselocalstorage';
@@ -19,8 +22,8 @@ function App() {
   // const isLoggedIn = true; y
 
   return (<>
-  {/* <Navbarr />
-      <Suspense fallback={<div><h1>Loading... </h1></div>}>
+   {/* <Navbarr />   */}
+      {/* <Suspense fallback={<div><h1>Loading... </h1></div>}>
         <Routes>
           
           <Route path='/' element={<Home/>}/>
@@ -30,10 +33,12 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact"element={<ProtectedRoute isLoggedIn={isLoggedIn}><Contact /></ProtectedRoute>}/>
         </Routes> 
-      </Suspense> */}
+      </Suspense>  */}
 
       {/* <Todolist/> */}
-      <Tasksform/>
+      {/* <Tasksform/> */}
+      <Test/>
+      {/* <Feedback/> */}
       
       </>
           

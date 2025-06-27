@@ -1,64 +1,87 @@
-import React, { useState } from 'react'
-import { FaBackward } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
-
+import React, { useReducer, useState } from 'react'
+import { FaBackward,   FaArrowRight } from "react-icons/fa";
+import { initialState } from './Multipal-form-step';
 
 function Tasksform() {
-  const [page, setpage] = useState(1);
-  const [name, setname] = useState();
-  const [email, setemail] = useState();
-  const [city, setcity] = useState();
-  const [pincode, setpincode] = useState();
-
-
-
-  const click = () => {
-    setpage(page + 1)
+    
+  const [State, dispatch] = useReducer(Tasksform,initialState);
+  const handlechange =(e)=>{
+    dispatch({
+        type:"update_field",
+        field:e.target.name ,
+        value:e.target.value
+    })
   }
-  const clicke = () => {
-    setpage(page - 1)
+//   const [name, setname] = useState();
+//   const [email, setemail] = useState();
+//   const [city, setcity] = useState();
+//   const [pincode, setpincode] = useState();
+
+  
+  const handlnext = () => {
+    dispatch({   
+        type:"nextfield"
+    })
   }
-  return (<>
-    {/* page1 */}
-    {page === 1 ? <div className='border bg-red-300 w-50 m-5  rounded-2xl'>
-      <div className=''>
-        <input type="text"  placeholder="name" value={name} onChange={(e) => setname(e.target.value)} className="w-25 p-2 m-3 mb-4 border border-gray-300 rounded" />
-      </div>
-      <input type="text" placeholder="email" value={email} onChange={(e) => setemail(e.target.value)} className="w-25 p-2 mb-4 m-3 border border-gray-300 rounded"
-      />
-      <div>
-        <button className=' bg-red-700 m-3 text-white p-2 rounded  ' onClick={click} >Next
- </button>
-      </div>  
-       </div> :"" }
-       {page === 2 ? 
-        <div className='border bg-red-300 w-50 mt-5 m-5  rounded-2xl'>
-          <div className=''>
-            <input type="text" placeholder="city" value={city} onChange={(e) => setcity(e.target.value)} className="w-25 p-2 m-3 mb-4 border border-gray-300 rounded" />
-          </div>
-          <input type="text" placeholder="pincode" value={pincode} onChange={(e) => setpincode(e.target.value)} className="w-25 p-2 m-3 mb-4 border border-gray-300 rounded"
+  const handlpre = () => {
+    dispatch({
+        type:"prefield"
+    })
+  }
+
+  return (
+    <>
+      {/* Page 1 */}
+      { State.page === 1 &&
+        <div className='bg-red-300 max-w-md mx-auto mt-10 p-6 rounded-2xl shadow-lg' >
+          <input type="text" placeholder="Name" value={State.name} onChange={handlechange} className="w-full p-2 mb-4 border border-gray-300 rounded"/>
+          <input type="text" placeholder="Email" value={State.email} onChange={handlechange} className="w-full p-2 mb-4 border border-gray-300 rounded"/>
+          <button className='bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800'onClick={handlnext}>
+            Next <FaArrowRight className="inline ml-1" />
+          </button>
+        </div>
+      }
+
+      {/* Page 2 */}
+      {State.page === 2 &&
+           <div className='bg-red-300 max-w-md mx-auto mt-10 p-6 rounded-2xl shadow-lg'>
+          <input type="text"placeholder="City"value={State.city}onChange={handlechange}className="w-full p-2 mb-4 border border-gray-300 rounded"/>
+          <input type="text" required placeholder="Pincode" value={State.pincode} onChange={handlechange} className="w-full p-2 mb-4 border border-gray-300 rounded"
           />
-          <div>
-            <button className=' bg-blue-500 text-white m-3 p-2 rounded ' onClick={clicke}> <FaBackward /> </button>
-            <button className=' bg-red-700 text-white text-size-12 m-3 p-2 rounded ' onClick={click}>NEXT
-</button>
-          </div>   </div>
-      
-       : ""}
-        {page===3?<div className='border bg-red-300 w-50 mt-9 m-5 p-4  rounded-2xl'>
-          <h4>Your name = {name}</h4>
-          <h4>Your email = {email}</h4>
-          <h4>Your city = {city}</h4>
-          <h4>Your pincode = {pincode}</h4>
-          <div>
-            <button className='  bg-blue-500 text-white p-2 m-3 rounded ' onClick={clicke}><FaBackward /></button>
-            <button className=' bg-green-600 text-white p-2 m-3 rounded '>submit</button>
-          </div>   </div>:""}  
+          <div className="flex justify-between">
+            <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600' onClick={handlpre} >
+              <FaBackward />
+            </button>
+            <button  className='bg-red-700 text-white px-4 py-2 rounded hover:bg-red-800'onClick={handlnext}>
+              NEXT
+            </button>
+          </div>
+        </div>
+      }
 
-
-
-
-  </>)
+      {/* Page 3 */}
+      { State.page === 3 &&
+        <div className='bg-red-300 max-w-md mx-auto mt-10 p-6 rounded-2xl shadow-lg'>
+          <h4 className="mb-2">Your name = {State.name}</h4>
+          <h4 className="mb-2">Your email = {State.email}</h4>
+          <h4 className="mb-2">Your city = { State.city}</h4>
+          <h4 className="mb-4">Your pincode = {State.pincode}</h4>
+          <div className="flex justify-between">
+            <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600'
+onClick={handlpre}
+            >
+              <FaBackward />
+            </button>
+            <button
+              className='bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700'
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      }
+    </>
+  )
 }
 
 export default Tasksform
