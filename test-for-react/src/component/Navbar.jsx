@@ -4,7 +4,7 @@ import { IoIosSunny } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
 import { useTheme } from '../ContextApi';
 
-const Navbar = (props) => {
+const Navbar = () => {
   const {theme, setTheme} = useTheme()
     const handleMode = () =>{
       if(theme==='light'){
