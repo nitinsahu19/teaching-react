@@ -4,7 +4,7 @@ const BottomButtons = () => {
     const [color , setColor] = useState('black')
     return (
         <div style={{backgroundColor:color}} className="relative min-h-screen bg-gray-100">
-            <div className="absolute bottom-10 left-0 right-0 flex justify-center gap-4">
+            <div className="absolute top-20 left-0 right-0 flex justify-center gap-4">
                 <button onClick={() => setColor('red')} className="bg-red-500 text-white cursor-pointer px-4 py-2 rounded-lg hover:bg-red-600">Red</button>
                 <button onClick={() => setColor('blue')} className="bg-blue-500 text-white cursor-pointer px-4 py-2 rounded-lg hover:bg-blue-600">Blue</button>
                 <button onClick={() => setColor('green')} className="bg-green-500 text-white cursor-pointer px-4 py-2 rounded-lg hover:bg-green-600">Green</button>

@@ -18,7 +18,7 @@ const Formpages = () => {
 
     return (
         <>
-            {state.page === 1 && <div className='w-90 h-80 border p-5 mt-10 flex justify-center ml-10' >
+            {state.page === 1 && <div className='w-110 h-70 border-red-600 rounded-4xl border hover:border-8  hover:border-amber-500 p-5 mt-10 flex justify-center ml-10' >
                 <div>
                     <div className='mt-5'>
                         <label>Name:</label>
@@ -31,7 +31,7 @@ const Formpages = () => {
                     </div>
                     <div className='mt-5'>
                         <label>Password:</label>
-                        <input name='password' onChange={handlchange} value={state.password} className='border w-60 h-8 rounded-2xl p-3 ml-1' type="password" placeholder='Enter your Password!' />
+                        <input name='password' onChange={handlchange} value={state.password} className='border w-60 h-8 rounded-2xl p-3 ml-1' type="number" placeholder='Enter your Password!' />
                     </div>
                     <button onClick={Nexthandler} className='w-25 h-9 rounded-2xl bg-red-600 cursor-pointer mt-5'>Next</button>
                 </div>
@@ -45,7 +45,7 @@ const Formpages = () => {
                     </div>
                     <div className='mt-5'>
                         <label>PinCode:</label>
-                        <input name='pincode' onChange={handlchange} value={state.pincode} className='border w-60 h-8 rounded-2xl p-3 ml-1' type="password" placeholder='Enter Your PinCode Name!' />
+                        <input name='pincode' onChange={handlchange} value={state.pincode} className='border w-60 h-8 rounded-2xl p-3 ml-1' type="number" placeholder='Enter Your PinCode Name!' />
                     </div>
                     <div className='flex gap-10'>
                         <button onClick={Prevhandler} className='bg-red-500 w-25 h-9 mt-5 rounded-2xl cursor-pointer'>Back</button>

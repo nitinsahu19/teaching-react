@@ -7,10 +7,12 @@ const Feedback = () => {
     console.log(state);
 
     const total = state.good + state.natural + state.bad
-    const totalvalue = Math.round((state.good / total) * 100 || 0)
+    const Total_Good = Math.round((state.good / total) * 100 || 0)
     const Total_Natural = Math.round((state.natural / total) * 100 || 0)
     const Total_Bad = Math.round((state.bad / total) * 100 || 0)
- 
+    
+    console.log(total , "total value")
+    console.log(Total_Good , "total")
 
     return (
         <>
@@ -45,7 +47,7 @@ const Feedback = () => {
                 </div>
 
                 <div className='font-bold text-center p-2'>
-                    <h1 className='text-green-600'>Total_Good : {totalvalue}%</h1>
+                    <h1 className='text-green-600'>Total_Good : {Total_Good}%</h1>
                     <h1 className='text-pink-600'>Total_Natural : {Total_Natural}%</h1>
                     <h1 className='text-yellow-600'>Total_Bad : {Total_Bad}%</h1>
                 </div>

@@ -20,7 +20,7 @@ const Home = ({ message , setLogin }) => {
 
   const [cart, setcart] = useState([]);
   const [slider, setslider] = useState(false);
-  const [slected, setslected] = useState("All")
+  const [salected, setsalected] = useState("All")
 
 
 
@@ -34,9 +34,7 @@ const Home = ({ message , setLogin }) => {
       ubdateValue[index].quantity += 1;
       setcart(ubdateValue);
     }
-  };
- 
-
+  }; 
 
   
   useEffect(() => {
@@ -60,26 +58,12 @@ const Home = ({ message , setLogin }) => {
     localStorage.removeItem('login');
     setLogin(false);
     alert('Log out successfully');
-  };
-
+  }; 
   
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); 
 
-  
-  // useEffect=(()=>{
-  //   const ubdatecart = JSON.parse(localStorage.getItem("party"))
-  // },[])
-
-  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-
-  // const handleClick = () => {
-  //   const result = category === "All"? cart : cart.filter(item => item.category === category);
-  //   setslected(result);
-  // };
-
-
-  const result = slected === "All" ? products : products.filter
-    (item => item.category === slected);
+  const result = salected === "All" ? products : products.filter
+    (item => item.category === salected);
   return (
     <>
 
@@ -91,7 +75,7 @@ const Home = ({ message , setLogin }) => {
         </div>
 
         <section className='flex gap-60 mt-10'>
-          <select className='bg-cyan-400 w-40 p-2 ml-220 cursor-pointer' onChange={(e) => setslected(e.target.value)}>
+          <select className='bg-cyan-400 w-40 p-2 ml-220 cursor-pointer' onChange={(e) => setsalected(e.target.value)}>
             <option value="All">All Products</option>
             <option value="Headphones">Headphones</option>
             <option value="Smart Watch">Smart Watch</option>

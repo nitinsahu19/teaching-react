@@ -1,69 +1,37 @@
-// import React, { useState, useEffect, memo, Children } from 'react';
-// import './App.css';
-// import { Routes, Route, useNavigate, BrowserRouter, Link, NavLink, Outlet } from 'react-router-dom';
-// import Navbar from './component/Navbar';
-// import { lazy, Suspense } from 'react'; 
-// import Weather from './component/Weather';
-// import Home from './component/Home';
-
-// const Cart = React.lazy(() => import('./component/Cart'))
-// const Header = React.lazy(() => import('./component/Header'))
-// const Datas = React.lazy(() => import('./component/Datas'))
-
-// function App() {
-
-//   return (
-
-//     <>
-//     {<Suspense fallback={<div className=' text-red-600 text-9xl flex justify-center items-center' id='hello'>Loading...</div>}>
-//       <Routes>
-//         <Route path='/navbar' element={<Navbar />} >
-//           <Route path='cart' element={<Cart />} />
-//           <Route path='header' element={<Header />} />
-//           <Route path='data' element={<Datas />} />
-//         </Route>
-//       </Routes>
-//     </Suspense>} 
-
-     
- 
-    
-//     {/* <Weather/> */}
-//   </>
-//   )
-// }
-
-// export default App;
-
- import React from 'react';
+import React, { Suspense, lazy } from 'react';
+import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import ProtectedRoute from './component/ProtectedRoute'; 
-import TodoList from './component/TodoList';
-import Login from './component/Login'; 
-// import Todos from './component/todos';
-// import Formpages from './component/Formpages';
-// import Forms from './component/Formreduce';
-// import Product from './component/Product'
-import Feedback from './component/Feedback'; 
-import MoodDiary from './component/MoodDiary';
-const App = () => {
+import Navbar from './component/Navbar'; 
+
+const Cart = lazy(() => import('./component/Cart'));
+const Header = lazy(() => import('./component/Header'));
+const Datas = lazy(() => import('./component/Datas'));
+const Weather = lazy(() => import('./component/Weather'));
+const Formpages = lazy(() => import('./component/Formpages'));
+const Feedback = lazy(() => import('./component/Feedback'));
+const Colors = lazy(() => import('./component/Colors'));
+const User = lazy(() => import('./component/User'))
+
+function App() {
   return (
-    <>
-      {/* <Routes> 
-        <Route path="/" element={<Login />} />
-        <Route path="/productData" element={<ProtectedRoute> <Product /></ProtectedRoute>} />
-      </Routes> */}
+    <Suspense fallback={<div className='text-red-600 text-4xl flex justify-center items-center h-screen'>Loading...</div>}>
+      <Routes>
 
+        <Route path='/navbar' element={<Navbar />}>
+        <Route path='user' element={<User />} />
+          <Route path='cart' element={<Cart />} />
+          <Route path='header' element={<Header />} />
+          <Route path='data' element={<Datas />} />
+          <Route path='weather' element={<Weather />} />
+          <Route path='formpage' element={<Formpages />} />
+          <Route path='feedback' element={<Feedback />} />
+          <Route path='Colors' element={<Colors />} />
 
-        {/* <Feedback/> */}
-        <MoodDiary/>
-        {/* <Hello/> */}
-
-        {/* <Forms/> */}
-    </>
+        </Route>
+      </Routes>
+    </Suspense>
+ 
   );
-};
+}
 
 export default App;
-
- 
