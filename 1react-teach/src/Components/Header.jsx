@@ -58,6 +58,7 @@ export default function Header(props) {
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/todo' >Todo</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/multipalForms' >MultipalForms</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/feedback' >Feedback</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/registionFrom' >Registretion</NavLink>
         </div>
         <div>
           <div className='flex items-center'>

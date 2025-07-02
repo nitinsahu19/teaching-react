@@ -14,9 +14,9 @@ function FeedBack() {
   const reset = () => { dispatch({ type: "reset" }) }
 
   const total = state.good + state.neutral + state.bad;
-  const goodPresent = Math.trunc((state.good / total) * 100 || 0);
-  const neutralPresent = Math.trunc((state.neutral / total) * 100 || 0);
-  const badPresent = Math.trunc((state.bad / total) * 100 || 0);
+  const goodPresent = parseFloat(((state.good / total) * 100  || 0).toFixed(2));
+  const neutralPresent = parseFloat(((state.neutral / total) * 100 || 0).toFixed(2));
+  const badPresent = parseFloat(((state.bad / total) * 100 || 0).toFixed(2));
 
 
   return (

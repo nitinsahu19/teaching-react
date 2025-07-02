@@ -5,6 +5,7 @@ import Form from './Components/Form'
 import Header from './Components/Header';
 import MultipalFrom from './Components/MultipalFrom';
 import FeedBack from './Components/FeedBack';
+import UseFormComponent from './Components/useFormComponent';
 // import Home from './Components/Home';
 const Home = React.lazy(() => import('./Components/Home'))
 // import About from './Components/About';
@@ -35,7 +36,8 @@ function App() {
           <Route path='/Weather' element={<Weather />} />
           <Route path='/github' element={<Github />} />
           <Route path='/multipalForms' element={<MultipalFrom />} />
-          <Route path='/feedback' element={<FeedBack />} />
+          <Route path='/registionFrom' element={<UseFormComponent />} />
+          <Route path='/feedback' element={<FeedBack />} /> 
           {/* <ProtectedRoute /> */}
         </Routes>
       </Suspense>}
