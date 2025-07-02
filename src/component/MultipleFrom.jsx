@@ -34,7 +34,7 @@ const MultipleFrom = (props) => {
   // }
 const [state,dispatch] = useReducer(fromReducer, initialState)
 const handlechange  = (e)=>{
-  dispatch({
+  dispatch({  
     type:"updated-filed",
     field:e.target.name,
     value:e.target.value

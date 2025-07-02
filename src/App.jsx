@@ -15,6 +15,7 @@ import MultipleFrom from './component/MultipleFrom'
 import Todo from './component/Todo'
 import FeedBack from './component/FeedBack'
 import MoodDiary from './component/MoodDiary'
+import UseForm from './component/UseForm'
 
 
 
@@ -71,6 +72,8 @@ function App() {
         <Route path='/todo' element={ <Todo mode={mode} colorMode={colorMode} logOut={logOut} />
  } />
         <Route path='/moodDiary' element={ <MoodDiary mode={mode} colorMode={colorMode} logOut={logOut} />
+ } />
+        <Route path='/useform' element={ <UseForm mode={mode} colorMode={colorMode} logOut={logOut} />
  } />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
         <Route path='/detail/:id' element={<Details/>}/>

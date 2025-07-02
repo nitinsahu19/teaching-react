@@ -28,6 +28,8 @@ const Navbar = (props) => {
             FeedBack</NavLink></li>
           <li ><NavLink to="/moodDiary" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
             MoodDiary</NavLink></li>
+          <li ><NavLink to="/useform" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
+            UseForm</NavLink></li>
         </ul>
         <div>
           {props.mode === "light" ? <button onClick={props.colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
