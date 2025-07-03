@@ -13,9 +13,10 @@ const UseForm = (props) => {
         number: z.string().length(10, "Number must be exactly 10 digits").regex(/^\d+$/, "Only digits allowed"),
     })
     const { register, handleSubmit, formState: { errors },reset } = useForm({ resolver: zodResolver(schema) })
-    const handleForm = (data, e) => {
+    const handleForm = (data) => {
         console.log(data); 
         reset();
+        alert('your from submited')
     }
     return (
         <div>
