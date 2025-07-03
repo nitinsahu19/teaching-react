@@ -217,7 +217,7 @@ In short It helps you share data between components without passing props again 
 const ThemeContext = React.createContext();
 
 function App() {
-  return (
+  return (  
     <ThemeContext.Provider value="dark">
       <Child />
     </ThemeContext.Provider>
@@ -289,3 +289,57 @@ function Counter() {
     </>
   );
 }
+
+
+
+---------------------------------- What is react-hook-form ? ---------------------------------
+React Hook Form is a library in react that help to easily handle form and validation  
+
+---------------------------------- Why use react-hook-form ? ---------------------------------
+It makes form handling in React simple and faster.
+It reduces code complexity and improves performance.
+It has built-in validation and works well with UI libraries.
+It uses less re-rendering, so forms run smoothly. 
+In short, less code with easy validation .
+
+---------------------------------- What is zod ? ---------------------------------
+Zod is a library that helps you define a schema (data structure) and check if your data follows that schema or not.
+
+---------------------------------- SYNTAX ? ---------------------------------
+
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters"),
+  age: z.number().min(18, "You must be atleast 18"),
+});
+
+function MyForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("username")} placeholder="Username" />
+      {errors.username && <p>{errors.username.message}</p>}
+
+      <input type="number" {...register("age", { valueAsNumber: true })} placeholder="Age" />
+      {errors.age && <p>{errors.age.message}</p>}
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+
