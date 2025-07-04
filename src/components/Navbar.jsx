@@ -14,6 +14,7 @@ function Navbar() {
     { to: "todo", label: "Todo" },
     { to: "counter", label: "Counter" },
     { to: "multiple-step-form", label: "Multiple-Step-form" },
+    { to: "react-hook-form", label: "ReactHookForm" },
   ];
 
   const { theme } = useTheme();

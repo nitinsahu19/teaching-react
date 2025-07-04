@@ -13,6 +13,7 @@ import MovieDetails from "./components/MovieDetails";
 import Todo from "./components/Todo";
 import Counter from "./components/Counter";
 import MultiStepForm from "./components/MultipleStepForm";
+import ReactHookForm from "./components/ReactHookForm";
 
 const Profile = lazy(() => import("./components/Profile"));
 const Orders = lazy(() => import("./components/Orders"));
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/todo" element={<Todo />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="multiple-step-form" element={<MultiStepForm />} />
+          <Route path="react-hook-form" element={<ReactHookForm />} />
         </Route>
       </Routes>
     </Suspense>
