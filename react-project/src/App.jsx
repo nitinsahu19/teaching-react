@@ -3,12 +3,14 @@ import React from 'react';
 
 import Home from "./components/Navbar/Home";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/ReactHookForm/Login';
+import Signup from './components/ReactHookForm/Signup';
 
 
 
 const Count = React.lazy(() => import("./components/Count/CountButton"));
 const Todo = React.lazy(() => import("./components/Todo/Todo"));
-const TodoApp = React.lazy(() => import("./components/Todo/simpletodo"));
+const TodoApp = React.lazy(() => import("./components/Todo/Todo"));
 const ShowHide = React.lazy(() => import("./components/show/hide/show_hide"));
 const NoPageFound = React.lazy(() => import("./components/NopageFound/Nopagefound"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
@@ -42,6 +44,8 @@ function App() {
               <Route path="feedback" element={<Feedback />} />
               <Route path="*" element={<NoPageFound />} />  
               <Route path="test" element={<Test2 />} />  
+              <Route path="Login" element={<Login />} />  
+              <Route path="Signup" element={<Signup />} />  
             
             </Route>
           </Routes>

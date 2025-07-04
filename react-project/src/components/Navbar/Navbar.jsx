@@ -26,7 +26,7 @@ const Navbar = () => {
           
           <div className={`flex-col lg:flex-row lg:flex gap-4 absolute lg:static top-16 left-0 right-0 bg-white dark:bg-gray-800 p-4 ${isOpen ? 'flex' : 'hidden'}`}>
             <NavLink to="/home" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Home</NavLink>
-            <NavLink to="/SimpleTodo" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>SimpleTodo</NavLink>
+            <NavLink to="/Todo" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Todo</NavLink>
             <NavLink to="/selector" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Selector</NavLink>
             <NavLink to="/weather" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Weather</NavLink>
             <NavLink to="/GithubUser" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Github User</NavLink>
@@ -34,6 +34,7 @@ const Navbar = () => {
             <NavLink to="/Multipleform" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Multiple Form</NavLink>
             <NavLink to="/Feedback" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Feedback</NavLink>
             <NavLink to="/test" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>Test</NavLink>
+            <NavLink to="/Login" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-gray-700 dark:text-white'}>ReactHookForm</NavLink>
           </div>
 
           

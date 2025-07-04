@@ -1,50 +1,56 @@
 import React, { useState, useEffect } from "react";
 
 const Test2 = () => {
-  const [mood, setMood] = useState(""); // State to store the current mood input
-    const [moods, setMoods] = useState([]); // State to store the list of moods
-  
-    const handleSubmit = (e) => {
-        e.preventDefault();  //form submit hone pr page reload nhi hoga
-        if (mood) {    //check if mood is not empty
-          const moods = JSON.parse(localStorage.getItem("moods")) || [];  //get moods from localStorage or initialize as empty array
-          moods.push(mood);  //add new mood to the array
-          localStorage.setItem("moods", JSON.stringify(moods));  //save updated moods to localStorage
-          setMood(""); //clear the input field
-        }
-      };
+  const [mood, setMood] = useState(""); // Current mood input
+  const [moods, setMoods] = useState([]); // All mood entries
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (mood.trim() !== "") {
+      const updatedMoods = [...moods, mood];
+      localStorage.setItem("moods", JSON.stringify(updatedMoods));
+      setMoods(updatedMoods); // Update state immediately to reflect on screen
+      setMood(""); // Clear input
+    }
+  };
+
   useEffect(() => {
     const storedMoods = JSON.parse(localStorage.getItem("moods")) || [];
-    setMoods(storedMoods); 
+    setMoods(storedMoods);
   }, []);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-        <label className="block mb-2 text-white">Mood Diary</label>
-        <textarea
-          className="border-2 border-gray-300 rounded p-2"
-          placeholder="How are you feeling today?"
-          value={mood}
-          onChange={(e) => setMood(e.target.value)}
-        />
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
+      <div className="bg-gray-800 p-6 rounded shadow-lg w-full max-w-md">
+        <form onSubmit={handleSubmit}>
+          <label className="block mb-2 text-white text-xl font-semibold text-center">
+            Mood Diary
+          </label>
+          <textarea
+            className="w-full border-2 border-gray-400 rounded p-2 text-white"
+            placeholder="How are you feeling today?"
+            value={mood}
+            onChange={(e) => setMood(e.target.value)}
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-500 mt-3 text-white rounded p-2 hover:bg-blue-600"
+          >
+            Submit Mood
+          </button>
+        </form>
 
+        <div className="mt-6">
+          <h2 className="text-white text-lg underline decoration-wavy text-center mb-2">
+            Mood Entries
+          </h2>
+          <ul className="list-disc pl-5 text-white space-y-1">
+            {moods.map((mood, index) => (
+              <li key={index}>{mood}</li>
+            ))}
+          </ul>
         </div>
-        <button
-          className="bg-blue-500 mt-2 mb-2 text-white rounded p-2 hover:bg-blue-600"
-        >
-          Submit Mood
-        </button>
-      </form>
-      <div>
-        <h2 className="underline decoration-wavy">Mood Entries</h2>
-      <ul>
-        {moods.map((mood, index) => (
-          <li key={index} className="text-white">{mood}</li>
-        ))}
-      </ul>
-    </div>
+      </div>
     </div>
   );
 };

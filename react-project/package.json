@@ -10,13 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "@lottiefiles/dotlottie-react": "^0.14.1",
     "@tailwindcss/vite": "^4.1.8",
     "lucide-react": "^0.514.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-hook-form": "^7.59.0",
     "react-router-dom": "^7.6.2",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "zod": "^3.25.72"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
