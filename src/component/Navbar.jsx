@@ -12,12 +12,11 @@ const Navbar = (props) => {
           <img className='w-16 h-16 rounded-full' src="https://marketplace.canva.com/EAGQ1aYlOWs/1/0/1600w/canva-blue-colorful-illustrative-e-commerce-online-shop-logo-bHiX_0QpJxE.jpg" alt="" />
         </div>
         <ul className='flex flex-wrap gap-10'>
-          <li><NavLink to="/" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
+          <li><NavLink  to="/" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
             Home </NavLink></li>
           <li><NavLink to="/about" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'} >
             About </NavLink></li>
-          <li ><NavLink to="/cart" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
-            Cart </NavLink></li>
+        
           <li ><NavLink to="/multifrom" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
             MultiFrom </NavLink></li>
           <li ><NavLink to="/weather" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
@@ -30,6 +29,8 @@ const Navbar = (props) => {
             MoodDiary</NavLink></li>
           <li ><NavLink to="/useform" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
             UseForm</NavLink></li>
+          <li ><NavLink to="/counter" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
+            Counter</NavLink></li>
         </ul>
         <div>
           {props.mode === "light" ? <button onClick={props.colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
@@ -38,7 +39,7 @@ const Navbar = (props) => {
         <div>
           <button onClick={props.logout} className='border rounded  p-1 ps-2 pe-2  bg-red-600 text-white cursor-pointer'>Log-out</button>
         </div>
-      </nav>
+      </nav>  
     </div>
    
     </>
