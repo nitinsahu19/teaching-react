@@ -108,7 +108,7 @@ const Todo = () => {
   const filteredTodos = todos.filter((todo) => {
     if (filter === 'Active') return !todo.checked;
     if (filter === 'Complete') return todo.checked;
-    return true; // 'All'の場合
+    return true; 
   });
 
   return (

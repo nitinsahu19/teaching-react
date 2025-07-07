@@ -21,6 +21,7 @@ const Home=()=> {
 
 
         <NavLink to='cart' className={({isActive})=>(isActive?'text-red-700 bg-amber-300':"")}><button className='border'> cart</button></NavLink>
+        
         <NavLink to='details' className={({isActive})=>(isActive?'text-red-700 bg-amber-300':"")}><button className='border'>details</button></NavLink>
 
 

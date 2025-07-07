@@ -2,6 +2,9 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import Errors from './RoutesFol/Errors';
+import Formhook from './FormHookFol/Formhook';
+import OtherSomething from './FormHookFol/OtherSomething';
+import { Counter } from './ReduxFol/Counter';
 
 
 
@@ -15,17 +18,21 @@ const Cart = React.lazy(() => import("./RoutesFol/Cart"))
 const Details = React.lazy(() => import("./RoutesFol/details"))
 
 
-import Todo from "./TodoList/Todo";
-import { Divide } from 'lucide-react';
-import Prectice from './components/prectice';
-import Api from './components/Api';
-import Api1 from './components/Api1';
-import First from './TodoList/First';
-import Second from './TodoList/Second';
-import Searchperams from './RoutesFol/Searchperams';
-import WeatherApp from './components/WeatherApp';
-import { NameContextFun } from './RoutesFol/NameContext';
-import MultipleForm from './TasksFol/MultipleForm';
+// import Todo from "./TodoList/Todo";
+// import { Divide } from 'lucide-react';
+// import Prectice from './components/prectice';
+// import Api from './components/Api';
+// import Api1 from './components/Api1';
+// import First from './TodoList/First';
+// import Second from './TodoList/Second';
+// import Searchperams from './RoutesFol/Searchperams';
+// import WeatherApp from './components/WeatherApp';
+// import { NameContextFun } from './RoutesFol/NameContext';
+// import MultipleForm from './TasksFol/MultipleForm';
+// import FeedbackReducer from './TasksFol/FeedbackReducer';
+// import ReducerForm from './TasksFol/ReducerForm';
+// import NewTodo from './TodoList/NewTodo';
+// import AnimatedTabExample from './AuraFramework.jsx/AnimatedTabExample';
 
 
 
@@ -34,10 +41,10 @@ const App = () => {
 
   return (
     <>
-  
+
 
       {/* <Suspense fallback={<div className='text-6xl'>Loading ...................</div>}> */}
-        {/* <Routes>
+      {/* <Routes>
           <Route path="/home" element={<Home />}>
             <Route path="cart" element={<Suspense fallback={<div className='text-2xl'>Loading .....</div>}><Cart /></Suspense>} />
             <Route path="details" element={<Details />} />
@@ -55,9 +62,18 @@ const App = () => {
  </Routes>
  </BrowserRouter> */}
 
+
+
+
+      <Routes>
+        <Route path="/" element={<Formhook />} />
+        <Route path="/OtherSomething" element={<OtherSomething/>} />
+        <Route path='redux' element={<Counter/>}/>
+      </Routes>
+
       {/* <Todo/> */}
 
-        {/* <LoginForm/> */}
+      {/* <LoginForm/> */}
       {/* <Prectice/> */}
       {/* <Searchperams/> */}
 
@@ -70,7 +86,15 @@ const App = () => {
 
       {/* <WeatherApp/> */}
 
-      <MultipleForm/>
+      {/* <MultipleForm/> */}
+      {/* <FeedbackReducer/> */}
+      {/* <ReducerForm/> */}
+      {/* <NewTodo/> */}
+
+      {/* <AnimatedTabExample/> */}
+      {/* <Formhook/> */}
+
+
 
 
 
