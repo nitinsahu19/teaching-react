@@ -50,7 +50,7 @@ export default function Header(props) {
         <div>
           <h1 className='font-bold'>Hello User.</h1>
         </div>
-        <div className='flex gap-10'>
+        <div className='grid grid-cols-6 gap-6 ms-5'>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/' >Home</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/about' >About</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : " "} to='/weather' >Weather</NavLink>
@@ -59,6 +59,9 @@ export default function Header(props) {
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/multipalForms' >MultipalForms</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/feedback' >Feedback</NavLink>
           <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/registionFrom' >Registretion</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/reduxConter' >ReduxConter</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/reduxApi' >ReduxApi</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-blue-600" : ""} to='/normalReduxApi' >NormalReduxApi</NavLink>
         </div>
         <div>
           <div className='flex items-center'>

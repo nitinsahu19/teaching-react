@@ -43,8 +43,7 @@ export default function ProductCart(props) {
       Updatequantity[index].quantity += 1
       setAddCartItem(Updatequantity)
     }
-  }
-  console.log(cartsAdd)
+  } 
 
 
   const filterCategory = search.get("category") || 'All';

@@ -6,6 +6,9 @@ import Header from './Components/Header';
 import MultipalFrom from './Components/MultipalFrom';
 import FeedBack from './Components/FeedBack';
 import UseFormComponent from './Components/useFormComponent';
+import Counter from './Components/Counter';
+import ReduxApi from './Components/ReduxApi';
+import ReduxApiNor from './Components/ReduxApiNor';
 // import Home from './Components/Home';
 const Home = React.lazy(() => import('./Components/Home'))
 // import About from './Components/About';
@@ -37,11 +40,14 @@ function App() {
           <Route path='/github' element={<Github />} />
           <Route path='/multipalForms' element={<MultipalFrom />} />
           <Route path='/registionFrom' element={<UseFormComponent />} />
-          <Route path='/feedback' element={<FeedBack />} /> 
+          <Route path='/feedback' element={<FeedBack />} />
+          <Route path='/reduxConter' element={<Counter />} />
+          <Route path='/reduxApi' element={<ReduxApi />} />
+          <Route path='/normalReduxApi' element={<ReduxApiNor />} />
           {/* <ProtectedRoute /> */}
         </Routes>
       </Suspense>}
-
+      {/* <Counter/> */}
       {/* <MultipalFrom /> */}
     </>
   )
