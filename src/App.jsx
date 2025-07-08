@@ -15,6 +15,8 @@ import FeedBack from './component/FeedBack'
 import MoodDiary from './component/MoodDiary'
 import UseForm from './component/UseForm'
 import CounterSlice from './component/CounterSlice'
+import FakeStore from './component/FakeStore'
+import Pretics from './component/Pretics'
 
 
 
@@ -49,7 +51,7 @@ function App() {
 
     <>
 
-      {<Routes>
+      {/* {<Routes>
         <Route path='*' element={<DefaulPage />} />
         <Route path='/' element={
           <ProtectRoute>
@@ -73,9 +75,12 @@ function App() {
         } />
         <Route path='/counter' element={<CounterSlice mode={mode} colorMode={colorMode} logOut={logOut} />
         } />
+        <Route path='/fakestore' element={<FakeStore mode={mode} colorMode={colorMode} logOut={logOut} />
+        } />
         <Route path='/Form' element={<Form setLogin={setLogin} error={error} setError={setError} />} />
         <Route path='/detail/:id' element={<Details />} />
-      </Routes>}
+      </Routes>} */}
+      <Pretics/>
 
 
 

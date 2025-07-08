@@ -31,6 +31,8 @@ const Navbar = (props) => {
             UseForm</NavLink></li>
           <li ><NavLink to="/counter" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
             Counter</NavLink></li>
+          <li ><NavLink to="/fakestore" className={({isActive})=>isActive?'text-blue-500 border-b-2 font-medium ':'hover:underline cursor-pointer hover:text-blue-600 font-semibold'}>
+            FakeStoreApi</NavLink></li>
         </ul>
         <div>
           {props.mode === "light" ? <button onClick={props.colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
