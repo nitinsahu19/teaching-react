@@ -5,7 +5,7 @@ import { productData } from '../redux/reduxCounter/NormalApiRedux'
 
 const ReduxApiNor = () => {
 
-    const [apiData, setApiData] = useState([])
+    
 
     const dispatch = useDispatch();
     const value =  useSelector(state => state.products.product)
@@ -20,7 +20,7 @@ const ReduxApiNor = () => {
             .catch((err) => {
                 console.log(err)
             })
-    }, [setApiData])
+    }, [dispatch])
 
     return (
         <>
