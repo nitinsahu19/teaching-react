@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Toastify from './Tostify'
 
 const Login = () => {
   const navigate = useNavigate()
 
   const [username, setUsername] = useState('')
+  const [massage , setMessage] = useState(null)
 
   const handleLogin = () => {
     if (username !== '') {
       localStorage.setItem('token', 'mytoken')
-      navigate('/productData')
+      navigate('/home')
+      setMessage(true)
     } else {
       alert("कृपया एक कार्य इनपुट करें और बाद में दोबारा प्रयास करें।")
+      setMessage(false)
     }
 
   }
   return (
     <>
+      {massage !== null &&<Toastify massage={massage}/>}
       <div className='w-150 h-100 p-10 bg-gray-500 ml-100 mt-50 rounded-2xl'>
         <h1 className="text-6xl font-extrabold text-blue-800 text-center">Login</h1>
         <div className='flex mt-20 justify-between gap-2'>

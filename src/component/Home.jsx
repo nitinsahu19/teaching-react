@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BsCart3 } from "react-icons/bs";
 import Tostify from './Tostify';
 
-const Home = ({ message , setLogin }) => {
+const Home = ({ message, setLogin }) => {
   const products = [
     { id: 10, name: "Lamborghini Huracán", price: 320000, image: "https://i.ytimg.com/vi/MG4AAcV9Pc0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDN_0jWQ5wpqcSgJ2QgYKvDwW_Dmw", category: "Mercedes AMG GT" },
     { id: 6, name: "Tesla Model S", price: 85000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiAntqH2b6A_JaN7aF-duyrxkDMr9sQA5yzQ&s", category: "Tesla" },
@@ -21,6 +21,7 @@ const Home = ({ message , setLogin }) => {
   const [cart, setcart] = useState([]);
   const [slider, setslider] = useState(false);
   const [salected, setsalected] = useState("All")
+  const [massage, setMessage] = useState(null)
 
 
 
@@ -29,45 +30,47 @@ const Home = ({ message , setLogin }) => {
     if (index === -1) {
       const values = [...cart, { ...product, quantity: 1 }];
       setcart(values);
+      setMessage(true)
     } else {
       const ubdateValue = [...cart];
       ubdateValue[index].quantity += 1;
       setcart(ubdateValue);
+      setMessage(false)
     }
-  }; 
+  };
 
-  
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
       setcart(JSON.parse(storedCart));
     }
   }, []);
- 
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
 
-  
+
   const handleLogout = () => {
     if (cart.length > 0) {
-      alert("Please remove all cart !"); 
+      alert("Please remove all cart !");
     }
     localStorage.removeItem('cart');
     localStorage.removeItem('login');
     setLogin(false);
     alert('Log out successfully');
-  }; 
-  
-  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); 
+  };
+
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   const result = salected === "All" ? products : products.filter
     (item => item.category === salected);
   return (
     <>
 
-      {message && <Tostify message={message} />}
+      {massage !== null && <Tostify massage={massage} />}
       <div className='relative'>
         <div className='flex justify-between bg-indigo-600 p-5 text-white'>
           <b className='text-4xl'>Product List</b>
@@ -99,9 +102,9 @@ const Home = ({ message , setLogin }) => {
               cart.map((item, index) => (
                 <div key={index} className='mb-3 border-b pb-2'>
                   <img className='w-full h-32 object-contain rounded' src={item.image} alt={item.name} />
-                    <p className='font-semibold'>{item.name}</p> 
-                    <p className='font-bold'>${item.price}</p>
-                    <p>{item.quantity}</p>
+                  <p className='font-semibold'>{item.name}</p>
+                  <p className='font-bold'>${item.price}</p>
+                  <p>{item.quantity}</p>
 
                 </div>
               ))

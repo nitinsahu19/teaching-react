@@ -1,12 +1,20 @@
 import React from 'react';
 
-const Tostify = ({ message }) => {
-    const isError = message.toLowerCase().includes('check');
-    return (
-        <div>
-            <p className={`w-75 h-10 flex justify-center items-center rounded-2xl absolute top-4 z-5 right-18 text-white px-4 ${isError ? 'bg-red-500' : 'bg-green-500'}`}>{message}fgdfg</p>
-        </div>
-    );
+const Toastify = ({ massage, error }) => {
+
+    setTimeout(() => {
+        massage
+        console.log(massage , "sdfsdf")
+    }, 1000);
+  return (
+    <div>
+      {massage && <p className="w-75 h-10 flex justify-center items-center rounded-2xl absolute top-4 right-18 z-50 text-white px-4 bg-green-500">
+        {massage}<li>Add The Product Sucessfully <span className='text-red-500 cursor-pointer'>X</span></li></p>}
+
+      {error && <p className="w-75 h-10 flex justify-center items-center rounded-2xl absolute top-20 right-18 z-50 text-white px-4 bg-red-500">
+        {error}<li>Something Went Wrong Try Again <span className='text-red-500 cursor-pointer'>X</span></li></p>}
+    </div>
+  );
 };
 
-export default Tostify;
+export default Toastify;
