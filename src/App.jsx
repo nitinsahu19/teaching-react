@@ -51,15 +51,17 @@
 
 
   
-import React from 'react' 
-import Counter from './redux/Counter'
+// import React from 'react' 
+// // import Counter from './redux/Counter'
+// import ProductFetch from './redux/usefiles/ProductFetch'
+// // import Website from './component/Website'
 
-const App = () => {
-  return (
-    <div> 
-      <Counter/>
-    </div>
-  )
-}
+// const App = () => {
+//   return (
+//     <div>  
+//       <ProductFetch/>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
