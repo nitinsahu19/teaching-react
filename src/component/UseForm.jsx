@@ -2,10 +2,8 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod/src/zod.js';
-import Navbar from './Navbar';
-// import { email, number } from 'zod/v4-mini';
 
-const UseForm = (props) => {
+const UseForm = () => {
     const schema = z.object({
         email: z.string().email("please enter valid email"),
         name: z.string().min(5, "name valid 5 character"),
@@ -20,7 +18,6 @@ const UseForm = (props) => {
     }
     return (
         <div>
-                  <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
             
             <div className="min-h-screen  flex items-center justify-center p-4">
                 <form className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md space-y-6" onSubmit={handleSubmit(handleForm)}>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import Navbar from './Navbar'
 
 
 const Weather = (props) => {
@@ -53,7 +52,6 @@ const getweather = ()=>{
 
   return (
     <>
-          <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
 
     
     <div className=' img'>

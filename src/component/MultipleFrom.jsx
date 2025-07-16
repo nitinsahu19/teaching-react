@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from 'react'
-import Navbar from './Navbar'
 import { fromReducer, initialState } from '../reducer/resduserfun'
 
 const MultipleFrom = (props) => {
@@ -71,7 +70,6 @@ const handlesubmit = ()=>{
 }
   return (
     <>
-      <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
 
 
       {/* <div>

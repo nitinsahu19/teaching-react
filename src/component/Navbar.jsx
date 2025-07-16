@@ -1,12 +1,29 @@
-import React from 'react'
-import { Link, NavLink  } from 'react-router-dom'
+import {  NavLink  } from 'react-router-dom'
 import { CiDark } from "react-icons/ci";
-import { MdPropane, MdSunny } from "react-icons/md";
+import {  MdSunny } from "react-icons/md";
+import { useState } from 'react';
 
-const Navbar = (props) => {
+const Navbar = () => {
+  const [mode,setMode] = useState('light')
+   const colorMode = () => {
+    if (mode === "light") {
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      setMode("dark")
+    } else {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+      setMode("light")
+    }
+  }
+
+   const logOut = () => {
+    localStorage.removeItem("login");
+
+  }
   return (
     <>
-    <div className={`sticky top-0  z-50 ${props.mode==='light'?'bg-white':'bg-black'}`}>
+    <div className={`sticky top-0  z-50 ${mode==='light'?'bg-white':'bg-black'}`}>
       <nav className='flex  justify-between p-2 items-center'>
         <div>
           <img className='w-16 h-16 rounded-full' src="https://marketplace.canva.com/EAGQ1aYlOWs/1/0/1600w/canva-blue-colorful-illustrative-e-commerce-online-shop-logo-bHiX_0QpJxE.jpg" alt="" />
@@ -35,11 +52,11 @@ const Navbar = (props) => {
             FakeStoreApi</NavLink></li>
         </ul>
         <div>
-          {props.mode === "light" ? <button onClick={props.colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
-            <button onClick={props.colorMode} className='text-2xl text-white pe-2 cursor-pointer'><MdSunny /></button>}
+          {mode === "light" ? <button onClick={colorMode} className='text-2xl text-black pe-2 cursor-pointer'><CiDark /></button> :
+            <button onClick={colorMode} className='text-2xl text-white pe-2 cursor-pointer'><MdSunny /></button>}
         </div>
         <div>
-          <button onClick={props.logout} className='border rounded  p-1 ps-2 pe-2  bg-red-600 text-white cursor-pointer'>Log-out</button>
+          <button onClick={logOut} className='border rounded  p-1 ps-2 pe-2  bg-red-600 text-white cursor-pointer'>Log-out</button>
         </div>
       </nav>  
     </div>

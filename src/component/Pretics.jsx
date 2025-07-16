@@ -17,9 +17,11 @@ const Pretics = () => {
       <div className='grid grid-cols-3 gap-4'>
         {data.map((item,index)=>
         <div className='border p-2 rounded' key={index}>
-        <img className='h-50 object-center' src={item.image} alt="" />
+          <div>
+        <img className='h-34 mx-auto' src={item.image} alt="" />
+          </div>
         <p>{item.title}</p>
-        <p>{item.price}</p>
+        <p className='text-blue-600'>Rs : {item.price}</p>
         </div>
         )}
       </div>

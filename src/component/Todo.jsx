@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import Navbar from './Navbar';
 
-const Todo = (props) => {
+const Todo = () => {
 
     const [array, setArray] = useState([]);
     const [task, setTask] = useState('')
@@ -44,10 +43,9 @@ const Todo = (props) => {
 
     return (
         <>
-              <Navbar mode={props.mode} colorMode={props.colorMode} logout={props.logOut} />
 
             <div>
-                <p className='text-center font-bold mt-2 text-2xl'>Todo app</p>
+                <p className='text-center font-bold mt-2 text-xxl'>Todo app</p>
                 <div className='text-end p-2 mt-2'>
                     <select className='border rounded' value={filter} onChange={handleFilter} name="" id="">
                         <option value="All">All</option>
@@ -56,7 +54,7 @@ const Todo = (props) => {
                     </select>
                 </div>
                 <div className='flex justify-center mt-10 gap-2'>
-                    <input className='border rounded' value={task} onChange={(e) => setTask(e.target.value)} type="text" id='101' placeholder='Enter a task' required />
+                    <input className='border rounded p-2 font-medium' value={task} onChange={(e) => setTask(e.target.value)} type="text" id='101' placeholder='Enter a task' required />
                     <button onClick={addTaskButton} className='bg-green-500 p-1 ps-3 pe-3 rounded cursor-pointer'>Add task</button>
                 </div>
             </div>
