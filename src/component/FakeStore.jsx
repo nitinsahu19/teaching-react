@@ -14,8 +14,8 @@ const FakeStore = () => {
   return (
     <div>
       <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Fake Store Products</h1>
-      {loading && <p>Loading...</p>}
+      <h1 className="text-2xl font-bold mb-4 text-center m-2">Fake Store Products</h1>
+      {loading && <p className='flex justify-center items-center h-100 font-bold text-3xl'>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {products.map((product) => (
