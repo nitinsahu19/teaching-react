@@ -39,9 +39,6 @@ const handlechange  = (e)=>{
     value:e.target.value
   })
 }
-  // const handlenext=()=>{
-  //   dispatch({type:"next-step"})
-  // }
 
   const handlenext = () => {
     if (state.name === "" || state.email === '') {
