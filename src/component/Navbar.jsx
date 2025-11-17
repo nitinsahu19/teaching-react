@@ -21,6 +21,8 @@ const Navbar = () => {
     localStorage.removeItem("login");
 
   }
+
+  const token  = localStorage.getItem("login")
   return (
     <>
     <div className={`sticky top-0  z-50 ${mode==='light'?'bg-white':'bg-black'}`}>
@@ -56,7 +58,7 @@ const Navbar = () => {
             <button onClick={colorMode} className='text-2xl text-white pe-2 cursor-pointer'><MdSunny /></button>}
         </div>
         <div>
-          <button onClick={logOut} className='border rounded  p-1 ps-2 pe-2  bg-red-600 text-white cursor-pointer'>Log-out</button>
+          {token && <button onClick={logOut} className='border rounded  p-1 ps-2 pe-2  bg-red-600 text-white cursor-pointer'>Log-out</button>}
         </div>
       </nav>  
     </div>
