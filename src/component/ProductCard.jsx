@@ -55,9 +55,9 @@ const ProductCard = () => {
 
   });
 
-  const handlefun = (getindex) => {
-    console.log(getindex);
-    naviagate(`/detail/${getindex}`);
+  const handlefun = (id) => {
+    // console.log(id);
+    naviagate(`/detail/${id}`);
   }
 
 
