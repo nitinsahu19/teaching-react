@@ -15,7 +15,7 @@ import { FaShoppingCart, FaRupeeSign, FaInfoCircle, FaPlus, FaBolt } from 'react
 
 
 const ProductCard = () => {
-  const [mode,setMode] = useState('light')
+  const [mode, setMode] = useState('light')
 
 
   const [salected, setSalected] = useState("all");
@@ -82,9 +82,6 @@ const ProductCard = () => {
   const totalPrice = addcard.reduce((acc, item) => acc + parseFloat(item.price.replace(/,/g, "")) * item.quantity, 0);
 
   const formateTotal = totalPrice.toLocaleString("en-IN");
-
-
-
   return (
     <>
       {message && <Tostyfiy error={error} message={message} />}
