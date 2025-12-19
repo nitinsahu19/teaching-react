@@ -43,8 +43,6 @@ const Form = (props) => {
 
     }
 
-
-
     const ShowPassword = () => {
         let inputPassword = document.getElementById("102");
         let buton_show = document.getElementById("buton-show")
